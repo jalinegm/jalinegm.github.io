@@ -1,0 +1,439 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T12:55:46Z",
+  "title": "Design System: Portfólio Jaline Mombach",
+  "extensions": {
+    "colorMeta": {
+      "ink-navy": {
+        "role": "neutral",
+        "displayName": "Ink Navy",
+        "canonical": "oklch(19% 0.035 261)",
+        "tonalRamp": [
+          "#040b1a",
+          "#1b2536",
+          "#374255",
+          "#566276",
+          "#778398",
+          "#99a6bc",
+          "#bdcae1",
+          "#e1efff"
+        ]
+      },
+      "ink-surface": {
+        "role": "neutral",
+        "displayName": "Ink Surface",
+        "canonical": "oklch(24% 0.046 262)",
+        "tonalRamp": [
+          "#020a1e",
+          "#18253b",
+          "#35425b",
+          "#53627c",
+          "#73839e",
+          "#95a6c2",
+          "#b9cae8",
+          "#deefff"
+        ]
+      },
+      "ink-text": {
+        "role": "neutral",
+        "displayName": "Ink Text",
+        "canonical": "oklch(97% 0.009 265)",
+        "tonalRamp": [
+          "#090b0f",
+          "#232529",
+          "#404247",
+          "#5f6166",
+          "#808288",
+          "#a2a5ab",
+          "#c6c9cf",
+          "#ebeef4"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "oklch(82% 0.034 263)",
+        "tonalRamp": [
+          "#050b19",
+          "#1c2536",
+          "#384254",
+          "#576275",
+          "#788397",
+          "#9aa6bb",
+          "#becae0",
+          "#e3efff"
+        ]
+      },
+      "ink-border": {
+        "role": "neutral",
+        "displayName": "Ink Border",
+        "canonical": "oklch(62% 0.059 261)",
+        "tonalRamp": [
+          "#000923",
+          "#142441",
+          "#304261",
+          "#4e6283",
+          "#6e83a6",
+          "#90a6ca",
+          "#b4caf0",
+          "#d8f0ff"
+        ]
+      },
+      "signal-amber": {
+        "role": "primary",
+        "displayName": "Signal Amber",
+        "canonical": "oklch(83% 0.171 80)",
+        "tonalRamp": [
+          "#2a0000",
+          "#4c0800",
+          "#6e2d00",
+          "#924f00",
+          "#b67200",
+          "#dc9600",
+          "#ffba12",
+          "#ffe052"
+        ]
+      },
+      "signal-yellow": {
+        "role": "primary",
+        "displayName": "Signal Yellow",
+        "canonical": "oklch(85% 0.161 83)",
+        "tonalRamp": [
+          "#270000",
+          "#481000",
+          "#693200",
+          "#8c5400",
+          "#b07600",
+          "#d59a00",
+          "#fbbe2d",
+          "#ffe45e"
+        ]
+      },
+      "trace-pink": {
+        "role": "secondary",
+        "displayName": "Trace Pink",
+        "canonical": "oklch(73% 0.181 2)",
+        "tonalRamp": [
+          "#370006",
+          "#5d001f",
+          "#84003b",
+          "#ac1d5a",
+          "#d4477a",
+          "#fc6d9d",
+          "#ff92c0",
+          "#ffb7e6"
+        ]
+      },
+      "trace-cyan": {
+        "role": "secondary",
+        "displayName": "Trace Cyan",
+        "canonical": "oklch(83% 0.102 232)",
+        "tonalRamp": [
+          "#000c2e",
+          "#002a4d",
+          "#00496e",
+          "#006a91",
+          "#348db5",
+          "#5bb0da",
+          "#80d5ff",
+          "#a6fbff"
+        ]
+      },
+      "paper-cool": {
+        "role": "neutral",
+        "displayName": "Paper Cool",
+        "canonical": "oklch(98% 0.006 265)",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#242528",
+          "#404245",
+          "#5f6165",
+          "#808286",
+          "#a3a5a9",
+          "#c7c9cd",
+          "#eceef2"
+        ]
+      },
+      "paper-surface": {
+        "role": "neutral",
+        "displayName": "Paper Surface",
+        "canonical": "oklch(94% 0.013 262)",
+        "tonalRamp": [
+          "#080b11",
+          "#22252c",
+          "#3e4249",
+          "#5d6169",
+          "#7e828b",
+          "#a1a5ae",
+          "#c4c9d2",
+          "#eaeff8"
+        ]
+      },
+      "paper-ink": {
+        "role": "neutral",
+        "displayName": "Paper Ink",
+        "canonical": "oklch(20% 0.035 261)",
+        "tonalRamp": [
+          "#040b1a",
+          "#1b2536",
+          "#384255",
+          "#566276",
+          "#778398",
+          "#99a6bc",
+          "#bdcae1",
+          "#e2efff"
+        ]
+      },
+      "paper-muted": {
+        "role": "neutral",
+        "displayName": "Paper Muted",
+        "canonical": "oklch(41% 0.048 261)",
+        "tonalRamp": [
+          "#020a1f",
+          "#18253c",
+          "#34425c",
+          "#52627d",
+          "#7283a0",
+          "#94a6c4",
+          "#b8cae9",
+          "#ddf0ff"
+        ]
+      },
+      "paper-border": {
+        "role": "neutral",
+        "displayName": "Paper Border",
+        "canonical": "oklch(53% 0.047 261)",
+        "tonalRamp": [
+          "#020a1f",
+          "#18253c",
+          "#34425b",
+          "#52627c",
+          "#72839f",
+          "#95a6c3",
+          "#b8cae9",
+          "#ddf0ff"
+        ]
+      },
+      "paper-blue": {
+        "role": "primary",
+        "displayName": "Paper Blue",
+        "canonical": "oklch(43% 0.150 258)",
+        "tonalRamp": [
+          "#000048",
+          "#00186b",
+          "#003c8f",
+          "#225eb4",
+          "#4581da",
+          "#67a5ff",
+          "#8bcaff",
+          "#aff0ff"
+        ]
+      },
+      "paper-trace-amber": {
+        "role": "primary",
+        "displayName": "Paper Trace Amber",
+        "canonical": "oklch(54% 0.136 53)",
+        "tonalRamp": [
+          "#2e0000",
+          "#510000",
+          "#752300",
+          "#9a4500",
+          "#c06826",
+          "#e78b4d",
+          "#ffaf71",
+          "#ffd496"
+        ]
+      },
+      "paper-trace-pink": {
+        "role": "secondary",
+        "displayName": "Paper Trace Pink",
+        "canonical": "oklch(52% 0.199 6)",
+        "tonalRamp": [
+          "#3c0002",
+          "#640016",
+          "#8b0032",
+          "#b40050",
+          "#dd3b70",
+          "#ff6392",
+          "#ff89b6",
+          "#ffb0da"
+        ]
+      },
+      "paper-trace-cyan": {
+        "role": "secondary",
+        "displayName": "Paper Trace Cyan",
+        "canonical": "oklch(49% 0.133 250)",
+        "tonalRamp": [
+          "#00003f",
+          "#002161",
+          "#004284",
+          "#0b64a9",
+          "#3986ce",
+          "#5eaaf5",
+          "#82cfff",
+          "#a7f5ff"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "hero": {
+        "displayName": "Hero",
+        "purpose": "The name on the home page only, max 14ch."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page h1."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and the closing call line."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3, card titles, lede, site name, primary action label."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 68ch measure."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Badges, captions, footer, mobile nav."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions: stroke growth, link underline offset, button slide."
+      },
+      {
+        "name": "trace-draw",
+        "value": "0.05s ease-out backwards, 12ms stagger per segment, 150ms delay",
+        "purpose": "The hero trace draws itself once."
+      },
+      {
+        "name": "stroke-grow",
+        "value": "0.35s to 0.45s ease-out on transform scaleX",
+        "purpose": "Nav underline (0.35s) and card stroke (0.45s)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation and transition none; no pointer trail",
+        "purpose": "Static trace for prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "22rem"
+      },
+      {
+        "name": "mobile",
+        "value": "40rem"
+      },
+      {
+        "name": "wide",
+        "value": "56rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Call Button",
+      "kind": "button",
+      "refersTo": "button-link",
+      "description": "Primary call to action: amber pill that slides 4px right on hover.",
+      "html": "<a class=\"ds-btn-link\" href=\"#\">Ver colaboração</a>",
+      "css": ".ds-btn-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:12px 24px;border-radius:999px;background:var(--trace-slow,#ffb703);color:var(--color-bg,#0b1424);font-family:var(--font-display);font-weight:700;text-decoration:none;transition:transform .25s cubic-bezier(.16,1,.3,1)}.ds-btn-link:hover{transform:translateX(4px)}.ds-btn-link:focus-visible{outline:3px solid var(--color-focus,#7fd4ff);outline-offset:3px}"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "button-toggle",
+      "description": "Outlined 4px-radius button; border turns amber on hover and when pressed.",
+      "html": "<button class=\"ds-toggle\" aria-pressed=\"false\">Tema escuro</button>",
+      "css": ".ds-toggle{min-height:44px;min-width:44px;font:inherit;color:inherit;background:transparent;border:2px solid var(--color-border,#7388ab);border-radius:4px;padding:8px 12px;cursor:pointer;transition:border-color .2s cubic-bezier(.16,1,.3,1)}.ds-toggle:hover,.ds-toggle[aria-pressed=true]{border-color:var(--trace-slow,#ffb703)}.ds-toggle:focus-visible{outline:3px solid var(--color-focus,#7fd4ff);outline-offset:3px}"
+    },
+    {
+      "name": "Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Bold links; a three-stop trace stroke scales in on hover and stays under the current page.",
+      "html": "<ul class=\"ds-nav\"><li><a href=\"#\" aria-current=\"page\">Início</a></li><li><a href=\"#\">Pesquisa</a></li><li><a href=\"#\">Projetos</a></li></ul>",
+      "css": ".ds-nav{list-style:none;display:flex;gap:4px 24px;padding:0;margin:0}.ds-nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;color:var(--color-text,#f2f5fb);font-weight:700;text-decoration:none}.ds-nav a::after{content:'';position:absolute;inset-inline:0;bottom:6px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--trace-slow,#ffb703),var(--trace-mid,#ff6f9f),var(--trace-fast,#7fd4ff));transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.16,1,.3,1)}.ds-nav a:hover::after,.ds-nav a[aria-current=page]::after{transform:scaleX(1)}.ds-nav a:focus-visible{outline:3px solid var(--color-focus,#7fd4ff);outline-offset:3px}"
+    },
+    {
+      "name": "Open Entry Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Unboxed entry with a 2px top rule; amber-to-pink stroke extends on hover or focus.",
+      "html": "<article class=\"ds-card\"><h3><a href=\"#\">CLAT: captura do traço infantil</a></h3><p>Resumo curto do caso de estudo.</p></article>",
+      "css": ".ds-card{position:relative;display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--color-border,#7388ab);color:var(--color-text,#f2f5fb)}.ds-card::before{content:'';position:absolute;top:-4px;left:0;right:0;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--trace-slow,#ffb703),var(--trace-mid,#ff6f9f));transform:scaleX(.14);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}.ds-card:hover::before,.ds-card:focus-within::before{transform:scaleX(1)}.ds-card h3{margin:0;font-family:var(--font-display);font-size:1.4rem;line-height:1.12}.ds-card a{color:inherit;text-decoration:underline;text-decoration-color:transparent;text-decoration-thickness:2px;text-underline-offset:.2em}.ds-card a:hover,.ds-card a:focus-visible{text-decoration-color:currentColor}.ds-card p{margin:0}"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Small surface-filled tag, 4px radius; dashed border for alert variant.",
+      "html": "<span class=\"ds-badge\">Acessibilidade</span> <span class=\"ds-badge ds-badge-alert\">Em revisão</span>",
+      "css": ".ds-badge{display:inline-block;padding:4px 8px;border-radius:4px;border:1px solid var(--color-border,#7388ab);background:var(--color-surface,#131f35);color:var(--color-text,#f2f5fb);font-size:.95rem;line-height:1.3}.ds-badge-alert{border-style:dashed}"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": "typography.headline",
+      "description": "Headline opened by a 4.5rem trace stroke; the standard section opener.",
+      "html": "<h2 class=\"ds-section-title\">Atuação</h2>",
+      "css": ".ds-section-title{position:relative;margin:0;padding-top:16px;font-family:var(--font-display);font-weight:700;font-size:2rem;line-height:1.12;letter-spacing:-.015em;color:var(--color-text,#f2f5fb)}.ds-section-title::before{content:'';position:absolute;top:0;left:0;width:4.5rem;height:6px;border-radius:999px;background:linear-gradient(90deg,var(--trace-slow,#ffb703),var(--trace-mid,#ff6f9f) 55%,var(--trace-fast,#7fd4ff))}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Traço Capturado",
+    "overview": "The data of the author's thesis becomes the identity: a child's pre-writing finger stroke, recorded with speed and pressure, is what draws the site. The default world is a dark ink-navy capture screen; light theme is its paper-cool counterpart where the same stroke is drawn in ink. Everything the stroke touches is an academic, institutional page: the voice stays scholarly, never a toy, never a cold CV.\n\nOne idea carries the system: a short rounded stroke in the trace ramp (amber slow, pink mid, cyan fast) marks the start of things. It opens section titles, grows under a nav link, slides across a card's top edge, and is drawn full-width in the hero. Surfaces are flat and unboxed; hierarchy comes from type scale, that stroke, and 2px rules.",
+    "keyCharacteristics": [
+      "Dark ink-navy by default, light paper-cool counterpart; follows the OS, with a manual toggle.",
+      "One three-stop trace ramp (slow, mid, fast), used only for strokes and state.",
+      "Bricolage Grotesque display over Atkinson Hyperlegible Next body.",
+      "Entries open with a stroke; no boxed cards, no shadows.",
+      "AA contrast checked per token pair; 44px minimum targets; reduced motion shows a static trace."
+    ],
+    "rules": [
+      {
+        "name": "The Trace Ramp Rule",
+        "body": "The three trace colors appear only as strokes, gradients of strokes, and state (hover, pressed, selection, the primary action). They never fill panels or color body text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paired Theme Rule",
+        "body": "Every color is a theme pair. Never use a dark value on paper or the reverse; the light trace colors are darkened specifically to hold 5:1 or better on paper-cool.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Display face for headings, names, and the call line; Atkinson for everything read at length. Do not set paragraphs in the display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces stay flat; separation is a 2px rule or whitespace. A hovering card extends its stroke, it does not rise.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do open sections and entries with a short rounded stroke in the trace ramp.",
+      "Do keep every state change (hover, current, pressed) as a stroke growing or a border turning amber.",
+      "Do set min 44px targets and 3px focus rings; verify 5:1 on UI boundaries and 4.5:1 on text per theme.",
+      "Do read all colors from the theme custom properties so light, dark and manual toggle stay in sync.",
+      "Do pair every motion with a reduced-motion static equivalent."
+    ],
+    "donts": [
+      "Don't use the trace colors as panel fills or for paragraph text.",
+      "Don't box entries in cards with shadows or filled backgrounds; the open entry with a top rule is the form.",
+      "Don't use one theme's trace values in the other theme.",
+      "Don't make the trace carry information; it is illustrative and must stay aria-hidden.",
+      "Don't drift toward a childish toy look (primary-color blobs, rounded cartoon type) or a cold institutional CV page; the stroke is the identity, the voice stays academic."
+    ]
+  }
+}
