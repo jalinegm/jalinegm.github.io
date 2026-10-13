@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Build e testes
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar dependências Node
+        run: npm ci
+
+      - name: Instalar Chromium para Playwright
+        run: npx playwright install --with-deps chromium
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências Python
+        run: python -m pip install -r requirements.txt
+
+      - name: Testes unitários dos scripts Python
+        run: python -m pytest scripts/tests -q
+
+      - name: Testes unitários (Vitest)
+        run: npm run test:unit
+
+      - name: Build (astro check + astro build)
+        run: npm run build
+
+      - name: Validação HTML (html-validate)
+        run: npm run test:html
+
+      - name: Testes e2e (Playwright + axe)
+        run: npm run test:e2e
+
+      - name: Lighthouse CI
+        run: npx lhci autorun
