@@ -3,7 +3,7 @@ import Base from "../../layouts/Base.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { getCollection, render } from "astro:content";
 import { t } from "../../i18n";
-import { doiUrl, idiomaTitulo } from "../../lib/citation";
+import { doiUrl, idiomaTitulo, idiomaVeiculo } from "../../lib/citation";
 
 export async function getStaticPaths() {
   const entries = await getCollection("pesquisa");
@@ -45,7 +45,7 @@ const { titulo, resumo, pdf, repositorioUrl, publicacoesDerivadas, midia } = ent
           return (
             <li>
               {idioma === "en" ? <span lang="en">{p.titulo}</span> : p.titulo}
-              {p.veiculo && <>. {p.veiculo}</>}
+              {p.veiculo && <>. {idiomaVeiculo(p.veiculo) === "en" ? <span lang="en">{p.veiculo}</span> : p.veiculo}</>}
               {p.ano && <>, {p.ano}</>}.
               {url && (
                 <>

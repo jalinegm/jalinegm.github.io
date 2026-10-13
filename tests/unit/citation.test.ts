@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { formatCitation, doiUrl, idiomaTitulo, type Publicacao } from "../../src/lib/citation";
+import { formatCitation, doiUrl, idiomaTitulo, idiomaVeiculo, type Publicacao } from "../../src/lib/citation";
 
 const comDoi: Publicacao = {
   id: "a",
@@ -73,5 +73,18 @@ describe("idiomaTitulo", () => {
   it("treats Portuguese titles as pt", () => {
     expect(idiomaTitulo("Empoderamento de gênero mediado pelas tecnologias")).toBe("pt");
     expect(idiomaTitulo("Uma abordagem para a promoção de habilidades empreendedoras")).toBe("pt");
+  });
+});
+
+describe("idiomaVeiculo", () => {
+  it("marca veículos em inglês conhecidos", () => {
+    expect(idiomaVeiculo("2020 IEEE Canadian Conference on Electrical and Computer Engineering (CCECE)")).toBe("en");
+    expect(idiomaVeiculo("IEEE Access")).toBe("en");
+    expect(idiomaVeiculo("Lecture Notes in Computer Science")).toBe("en");
+  });
+  it("mantém veículos em português sem marcação", () => {
+    expect(idiomaVeiculo("Simpósio Brasileiro de Informática na Educação")).toBe("pt");
+    expect(idiomaVeiculo("XXV Workshop de Informática na Escola")).toBe("pt");
+    expect(idiomaVeiculo("Congresso Internacional de Administração")).toBe("pt");
   });
 });

@@ -8,7 +8,7 @@ import FilterBar from "../../components/FilterBar.astro";
 import { getCollection } from "astro:content";
 import { t } from "../../i18n";
 import { getLattes } from "../../lib/data";
-import { doiUrl, formatCitation, idiomaTitulo } from "../../lib/citation";
+import { doiUrl, formatCitation, idiomaTitulo, idiomaVeiculo } from "../../lib/citation";
 import { ordenarPublicacoes, searchText } from "../../lib/filters";
 
 const lattes = getLattes();
@@ -27,7 +27,7 @@ const anos = [...new Set(publicacoes.map((p) => String(p.ano)))];
 // Projetos sem ano de fim no Lattes são tratados como em andamento.
 const projetosAtuais = lattes.projetos.filter((p) => p.fim === null);
 
-const estudos = await getCollection("pesquisa");
+const estudos = (await getCollection("pesquisa")).sort((a, b) => a.data.ordem - b.data.ordem);
 ---
 <Base title={t("pesquisa.titulo")} description={t("pesquisa.intro")}>
   <Breadcrumbs items={[{ label: t("nav.inicio"), href: "/" }, { label: t("pesquisa.titulo") }]} />
@@ -78,7 +78,7 @@ const estudos = await getCollection("pesquisa");
             {idioma === "en" ? <span lang="en">{p.titulo}</span> : p.titulo}
           </p>
           {p.autores.length > 0 && <p class="pub-autores">{p.autores.join("; ")}</p>}
-          <p class="pub-veiculo">{p.veiculo}, {p.ano}</p>
+          <p class="pub-veiculo">{idiomaVeiculo(p.veiculo) === "en" ? <span lang="en">{p.veiculo}</span> : p.veiculo}, {p.ano}</p>
           <ul class="card-badges">
             <li><Badge variante="neutro" texto={t(`pub.tipo.${p.tipo}`)} /></li>
             <li><Badge variante="neutro" texto={t(`pub.tema.${p.tema}`)} /></li>

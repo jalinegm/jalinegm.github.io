@@ -1,6 +1,7 @@
 ---
 titulo: "Proposta de aplicativo móvel para identificação de cédulas de Real por pessoas com deficiência visual"
 slug: dissertacao
+ordem: 2
 resumo: "Dissertação de mestrado em Engenharia Elétrica (UNIPAMPA, defendida em 07/05/2015) sobre um aplicativo Android que ajuda pessoas com deficiência visual a identificar as cédulas de Real."
 pdf:
   href: /docs/dissertacao-jaline-mombach.pdf

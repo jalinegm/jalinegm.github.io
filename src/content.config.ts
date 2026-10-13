@@ -27,6 +27,8 @@ const pesquisa = defineCollection({
   schema: z.object({
     titulo: z.string().min(1),
     slug,
+    /** Ordem de exibição na página de pesquisa (menor primeiro). */
+    ordem: z.number().int(),
     resumo: z.string().min(1),
     pdf: z.object({
       href: z.string().regex(/^\/docs\/.+\.pdf$/),

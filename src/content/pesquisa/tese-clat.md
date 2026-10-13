@@ -1,6 +1,7 @@
 ---
 titulo: "CLAT: arcabouço conceitual e ferramenta de apoio à avaliação da escrita inicial infantil por meio de dispositivos móveis"
 slug: tese-clat
+ordem: 1
 resumo: "Tese de doutorado em Ciência da Computação (UFG, defendida em 21/12/2022) que propõe modelos de interação para dispositivos móveis capazes de apoiar a avaliação remota da escrita inicial infantil."
 pdf:
   href: /docs/tese-clat-jaline-mombach.pdf

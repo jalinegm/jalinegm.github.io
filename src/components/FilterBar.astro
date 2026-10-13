@@ -177,16 +177,40 @@ const textoInicial = total === 1 ? resultados.um : resultados.varios.replace("{n
     preencher(inicial);
     aplicar(ler(), false);
 
+    // Digitação no campo de busca é adiada (400 ms) para não anunciar a cada tecla
+    // no aria-live; seleções aplicam na hora.
+    let pendente: number | undefined;
+    const cancelarPendente = () => {
+      if (pendente !== undefined) window.clearTimeout(pendente);
+      pendente = undefined;
+    };
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
+      cancelarPendente();
       aplicar(ler(), true);
     });
-    form.addEventListener("input", () => aplicar(ler(), true));
-    form.addEventListener("change", () => aplicar(ler(), true));
+    form.addEventListener("input", (event) => {
+      if ((event.target as HTMLElement | null)?.getAttribute("name") === "q") {
+        cancelarPendente();
+        pendente = window.setTimeout(() => {
+          pendente = undefined;
+          aplicar(ler(), true);
+        }, 400);
+        return;
+      }
+      cancelarPendente();
+      aplicar(ler(), true);
+    });
+    form.addEventListener("change", () => {
+      cancelarPendente();
+      aplicar(ler(), true);
+    });
 
     document.querySelectorAll<HTMLAnchorElement>("a[data-limpar]").forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
+        cancelarPendente();
         const vazioQ: FiltroQuery = { tipo: "", ano: "", tema: "", q: "", linguagem: "", visibilidade: "" };
         preencher(vazioQ);
         aplicar(vazioQ, true);

@@ -35,6 +35,14 @@ export function idiomaTitulo(titulo: string): "pt" | "en" {
   return en >= 2 && en > pt ? "en" : "pt";
 }
 
+// Nomes de veículos em inglês (lang="en"); lista explícita porque o heurístico de títulos não cobre nomes curtos.
+const VEICULOS_EN = ["IEEE", "HCI International", "Lecture Notes in", "Interaction Design and Children", "INTERNATIONAL JOURNAL OF INFORMATION", "LITERACY INFORMATION"];
+
+/** "en" para nomes de veículos em inglês conhecidos; "pt" nos demais. */
+export function idiomaVeiculo(veiculo: string): "pt" | "en" {
+  return VEICULOS_EN.some((nome) => veiculo.includes(nome)) ? "en" : "pt";
+}
+
 /**
  * Citação em estilo ABNT simplificado:
  * SOBRENOME, Nome; ... Título. Veículo, ano. DOI: https://doi.org/<doi>
