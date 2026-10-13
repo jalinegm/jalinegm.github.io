@@ -61,7 +61,7 @@ const segmentos = (texto: string): Segmento[] =>
     </div>
   </section>
 
-  <section>
+  <section class="cta">
     <p>{t("inicio.ctaTexto")}</p>
     <p><a class="button-link" href="/colaboracao">{t("inicio.cta")}</a></p>
   </section>
@@ -115,6 +115,27 @@ const segmentos = (texto: string): Segmento[] =>
   @media (min-width: 40rem) {
     section[aria-labelledby="destaques-titulo"] > div {
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .cta {
+    margin-block-start: var(--space-8);
+  }
+  .cta p:first-child {
+    max-width: 30ch;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+    line-height: 1.15;
+  }
+  .cta p + p {
+    margin-block-start: var(--space-5);
+  }
+  .lede {
+    text-wrap: balance;
+  }
+  @media (min-width: 56rem) {
+    section[aria-labelledby="atuacao-titulo"] h3 {
+      min-block-size: calc(2 * 1.12em);
     }
   }
   section > div > section p {

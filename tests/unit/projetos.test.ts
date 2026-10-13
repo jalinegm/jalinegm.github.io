@@ -104,10 +104,10 @@ describe("projetos/index.html", () => {
     expect(h).toMatch(/<div class="vazio" data-vazio hidden/);
   });
 
-  it("imagens têm alt e a placeholder de linguagem é decorativa", () => {
+  it("imagens têm alt e não há caixa de placeholder vazia", () => {
     const h = page();
     for (const img of h.match(/<img [^>]*>/g) ?? []) expect(img).toMatch(/\salt="/);
-    expect(h).toMatch(/<div class="card-placeholder" aria-hidden="true"[^>]*>/);
+    expect(h).not.toMatch(/card-placeholder/);
   });
 
   it("não contém vocabulário proibido", () => {

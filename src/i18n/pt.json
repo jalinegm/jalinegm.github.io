@@ -113,6 +113,7 @@
     "DE": "Dedicação Exclusiva"
   },
   "inicio": {
+    "tracoLegenda": "Traço de pré-escrita ilustrativo, desenhado por código, não é a captura de uma criança. A cor mostra a velocidade (do âmbar, lento, ao azul, rápido) e a espessura mostra a pressão: o mesmo tipo de dado que a pesquisa do CLAT registra quando uma criança escreve na tela.",
     "atuacaoTitulo": "Atuação profissional",
     "bloco1Titulo": "Pesquisa em IHC e acessibilidade",
     "bloco1Texto": "Pesquisa em {IHC}, {CCI} e tecnologia assistiva, com foco na avaliação da escrita inicial infantil e na acessibilidade para pessoas com deficiência visual.",

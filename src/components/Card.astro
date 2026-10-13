@@ -19,19 +19,13 @@ interface Props {
   badges?: BadgeItem[];
   imagem?: string;
   alt?: string;
-  /** Texto de um marcador decorativo quando não há imagem (ex.: linguagem do repositório). */
-  placeholder?: string;
 }
 
-const { titulo, href, externo = false, descricao, descricaoLang, badges = [], imagem, alt, placeholder } = Astro.props;
+const { titulo, href, externo = false, descricao, descricaoLang, badges = [], imagem, alt } = Astro.props;
 if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige alt (use "" apenas se decorativa)`);
 ---
 <article class="card">
-  {imagem ? (
-    <img src={imagem} alt={alt} loading="lazy" />
-  ) : (
-    placeholder && <div class="card-placeholder" aria-hidden="true">{placeholder}</div>
-  )}
+  {imagem && <img src={imagem} alt={alt} loading="lazy" />}
   <h3>
     {href ? (
       <a href={href}>
@@ -82,15 +76,11 @@ if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige
   }
   .card h3 a {
     color: var(--color-text);
+    text-decoration-color: transparent;
   }
-  .card-placeholder {
-    display: grid;
-    place-items: center;
-    aspect-ratio: 16 / 9;
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius);
-    color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
+  .card h3 a:hover,
+  .card h3 a:focus-visible {
+    text-decoration-color: currentColor;
   }
   .card-badges {
     list-style: none;

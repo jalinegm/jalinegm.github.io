@@ -102,14 +102,11 @@ a:hover {
 }
 
 main {
-  max-width: var(--measure);
+  max-width: var(--wide);
   margin-inline: auto;
   padding: var(--space-6) var(--space-4) var(--space-8);
 }
 
-main.wide {
-  max-width: var(--wide);
-}
 
 button,
 a,
@@ -229,5 +226,49 @@ td {
 @media (max-width: 22rem) {
   main {
     padding-inline: var(--space-3);
+  }
+}
+
+.trace-live {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+html {
+  accent-color: var(--trace-slow);
+  scrollbar-color: var(--color-border) var(--color-bg);
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--trace-slow);
+}
+
+main:not(.wide) > * {
+  max-width: var(--measure);
+}
+
+@media (max-width: 40rem) {
+  .site-header__inner {
+    position: relative;
+  }
+  #theme-toggle {
+    position: absolute;
+    inset-block-start: var(--space-2);
+    inset-inline-end: var(--space-4);
+    min-block-size: 40px;
+    padding-inline: var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 40rem) {
+  .site-name {
+    font-size: 1.05rem;
+    max-width: calc(100% - 8.5rem);
   }
 }

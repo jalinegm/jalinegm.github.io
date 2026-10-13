@@ -39,6 +39,14 @@ const isCurrent = (href: string) => (href === "/" ? path === "/" : path === href
     font-weight: 700;
     text-decoration: none;
   }
+  @media (max-width: 40rem) {
+    .nav-list {
+      gap: var(--space-1) var(--space-4);
+    }
+    .nav-list a {
+      font-size: var(--font-size-sm);
+    }
+  }
   .nav-list a::after {
     content: "";
     position: absolute;
