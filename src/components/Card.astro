@@ -53,16 +53,32 @@ if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige
 </article>
 <style>
   .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    padding: var(--space-4);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    background: var(--color-surface);
+    padding-block-start: var(--space-4);
+    border-block-start: 2px solid var(--color-border);
   }
-  .card h3 {
-    font-size: var(--font-size-lg);
+  .card::before {
+    content: "";
+    position: absolute;
+    inset-block-start: -4px;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--trace-slow), var(--trace-mid));
+    transform: scaleX(0.14);
+    transform-origin: left;
+    transition: transform 0.45s var(--ease-out);
+  }
+  .card:hover::before,
+  .card:focus-within::before {
+    transform: scaleX(1);
+  }
+  .card img {
+    border-radius: var(--radius);
   }
   .card h3 a {
     color: var(--color-text);
@@ -71,7 +87,7 @@ if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige
     display: grid;
     place-items: center;
     aspect-ratio: 16 / 9;
-    border: 1px dashed var(--color-border);
+    border: 2px dashed var(--color-border);
     border-radius: var(--radius);
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);

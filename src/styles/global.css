@@ -1,3 +1,8 @@
+@import "@fontsource-variable/bricolage-grotesque/index.css";
+@import "@fontsource/atkinson-hyperlegible-next/400.css";
+@import "@fontsource/atkinson-hyperlegible-next/400-italic.css";
+@import "@fontsource/atkinson-hyperlegible-next/700.css";
+
 *,
 *::before,
 *::after {
@@ -11,6 +16,15 @@
 html {
   scroll-padding-top: 5rem;
   -webkit-text-size-adjust: 100%;
+  color-scheme: light dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -20,6 +34,45 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   min-height: 100vh;
+}
+
+::selection {
+  background: var(--trace-slow);
+  color: var(--color-bg);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  margin-block-start: var(--space-7);
+  margin-block-end: var(--space-3);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+main > * + * {
+  margin-block-start: var(--space-4);
 }
 
 img,
@@ -33,17 +86,29 @@ video {
 
 a {
   color: var(--color-link);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  transition: text-underline-offset 0.25s var(--ease-out);
+}
+
+a:hover {
+  text-underline-offset: 0.35em;
 }
 
 :focus-visible {
   outline: var(--focus-ring);
-  outline-offset: 2px;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 main {
   max-width: var(--measure);
   margin-inline: auto;
-  padding: var(--space-5) var(--space-4);
+  padding: var(--space-6) var(--space-4) var(--space-8);
+}
+
+main.wide {
+  max-width: var(--wide);
 }
 
 button,
@@ -55,14 +120,29 @@ select {
   min-inline-size: 44px;
 }
 
+p a,
+li a:not([class]) {
+  min-block-size: 0;
+  min-inline-size: 0;
+}
+
 button {
   font: inherit;
   color: inherit;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: transparent;
+  border: 2px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-2) var(--space-3);
   cursor: pointer;
+  transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out);
+}
+
+button:hover {
+  border-color: var(--trace-slow);
+}
+
+button[aria-pressed="true"] {
+  border-color: var(--trace-slow);
 }
 
 .visually-hidden {
@@ -82,8 +162,8 @@ button {
   inset-block-start: var(--space-2);
   inset-inline-start: var(--space-2);
   z-index: 100;
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius);
   transform: translateY(-200%);
@@ -96,17 +176,38 @@ button {
 .button-link {
   display: inline-flex;
   align-items: center;
-  padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  background: var(--color-surface);
-  color: var(--color-text);
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: 999px;
+  background: var(--trace-slow);
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-weight: 700;
   text-decoration: none;
+  transition: transform 0.25s var(--ease-out);
 }
 
+.button-link:hover {
+  transform: translateX(4px);
+}
+
+/* Short stroke that starts each section title, the mark of a captured line. */
 .section-title {
-  font-size: var(--font-size-lg);
-  margin-block: var(--space-6) var(--space-3);
+  position: relative;
+  padding-block-start: var(--space-4);
+  font-size: var(--font-size-xl);
+  margin-block: var(--space-7) var(--space-4);
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  width: 4.5rem;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--trace-slow), var(--trace-mid) 55%, var(--trace-fast));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -116,5 +217,17 @@ button {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+dd,
+li,
+td {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 22rem) {
+  main {
+    padding-inline: var(--space-3);
   }
 }

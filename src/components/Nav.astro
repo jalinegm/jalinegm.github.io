@@ -26,19 +26,33 @@ const isCurrent = (href: string) => (href === "/" ? path === "/" : path === href
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2) var(--space-4);
+    gap: var(--space-1) var(--space-5);
     padding: 0;
     margin: 0;
   }
   .nav-list a {
+    position: relative;
     display: inline-flex;
     align-items: center;
     padding-block: var(--space-2);
+    color: var(--color-text);
+    font-weight: 700;
     text-decoration: none;
   }
-  .nav-list a[aria-current="page"] {
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 0.3em;
+  .nav-list a::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 6px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--trace-slow), var(--trace-mid), var(--trace-fast));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s var(--ease-out);
+  }
+  .nav-list a:hover::after,
+  .nav-list a[aria-current="page"]::after {
+    transform: scaleX(1);
   }
 </style>

@@ -9,9 +9,10 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description: string;
+  wide?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, wide = false } = Astro.props;
 const fullTitle = `${title} — ${t("site.nome")}`;
 ---
 <!doctype html>
@@ -38,7 +39,7 @@ const fullTitle = `${title} — ${t("site.nome")}`;
   <body>
     <SkipLink />
     <Header />
-    <main id="conteudo" tabindex="-1">
+    <main id="conteudo" tabindex="-1" class={wide ? "wide" : undefined}>
       <slot />
     </main>
     <Footer />
