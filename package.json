@@ -11,8 +11,10 @@
     "build": "astro check && astro build",
     "sync": "python -I scripts/lattes.py && python -I scripts/repos.py",
     "test:unit": "vitest run",
+    "test:html": "html-validate dist",
     "test:e2e": "playwright test",
-    "test": "npm run test:unit && npm run build && npm run test:e2e"
+    "test:lh": "lhci autorun",
+    "test": "npm run build && npm run test:unit && npm run test:html && npm run test:e2e"
   },
   "dependencies": {
     "astro": "^5.18.2",
@@ -20,8 +22,12 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.64.0",
     "@types/node": "^24.19.2",
     "gray-matter": "^4.0.3",
+    "html-validate": "^11.16.2",
     "typescript": "^5.9.3",
     "vitest": "^5.0.4"
   }
