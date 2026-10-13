@@ -31,13 +31,20 @@ const isCurrent = (href: string) => (href === "/" ? path === "/" : path === href
     margin: 0;
   }
   .nav-list a {
-    position: relative;
     display: inline-flex;
     align-items: center;
     padding-block: var(--space-2);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border-block-end: 2px solid transparent;
+  }
+  .nav-list a:hover {
+    color: var(--color-text);
+  }
+  .nav-list a[aria-current="page"] {
     color: var(--color-text);
     font-weight: 700;
-    text-decoration: none;
+    border-block-end-color: var(--color-accent);
   }
   @media (max-width: 40rem) {
     .nav-list {
@@ -46,21 +53,5 @@ const isCurrent = (href: string) => (href === "/" ? path === "/" : path === href
     .nav-list a {
       font-size: var(--font-size-sm);
     }
-  }
-  .nav-list a::after {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    inset-block-end: 6px;
-    height: 4px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--trace-slow), var(--trace-mid), var(--trace-fast));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.35s var(--ease-out);
-  }
-  .nav-list a:hover::after,
-  .nav-list a[aria-current="page"]::after {
-    transform: scaleX(1);
   }
 </style>

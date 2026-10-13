@@ -18,6 +18,8 @@ const casos = defineCollection({
     destaque: z.boolean(),
     ordem: z.number().int(),
     tese: slug.optional(),
+    /** Texto alternativo da imagem em public/projetos/<slug>.(png|jpg|webp). Sem ele, usa-se um texto genérico. */
+    imagemAlt: z.string().min(1).optional(),
   }),
 });
 

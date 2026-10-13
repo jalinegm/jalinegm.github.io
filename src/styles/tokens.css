@@ -1,21 +1,22 @@
 /*
- * Design tokens: "Traço Capturado".
- * Dark = tela de captura (ink-navy). Light = papel frio, traço em tinta.
- * Trace ramp: slow -> mid -> fast. Contrast ratios noted per surface.
+ * Design tokens: acadêmico sóbrio.
+ * Claro: fundo branco, texto grafite, um único acento (verde-azulado) para links e foco.
+ * Escuro: grafite-azulado, mesmo acento clareado. Razões de contraste anotadas por superfície.
  */
 :root {
   /* Light theme */
-  --color-bg: #f6f8fc;
-  --color-surface: #e8edf6;
-  --color-text: #0d1626;          /* 16.9:1 on bg */
-  --color-text-muted: #3d4c66;    /* 8.2:1 on bg */
-  --color-link: #0a4a9e;          /* 8.1:1 on bg */
-  --color-border: #5b6b86;        /* 5.1:1 on bg (UI boundary) */
-  --color-accent: #0a4a9e;
-  --color-focus: #0a4a9e;
-  --trace-slow: #a85200;          /* 5.0:1 on bg */
-  --trace-mid: #be1558;           /* 5.9:1 on bg */
-  --trace-fast: #0a63a8;          /* 6.1:1 on bg */
+  --color-bg: #ffffff;
+  --color-surface: #f3f5f7;
+  --color-text: #1d252d;          /* 15.8:1 on bg */
+  --color-text-muted: #47525e;    /* 8.1:1 on bg */
+  --color-link: #0b6475;          /* 6.6:1 on bg */
+  --color-border: #6b7683;        /* 4.7:1 on bg (UI boundary) */
+  --color-rule: #d5dbe1;          /* decorative hairline only */
+  --color-accent: #0b6475;
+  --color-focus: #0b6475;
+  --trace-slow: var(--color-accent);
+  --trace-mid: var(--color-text-muted);
+  --trace-fast: var(--color-border);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -28,18 +29,18 @@
 
   --radius: 0.25rem;
 
-  --font-display: "Bricolage Grotesque Variable", "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --font-display: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-body: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   --font-size-sm: clamp(0.9rem, 0.87rem + 0.2vw, 0.975rem);
   --font-size-base: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
-  --font-size-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --font-size-xl: clamp(1.6rem, 1.25rem + 1.4vw, 2.25rem);
-  --font-size-2xl: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
-  --font-size-hero: clamp(2.75rem, 1.5rem + 6vw, 6rem);
+  --font-size-lg: clamp(1.2rem, 1.1rem + 0.45vw, 1.4rem);
+  --font-size-xl: clamp(1.5rem, 1.25rem + 1vw, 1.9rem);
+  --font-size-2xl: clamp(1.8rem, 1.4rem + 1.6vw, 2.5rem);
+  --font-size-hero: clamp(2rem, 1.5rem + 2vw, 2.75rem);
 
   --measure: 68ch;
-  --wide: 76rem;
+  --wide: 70rem;
   --focus-ring: 3px solid var(--color-focus);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -47,31 +48,27 @@
 /* Dark theme: follows the OS unless the user chose light explicitly */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --color-bg: #0b1424;            /* text on bg: 16.4:1 */
-    --color-surface: #131f35;
-    --color-text: #f2f5fb;          /* 16.4:1 on bg */
-    --color-text-muted: #b8c4da;    /* 10.0:1 on bg */
-    --color-link: #ffc233;          /* 11.4:1 on bg */
-    --color-border: #7388ab;        /* 5.0:1 on bg (UI boundary) */
-    --color-accent: #ffc233;
-    --color-focus: #7fd4ff;         /* 11.2:1 on bg */
-    --trace-slow: #ffb703;
-    --trace-mid: #ff6f9f;
-    --trace-fast: #7fd4ff;
+    --color-bg: #12171c;            /* text on bg: 15.0:1 */
+    --color-surface: #1b222a;
+    --color-text: #e8ecf0;          /* 15.0:1 on bg */
+    --color-text-muted: #b3bcc6;    /* 9.3:1 on bg */
+    --color-link: #6cc4d6;          /* 9.4:1 on bg */
+    --color-border: #7b8794;        /* 4.7:1 on bg (UI boundary) */
+    --color-rule: #2c3640;
+    --color-accent: #6cc4d6;
+    --color-focus: #6cc4d6;
   }
 }
 
 /* Dark theme: manual toggle */
 :root[data-theme="dark"] {
-  --color-bg: #0b1424;
-  --color-surface: #131f35;
-  --color-text: #f2f5fb;
-  --color-text-muted: #b8c4da;
-  --color-link: #ffc233;
-  --color-border: #7388ab;
-  --color-accent: #ffc233;
-  --color-focus: #7fd4ff;
-  --trace-slow: #ffb703;
-  --trace-mid: #ff6f9f;
-  --trace-fast: #7fd4ff;
+  --color-bg: #12171c;
+  --color-surface: #1b222a;
+  --color-text: #e8ecf0;
+  --color-text-muted: #b3bcc6;
+  --color-link: #6cc4d6;
+  --color-border: #7b8794;
+  --color-rule: #2c3640;
+  --color-accent: #6cc4d6;
+  --color-focus: #6cc4d6;
 }

@@ -47,40 +47,20 @@ if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige
 </article>
 <style>
   .card {
-    position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    padding-block-start: var(--space-4);
-    border-block-start: 2px solid var(--color-border);
-  }
-  .card::before {
-    content: "";
-    position: absolute;
-    inset-block-start: -4px;
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    height: 6px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--trace-slow), var(--trace-mid));
-    transform: scaleX(0.14);
-    transform-origin: left;
-    transition: transform 0.45s var(--ease-out);
-  }
-  .card:hover::before,
-  .card:focus-within::before {
-    transform: scaleX(1);
+    padding-block-start: var(--space-3);
+    border-block-start: 1px solid var(--color-rule);
   }
   .card img {
     border-radius: var(--radius);
   }
+  .card h3 {
+    margin-block-start: 0;
+  }
   .card h3 a {
     color: var(--color-text);
-    text-decoration-color: transparent;
-  }
-  .card h3 a:hover,
-  .card h3 a:focus-visible {
-    text-decoration-color: currentColor;
   }
   .card-badges {
     list-style: none;

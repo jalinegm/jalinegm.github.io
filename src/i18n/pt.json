@@ -123,7 +123,9 @@
     "bloco3Texto": "Docente do IFFar e, entre 2017 e 2020, do Instituto Federal de Brasília (IFB), com projetos de ensino e de extensão registrados no currículo Lattes.",
     "destaquesTitulo": "Projetos em destaque",
     "cta": "Vamos conversar",
-    "ctaTexto": "Para colaborações, parcerias institucionais, projetos interinstitucionais e convites para palestras e bancas."
+    "ctaTexto": "Para colaborações, parcerias institucionais, projetos interinstitucionais e convites para palestras e bancas.",
+    "sobreTitulo": "Sobre",
+    "perfilRotulo": "Docente e pesquisadora"
   },
   "sobre": {
     "titulo": "Sobre",
@@ -193,6 +195,7 @@
     "reposCaso": "Repositórios no catálogo",
     "semRepos": "Nenhum repositório de código público está vinculado a este estudo de caso.",
     "tese": "Ver a tese relacionada",
-    "periodoRotulo": "Período"
+    "periodoRotulo": "Período",
+    "verProjeto": "Ver projeto"
   }
 }

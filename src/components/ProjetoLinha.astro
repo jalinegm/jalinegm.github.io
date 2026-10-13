@@ -1,0 +1,81 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  titulo: string;
+  href: string;
+  resumo: string;
+  periodo?: string;
+  /** Caminho da imagem (painel, captura de tela). Sem ela, mostra o espaço reservado. */
+  imagem?: string;
+  alt?: string;
+}
+
+const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
+---
+<article class="linha">
+  <a class="linha-midia" href={href} tabindex="-1" aria-hidden="true">
+    {imagem ? (
+      <img src={imagem} alt="" loading="lazy" width="640" height="400" />
+    ) : (
+      <span class="linha-vazio"></span>
+    )}
+  </a>
+  <div class="linha-texto">
+    <h3><a href={href}>{titulo}</a></h3>
+    {periodo && <p class="linha-periodo">{t("projetos.periodo", { periodo })}</p>}
+    <p>{resumo}</p>
+    <p><a class="button-link" href={href}>{t("projetos.verProjeto")}<span class="visually-hidden">: {titulo}</span></a></p>
+  </div>
+</article>
+<style>
+  .linha {
+    display: grid;
+    gap: var(--space-4) var(--space-6);
+    align-items: center;
+    padding-block: var(--space-5);
+    border-block-start: 1px solid var(--color-rule);
+  }
+  .linha-midia {
+    display: block;
+    min-block-size: 0;
+    aspect-ratio: 8 / 5;
+    background: var(--color-surface);
+    border: 1px solid var(--color-rule);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .linha-midia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+  }
+  .linha-vazio {
+    display: block;
+    height: 100%;
+  }
+  .linha-texto > * + * {
+    margin-block-start: var(--space-3);
+  }
+  .linha-texto h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+  }
+  .linha-texto h3 a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .linha-texto h3 a:hover {
+    text-decoration: underline;
+  }
+  .linha-periodo {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+  @media (min-width: 48rem) {
+    .linha {
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+  }
+</style>
