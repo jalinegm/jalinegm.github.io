@@ -1,0 +1,55 @@
+{
+  "404": {
+    "titulo": "Página não encontrada",
+    "descricao": "O endereço acessado não existe ou foi movido. Use um dos links abaixo para continuar."
+  },
+  "site": {
+    "nome": "Jaline Gonçalves Mombach",
+    "posicionamento": "Docente e pesquisadora do Instituto Federal Farroupilha. Interação humano-computador, acessibilidade e dados educacionais."
+  },
+  "nav": {
+    "inicio": "Início",
+    "sobre": "Sobre",
+    "pesquisa": "Pesquisa",
+    "projetos": "Projetos",
+    "colaboracao": "Colaboração"
+  },
+  "a11y": {
+    "pularConteudo": "Pular para o conteúdo",
+    "menu": "Menu principal"
+  },
+  "tema": {
+    "alternar": "Alternar tema",
+    "claro": "Claro",
+    "escuro": "Escuro",
+    "sistema": "Sistema",
+    "rotulo": "Tema"
+  },
+  "filtro": {
+    "resultados": "{n} publicações encontradas",
+    "limpar": "Limpar filtros",
+    "vazio": "Nenhum resultado para os filtros selecionados. Tente remover algum filtro."
+  },
+  "copiar": {
+    "email": "Copiar e-mail",
+    "emailOk": "E-mail copiado",
+    "citacao": "Copiar citação",
+    "citacaoOk": "Citação copiada"
+  },
+  "rodape": {
+    "instituicao": "Instituto Federal Farroupilha — Campus Alegrete · Diretoria de Planejamento e Desenvolvimento Institucional (Reitoria)",
+    "atualizado": "Última atualização: {data}",
+    "acessibilidade": "Acessibilidade"
+  },
+  "breadcrumb": {
+    "rotulo": "Você está em"
+  },
+  "link": {
+    "externo": "(link externo)"
+  },
+  "perfil": {
+    "lattes": "Currículo Lattes",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  }
+}
