@@ -5,7 +5,7 @@
     "secoes": "Seções principais"
   },
   "site": {
-    "nome": "Jaline Gonçalves Mombach",
+    "nome": "Jaline Mombach",
     "posicionamento": "Docente e pesquisadora do Instituto Federal Farroupilha. Interação humano-computador, acessibilidade e dados educacionais."
   },
   "nav": {
@@ -125,7 +125,9 @@
     "cta": "Vamos conversar",
     "ctaTexto": "Para colaborações, parcerias institucionais, projetos interinstitucionais e convites para palestras e bancas.",
     "sobreTitulo": "Sobre",
-    "perfilRotulo": "Docente e pesquisadora"
+    "perfilRotulo": "Docente e pesquisadora",
+    "lede": "Docente do Instituto Federal Farroupilha.",
+    "email": "Enviar e-mail"
   },
   "sobre": {
     "titulo": "Sobre",

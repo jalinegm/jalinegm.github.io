@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { getCollection } from "astro:content";
 import { t } from "../i18n";
+import { EMAIL, PERFIS } from "../lib/contato";
 import { imagemCaso } from "../lib/imagem-caso";
 
 const temFoto = fs.existsSync(path.join(process.cwd(), "public", "foto-jaline.jpg"));
@@ -25,25 +26,45 @@ const segmentos = (texto: string): Segmento[] =>
   <div class="pagina">
     <aside class="perfil" aria-label={t("inicio.perfilRotulo")}>
       {temFoto && (
-        <img class="perfil-foto" src="/foto-jaline.jpg" alt="Retrato de Jaline Gonçalves Mombach" width="480" height="600" />
+        <img class="perfil-foto" src="/foto-jaline.jpg" alt="Retrato de Jaline Mombach" width="480" height="600" />
       )}
       <ul class="perfil-links">
-        <li><a href="http://lattes.cnpq.br/5793944765294091">{t("perfil.lattes")}</a></li>
-        <li><a href="https://github.com/jalinegm">{t("perfil.github")}</a></li>
-        <li><a href="https://www.linkedin.com/in/jalinegm/">{t("perfil.linkedin")}</a></li>
+        <li>
+          <a href={PERFIS.lattes}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.2 2.7 2.5 6 2.5s6-1.3 6-2.5v-4.5"/><path d="M22 9v6"/></svg>
+            {t("perfil.lattes")}
+          </a>
+        </li>
+        <li>
+          <a href={PERFIS.github}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.9.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+            {t("perfil.github")}
+          </a>
+        </li>
+        <li>
+          <a href={PERFIS.linkedin}>
+            <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.5 9.75h3.8v1.54h.05c.53-1 1.82-2.04 3.75-2.04 4 0 4.75 2.63 4.75 6.05V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V21h-4z"/></svg>
+            {t("perfil.linkedin")}
+          </a>
+        </li>
       </ul>
+      <p class="perfil-email">
+        <a class="button-link" href={`mailto:${EMAIL}`}>
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          {t("inicio.email")}
+        </a>
+      </p>
     </aside>
 
     <div class="principal">
       <h1>{t("site.nome")}</h1>
-      <p class="lede">{t("site.posicionamento")}</p>
+      <p class="lede">{t("inicio.lede")}</p>
 
       <section aria-labelledby="sobre-titulo">
         <h2 id="sobre-titulo">{t("inicio.sobreTitulo")}</h2>
         <!-- REVISAR: bloco 3 não cita ano de início do IFFar; o currículo indica substituta em 2013 e o resumo indica desde 2014. Confirmar ao incluir a data. -->
         <p>{segmentos(t("inicio.bloco1Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
         <p>{segmentos(t("inicio.bloco2Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
-        <p>{segmentos(t("inicio.bloco3Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
       </section>
 
       <section aria-labelledby="destaques-titulo">
@@ -58,11 +79,6 @@ const segmentos = (texto: string): Segmento[] =>
           />
         ))}
         <p class="mais"><a href="/projetos">{t("nav.projetos")}</a></p>
-      </section>
-
-      <section class="cta">
-        <p>{t("inicio.ctaTexto")}</p>
-        <p><a class="button-link" href="/colaboracao">{t("inicio.cta")}</a></p>
       </section>
     </div>
   </div>
@@ -83,14 +99,29 @@ const segmentos = (texto: string): Segmento[] =>
   .perfil-links {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-1) var(--space-4);
-    font-size: var(--font-size-sm);
+    display: grid;
+    gap: var(--space-1);
   }
   .perfil-links a {
     display: inline-flex;
     align-items: center;
+    gap: var(--space-3);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+  .perfil-links a:hover {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+  .perfil-links svg {
+    flex: none;
+    color: var(--color-link);
+  }
+  .perfil-email {
+    margin-block-start: var(--space-4);
+  }
+  .perfil-email .button-link {
+    gap: var(--space-3);
   }
   .principal :global(h1) {
     font-size: var(--font-size-hero);
@@ -114,12 +145,6 @@ const segmentos = (texto: string): Segmento[] =>
     border-block-end: 1px solid var(--color-rule);
   }
   .mais {
-    margin-block-start: var(--space-4);
-  }
-  .cta {
-    margin-block-start: var(--space-7);
-  }
-  .cta p + p {
     margin-block-start: var(--space-4);
   }
   @media (min-width: 56rem) {
