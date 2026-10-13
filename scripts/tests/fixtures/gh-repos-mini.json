@@ -1,0 +1,72 @@
+[
+  {
+    "name": "POO_Aula02",
+    "description": null,
+    "primaryLanguage": {"name": "Java"},
+    "isPrivate": true,
+    "isFork": false,
+    "updatedAt": "2019-03-10T12:00:00Z",
+    "createdAt": "2019-03-01T12:00:00Z",
+    "url": "https://github.com/jalinegm/POO_Aula02",
+    "repositoryTopics": [],
+    "homepageUrl": "",
+    "usesCustomOpenGraphImage": false,
+    "openGraphImageUrl": ""
+  },
+  {
+    "name": "baixar-boletins-sigaa",
+    "description": "Emissao em lote de boletins do SIGAA IFFar (Python + Playwright)",
+    "primaryLanguage": {"name": "Python"},
+    "isPrivate": false,
+    "isFork": false,
+    "updatedAt": "2026-10-09T01:42:33Z",
+    "createdAt": "2025-02-01T10:00:00Z",
+    "url": "https://github.com/jalinegm/baixar-boletins-sigaa",
+    "repositoryTopics": [{"name": "playwright"}, {"name": "sigaa"}],
+    "homepageUrl": "",
+    "usesCustomOpenGraphImage": false,
+    "openGraphImageUrl": ""
+  },
+  {
+    "name": "Rede-DSBR",
+    "description": null,
+    "primaryLanguage": null,
+    "isPrivate": true,
+    "isFork": false,
+    "updatedAt": "2024-06-01T00:00:00Z",
+    "createdAt": "2024-05-01T00:00:00Z",
+    "url": "https://github.com/jalinegm/Rede-DSBR",
+    "repositoryTopics": [],
+    "homepageUrl": "",
+    "usesCustomOpenGraphImage": true,
+    "openGraphImageUrl": "https://opengraph.githubassets.com/abc/jalinegm/Rede-DSBR"
+  },
+  {
+    "name": "react-native-image-modal",
+    "description": "the simple image modal for React Native",
+    "primaryLanguage": {"name": "TypeScript"},
+    "isPrivate": false,
+    "isFork": true,
+    "updatedAt": "2023-01-15T00:00:00Z",
+    "createdAt": "2022-12-01T00:00:00Z",
+    "url": "https://github.com/jalinegm/react-native-image-modal",
+    "repositoryTopics": [],
+    "homepageUrl": "",
+    "usesCustomOpenGraphImage": false,
+    "openGraphImageUrl": ""
+  },
+  {
+    "name": "Sistema",
+    "description": null,
+    "primaryLanguage": {"name": "Java"},
+    "isPrivate": true,
+    "isFork": false,
+    "updatedAt": "2018-11-20T00:00:00Z",
+    "createdAt": "2018-10-01T00:00:00Z",
+    "url": "https://github.com/jalinegm/Sistema",
+    "repositoryTopics": [],
+    "homepageUrl": "",
+    "usesCustomOpenGraphImage": false,
+    "openGraphImageUrl": ""
+  }
+]
