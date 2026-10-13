@@ -1,0 +1,40 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  texto: string;
+  rotulo: string;
+  rotuloOk: string;
+}
+
+const { texto, rotulo, rotuloOk } = Astro.props;
+---
+<span class="copy">
+  <button type="button" data-copy data-texto={texto} data-rotulo={rotulo} data-rotulo-ok={rotuloOk} data-rotulo-erro={t("copiar.erro")}>{rotulo}</button>
+  <span class="copy-status" aria-live="polite"></span>
+</span>
+<script>
+  document.querySelectorAll<HTMLButtonElement>("button[data-copy]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const status = button.parentElement?.querySelector<HTMLElement>(".copy-status");
+      try {
+        await navigator.clipboard.writeText(button.dataset.texto ?? "");
+        if (status) status.textContent = button.dataset.rotuloOk ?? "";
+      } catch {
+        if (status) status.textContent = button.dataset.rotuloErro ?? "";
+      }
+    });
+  });
+</script>
+<style>
+  .copy {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+  .copy-status {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+</style>

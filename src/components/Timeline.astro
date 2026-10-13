@@ -1,0 +1,51 @@
+---
+import Badge from "./Badge.astro";
+import { t } from "../i18n";
+
+interface Item {
+  periodo: string;
+  titulo: string;
+  instituicao: string;
+  detalhe?: string;
+  status?: "em-andamento" | "concluido";
+}
+
+interface Props {
+  itens: Item[];
+}
+
+const { itens } = Astro.props;
+---
+<ol class="timeline">
+  {itens.map((item) => (
+    <li>
+      <p class="timeline-periodo">{item.periodo}{item.status === "em-andamento" && <> <Badge variante="info" texto={t("status.emAndamento")} /></>}</p>
+      <h3>{item.titulo}</h3>
+      <p>{item.instituicao}</p>
+      {item.detalhe && <p class="timeline-detalhe">{item.detalhe}</p>}
+    </li>
+  ))}
+</ol>
+<style>
+  .timeline {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--space-4);
+  }
+  .timeline li {
+    padding-inline-start: var(--space-3);
+    border-inline-start: 3px solid var(--color-border);
+  }
+  .timeline-periodo {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+  .timeline h3 {
+    font-size: var(--font-size-base);
+  }
+  .timeline-detalhe {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+</style>

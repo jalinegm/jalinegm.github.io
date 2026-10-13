@@ -1,0 +1,56 @@
+---
+import Badge from "./Badge.astro";
+
+interface BadgeItem {
+  variante: "neutro" | "info" | "alerta";
+  texto: string;
+}
+
+interface Props {
+  titulo: string;
+  href: string;
+  descricao: string;
+  badges?: BadgeItem[];
+  imagem?: string;
+  alt?: string;
+}
+
+const { titulo, href, descricao, badges = [], imagem, alt } = Astro.props;
+if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige alt (use "" apenas se decorativa)`);
+---
+<article class="card">
+  {imagem && <img src={imagem} alt={alt} loading="lazy" />}
+  <h3><a href={href}>{titulo}</a></h3>
+  <p>{descricao}</p>
+  {badges.length > 0 && (
+    <ul class="card-badges">
+      {badges.map((b) => (
+        <li><Badge variante={b.variante} texto={b.texto} /></li>
+      ))}
+    </ul>
+  )}
+</article>
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+  .card h3 {
+    font-size: var(--font-size-lg);
+  }
+  .card h3 a {
+    color: var(--color-text);
+  }
+  .card-badges {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: 0;
+  }
+</style>

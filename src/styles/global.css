@@ -93,6 +93,22 @@ button {
   transform: translateY(0);
 }
 
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.section-title {
+  font-size: var(--font-size-lg);
+  margin-block: var(--space-6) var(--space-3);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

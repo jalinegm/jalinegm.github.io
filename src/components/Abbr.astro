@@ -1,0 +1,9 @@
+---
+interface Props {
+  sigla: string;
+  significado: string;
+}
+
+const { sigla, significado } = Astro.props;
+---
+<abbr title={significado}>{sigla}</abbr>
