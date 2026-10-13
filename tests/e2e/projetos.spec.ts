@@ -1,5 +1,11 @@
 import { test, expect } from "@playwright/test";
-import repos from "../../src/data/repos.json";
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+// JSON lido com fs: o loader do Playwright não aplica import attributes para JSON.
+const repos: { name: string; privado: boolean; ocultar: boolean }[] = JSON.parse(
+  readFileSync(fileURLToPath(new URL("../../src/data/repos.json", import.meta.url)), "utf8"),
+);
 
 const CASOS = [
   "clat",
@@ -25,7 +31,8 @@ test.describe("páginas de projeto", () => {
 test.describe("catálogo de repositórios", () => {
   test("repositório privado exibe o selo de acesso sob convite", async ({ page }) => {
     await page.goto("/projetos");
-    await expect(page.getByText(PRIVADO).first()).toBeVisible();
+    // Seletor do selo (.badge): o mesmo texto também existe como <option> do filtro.
+    await expect(page.locator(".badge", { hasText: PRIVADO }).first()).toBeVisible();
   });
 
   test("nenhum link do catálogo aponta para um repositório privado", async ({ page }) => {
