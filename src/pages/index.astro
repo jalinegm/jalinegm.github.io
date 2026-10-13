@@ -1,8 +1,62 @@
 ---
 import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+import Abbr from "../components/Abbr.astro";
+import { getCollection } from "astro:content";
 import { t } from "../i18n";
+
+const destaques = (await getCollection("casos"))
+  .filter((c) => c.data.destaque)
+  .sort((a, b) => a.data.ordem - b.data.ordem);
+
+// Textos com siglas usam {SIGLA} como marcador; cada sigla vira <abbr> com a expansão de sigla.*.
+type Segmento = { sigla: string; significado: string } | { texto: string };
+const segmentos = (texto: string): Segmento[] =>
+  texto.split(/(\{[\w.-]+\})/).map((parte): Segmento => {
+    const m = parte.match(/^\{([\w.-]+)\}$/);
+    return m ? { sigla: m[1], significado: t(`sigla.${m[1]}`) } : { texto: parte };
+  });
 ---
 <Base title={t("nav.inicio")} description={t("site.posicionamento")}>
   <h1>{t("site.nome")}</h1>
   <p>{t("site.posicionamento")}</p>
+
+  <section aria-labelledby="atuacao-titulo">
+    <h2 id="atuacao-titulo" class="section-title">{t("inicio.atuacaoTitulo")}</h2>
+    <!-- REVISAR: bloco 3 não cita ano de início do IFFar; o currículo indica substituta em 2013 e o resumo indica desde 2014. Confirmar ao incluir a data. -->
+    <div>
+      <section>
+        <h3>{t("inicio.bloco1Titulo")}</h3>
+        <p>{segmentos(t("inicio.bloco1Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
+      </section>
+      <section>
+        <h3>{t("inicio.bloco2Titulo")}</h3>
+        <p>{segmentos(t("inicio.bloco2Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
+      </section>
+      <section>
+        <h3>{t("inicio.bloco3Titulo")}</h3>
+        <p>{segmentos(t("inicio.bloco3Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
+      </section>
+    </div>
+  </section>
+
+  <section aria-labelledby="destaques-titulo">
+    <h2 id="destaques-titulo" class="section-title">{t("inicio.destaquesTitulo")}</h2>
+    <div>
+      {destaques.map((c) => (
+        <Card titulo={c.data.titulo} href={`/projetos/${c.data.slug}`} descricao={c.data.resumo} />
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <p>{t("inicio.ctaTexto")}</p>
+    <p><a class="button-link" href="/colaboracao">{t("inicio.cta")}</a></p>
+  </section>
 </Base>
+<style>
+  section > div {
+    display: grid;
+    gap: var(--space-4);
+  }
+</style>

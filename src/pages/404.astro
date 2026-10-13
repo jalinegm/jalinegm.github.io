@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import { t } from "../i18n";
+
+const secoes = [
+  { href: "/", key: "nav.inicio" },
+  { href: "/sobre", key: "nav.sobre" },
+  { href: "/pesquisa", key: "nav.pesquisa" },
+  { href: "/projetos", key: "nav.projetos" },
+  { href: "/colaboracao", key: "nav.colaboracao" },
+];
+---
+<Base title={t("404.titulo")} description={t("404.descricao")}>
+  <h1>{t("404.titulo")}</h1>
+  <p>{t("404.descricao")}</p>
+  <h2 class="section-title">{t("404.secoes")}</h2>
+  <ul>
+    {secoes.map((s) => (
+      <li><a href={s.href}>{t(s.key)}</a></li>
+    ))}
+  </ul>
+</Base>

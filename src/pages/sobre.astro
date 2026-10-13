@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Timeline from "../components/Timeline.astro";
+import { getEntry } from "astro:content";
+import { t } from "../i18n";
+import { getLattes } from "../lib/data";
+import { PERFIS } from "../lib/contato";
+
+const lattes = getLattes();
+const extra = await getEntry("paginas", "formacao-extra");
+if (!extra) throw new Error("Coleção paginas: formacao-extra.yaml não encontrado");
+
+const tipoTitulo: Record<string, string> = {
+  doutorado: t("sobre.tese"),
+  mestrado: t("sobre.dissertacao"),
+  graduacao: t("sobre.tcc"),
+};
+
+// Formação: Lattes (doutorado, mestrado, graduação) + cursos de especialização informados pela autora.
+// Em andamento primeiro; depois do mais recente para o mais antigo.
+const formacaoLattes = lattes.formacao.map((f) => ({
+  ordem: f.conclusao,
+  status: "concluido" as const,
+  item: {
+    periodo: `${f.inicio}–${f.conclusao}`,
+    titulo: `${f.tipo === "doutorado" ? "Doutorado" : f.tipo === "mestrado" ? "Mestrado" : "Bacharelado"} em ${f.curso}`,
+    instituicao: f.instituicao,
+    detalhe: `${tipoTitulo[f.tipo]}: ${f.titulo}. ${t("sobre.orientacao", { nome: f.orientador })}.`,
+    status: "concluido" as const,
+  },
+}));
+const formacaoExtra = extra.data.itens.map((f) => ({
+  ordem: Number.POSITIVE_INFINITY,
+  status: f.status,
+  item: {
+    periodo: f.ano_inicio ? `${f.ano_inicio}–${t("status.emAndamento").toLowerCase()}` : t("sobre.periodoIndefinido"),
+    titulo: f.titulo,
+    instituicao: f.instituicao,
+    status: f.status,
+  },
+}));
+const formacao = [...formacaoExtra, ...formacaoLattes]
+  .sort((a, b) => (b.ordem === a.ordem ? 0 : b.ordem > a.ordem ? 1 : -1))
+  .map((x) => x.item);
+
+// Atuação profissional: vínculos a partir de 2013 que têm cargo informado (pré-2013 omitido, spec 4.2).
+const atuacao = lattes.atuacao
+  .filter((a) => a.cargo && a.inicio && a.inicio >= 2013)
+  .sort((a, b) => (b.inicio ?? 0) - (a.inicio ?? 0));
+---
+<Base title={t("sobre.titulo")} description={t("sobre.bio")}>
+  <Breadcrumbs items={[{ label: t("nav.inicio"), href: "/" }, { label: t("sobre.titulo") }]} />
+  <h1>{t("sobre.titulo")}</h1>
+  <!-- REVISAR: o resumo Lattes indica "professora do IFFar desde 2014"; a atuação indica substituta em 2013. Confirmar a formulação da biografia. -->
+  <p>{t("sobre.bio")}</p>
+
+  <h2 class="section-title">{t("sobre.formacao")}</h2>
+  <!-- REVISAR: nome do orientador do doutorado aparece no Lattes sem o sobrenome "Soares", presente na página de estudo de caso. Confirmar. -->
+  <Timeline itens={formacao} />
+
+  <h2 class="section-title">{t("sobre.atuacao")}</h2>
+  <ul>
+    <li>{t("sobre.atuacaoAtual")}</li>
+    {atuacao.map((a) => (
+      <li>{a.cargo}, {a.instituicao} ({a.inicio}–{a.fim ?? t("sobre.periodoAtual")})</li>
+    ))}
+    <!-- REVISAR: "PixelLab (UFG)" vem do perfil do GitHub e não consta do Lattes; confirmar cargo e período. -->
+    <li>{t("sobre.pixellab")}</li>
+  </ul>
+  <p set:html={t("sobre.revisora")} />
+
+  <h2 class="section-title">{t("sobre.premios")}</h2>
+  <ul>
+    {lattes.premios.map((p) => (
+      <li>{p.titulo} ({p.ano}), {p.entidade}</li>
+    ))}
+  </ul>
+
+  <h2 class="section-title">{t("sobre.patente")}</h2>
+  <p>{lattes.patente.titulo} (Brasil, {lattes.patente.ano}).</p>
+
+  <h2 class="section-title">{t("sobre.software")}</h2>
+  <ul>
+    {lattes.software.map((s) => (
+      <li>{s.titulo} ({s.ano})</li>
+    ))}
+  </ul>
+
+  <h2 class="section-title">{t("sobre.perfis")}</h2>
+  <ul class="perfis">
+    <li><a class="button-link" href={PERFIS.lattes}>{t("perfil.lattes")}</a></li>
+    <li><a class="button-link" href={PERFIS.linkedin}>{t("perfil.linkedin")}</a></li>
+    <li><a class="button-link" href={PERFIS.github}>{t("perfil.github")}</a></li>
+  </ul>
+</Base>
+<style>
+  .perfis {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+</style>

@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { t } from "../i18n";
+import { EMAIL } from "../lib/contato";
+
+const medidas = [1, 2, 3, 4, 5, 6, 7].map((n) => t(`acessibilidade.medida${n}`));
+const limitacoes = [1, 2].map((n) => t(`acessibilidade.limitacao${n}`));
+// REVISAR: a data abaixo é a da redação desta página; confirmar a data da última revisão manual.
+// REVISAR: as medidas descritas dependem dos testes automatizados (axe, teclado, reflow) previstos na Tarefa 8, ainda não executados.
+const ultimaRevisao = "13/10/2026";
+---
+<Base title={t("acessibilidade.titulo")} description={t("acessibilidade.reportarTexto")}>
+  <Breadcrumbs items={[{ label: t("nav.inicio"), href: "/" }, { label: t("acessibilidade.titulo") }]} />
+  <h1>{t("acessibilidade.titulo")}</h1>
+  <p set:html={t("acessibilidade.compromisso")} />
+
+  <h2 class="section-title">{t("acessibilidade.medidasTitulo")}</h2>
+  <ul>
+    {medidas.map((m) => <li>{m}</li>)}
+  </ul>
+
+  <h2 class="section-title">{t("acessibilidade.limitacoesTitulo")}</h2>
+  <ul>
+    {limitacoes.map((l) => <li>{l}</li>)}
+  </ul>
+
+  <h2 class="section-title">{t("acessibilidade.reportarTitulo")}</h2>
+  <p>{t("acessibilidade.reportarTexto")}</p>
+  <p><a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+
+  <h2 class="section-title">{t("acessibilidade.revisaoTitulo")}</h2>
+  <p>{ultimaRevisao}</p>
+</Base>
