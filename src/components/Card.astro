@@ -1,5 +1,6 @@
 ---
 import Badge from "./Badge.astro";
+import { t } from "../i18n";
 
 interface BadgeItem {
   variante: "neutro" | "info" | "alerta";
@@ -8,20 +9,40 @@ interface BadgeItem {
 
 interface Props {
   titulo: string;
-  href: string;
+  /** Sem href (ex.: repositório privado), o título é texto simples, sem link. */
+  href?: string;
+  /** Marca o link como externo para leitores de tela. */
+  externo?: boolean;
   descricao: string;
+  /** Idioma do texto da descrição, quando diferente do português. */
+  descricaoLang?: string;
   badges?: BadgeItem[];
   imagem?: string;
   alt?: string;
+  /** Texto de um marcador decorativo quando não há imagem (ex.: linguagem do repositório). */
+  placeholder?: string;
 }
 
-const { titulo, href, descricao, badges = [], imagem, alt } = Astro.props;
+const { titulo, href, externo = false, descricao, descricaoLang, badges = [], imagem, alt, placeholder } = Astro.props;
 if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige alt (use "" apenas se decorativa)`);
 ---
 <article class="card">
-  {imagem && <img src={imagem} alt={alt} loading="lazy" />}
-  <h3><a href={href}>{titulo}</a></h3>
-  <p>{descricao}</p>
+  {imagem ? (
+    <img src={imagem} alt={alt} loading="lazy" />
+  ) : (
+    placeholder && <div class="card-placeholder" aria-hidden="true">{placeholder}</div>
+  )}
+  <h3>
+    {href ? (
+      <a href={href}>
+        {titulo}
+        {externo && <span class="visually-hidden"> {t("link.externo")}</span>}
+      </a>
+    ) : (
+      titulo
+    )}
+  </h3>
+  <p lang={descricaoLang}>{descricao}</p>
   {badges.length > 0 && (
     <ul class="card-badges">
       {badges.map((b) => (
@@ -45,6 +66,15 @@ if (imagem && alt === undefined) throw new Error(`Card "${titulo}": imagem exige
   }
   .card h3 a {
     color: var(--color-text);
+  }
+  .card-placeholder {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
   }
   .card-badges {
     list-style: none;

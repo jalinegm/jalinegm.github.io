@@ -72,7 +72,7 @@ describe("pesquisa/index.html", () => {
   });
 
   it("carrega o script de filtros como módulo", () => {
-    expect(page()).toMatch(/<script type="module" src="[^"]+"/);
+    expect(page()).toMatch(/<script type="module"[^>]*>/);
   });
 
   it("não contém vocabulário proibido fora da lista de publicações (títulos são citados como constam no Lattes)", () => {

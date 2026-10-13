@@ -1,5 +1,5 @@
 ---
-import { t, textoResultados } from "../i18n";
+import { t } from "../i18n";
 
 interface Opcao {
   valor: string;
@@ -8,58 +8,111 @@ interface Opcao {
 
 interface Props {
   listaId: string;
-  tipos: Opcao[];
-  anos: string[];
-  temas: Opcao[];
+  tipos?: Opcao[];
+  anos?: string[];
+  temas?: Opcao[];
+  linguagens?: Opcao[];
+  visibilidades?: Opcao[];
   total: number;
+  /** Rótulo do grupo de filtros (aria-label do formulário). */
+  legenda?: string;
+  /** Textos de contagem; `{n}` é substituído pelo número. */
+  resultados?: { um: string; varios: string };
+  /** Destino do link "Limpar filtros" sem JavaScript. */
+  limparHref?: string;
 }
 
-const { listaId, tipos, anos, temas, total } = Astro.props;
+const {
+  listaId,
+  tipos = [],
+  anos = [],
+  temas = [],
+  linguagens = [],
+  visibilidades = [],
+  total,
+  legenda = t("filtro.legenda"),
+  resultados = { um: t("filtro.resultadoUm"), varios: t("filtro.resultados") },
+  limparHref = "/pesquisa",
+} = Astro.props;
+
+const textoInicial = total === 1 ? resultados.um : resultados.varios.replace("{n}", String(total));
 ---
-<form class="filtros" method="get" role="search" aria-label={t("filtro.legenda")} data-filtro data-lista={listaId}>
+<form
+  class="filtros"
+  method="get"
+  role="search"
+  aria-label={legenda}
+  data-filtro
+  data-lista={listaId}
+  data-res-um={resultados.um}
+  data-res-varios={resultados.varios}
+>
   <div class="filtros-campos">
-    <div class="campo">
-      <label for="filtro-tipo">{t("filtro.tipo")}</label>
-      <select id="filtro-tipo" name="tipo">
-        <option value="">{t("filtro.todos")}</option>
-        {tipos.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
-      </select>
-    </div>
-    <div class="campo">
-      <label for="filtro-ano">{t("filtro.ano")}</label>
-      <select id="filtro-ano" name="ano">
-        <option value="">{t("filtro.todos")}</option>
-        {anos.map((a) => <option value={a}>{a}</option>)}
-      </select>
-    </div>
-    <div class="campo">
-      <label for="filtro-tema">{t("filtro.tema")}</label>
-      <select id="filtro-tema" name="tema">
-        <option value="">{t("filtro.todos")}</option>
-        {temas.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
-      </select>
-    </div>
+    {visibilidades.length > 0 && (
+      <div class="campo">
+        <label for={`${listaId}-visibilidade`}>{t("filtro.visibilidade")}</label>
+        <select id={`${listaId}-visibilidade`} name="visibilidade">
+          <option value="">{t("filtro.todos")}</option>
+          {visibilidades.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
+        </select>
+      </div>
+    )}
+    {tipos.length > 0 && (
+      <div class="campo">
+        <label for={`${listaId}-tipo`}>{t("filtro.tipo")}</label>
+        <select id={`${listaId}-tipo`} name="tipo">
+          <option value="">{t("filtro.todos")}</option>
+          {tipos.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
+        </select>
+      </div>
+    )}
+    {linguagens.length > 0 && (
+      <div class="campo">
+        <label for={`${listaId}-linguagem`}>{t("filtro.linguagem")}</label>
+        <select id={`${listaId}-linguagem`} name="linguagem">
+          <option value="">{t("filtro.todos")}</option>
+          {linguagens.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
+        </select>
+      </div>
+    )}
+    {anos.length > 0 && (
+      <div class="campo">
+        <label for={`${listaId}-ano`}>{t("filtro.ano")}</label>
+        <select id={`${listaId}-ano`} name="ano">
+          <option value="">{t("filtro.todos")}</option>
+          {anos.map((a) => <option value={a}>{a}</option>)}
+        </select>
+      </div>
+    )}
+    {temas.length > 0 && (
+      <div class="campo">
+        <label for={`${listaId}-tema`}>{t("filtro.tema")}</label>
+        <select id={`${listaId}-tema`} name="tema">
+          <option value="">{t("filtro.todos")}</option>
+          {temas.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
+        </select>
+      </div>
+    )}
     <div class="campo campo-busca">
-      <label for="filtro-q">{t("filtro.busca")}</label>
-      <input id="filtro-q" name="q" type="search" autocomplete="off" aria-describedby="filtro-q-ajuda" />
-      <p id="filtro-q-ajuda" class="ajuda">{t("filtro.buscaAjuda")}</p>
+      <label for={`${listaId}-q`}>{t("filtro.busca")}</label>
+      <input id={`${listaId}-q`} name="q" type="search" autocomplete="off" aria-describedby={`${listaId}-q-ajuda`} />
+      <p id={`${listaId}-q-ajuda`} class="ajuda">{t("filtro.buscaAjuda")}</p>
     </div>
   </div>
   <div class="filtros-acoes">
     <button type="submit">{t("filtro.aplicar")}</button>
-    <a class="button-link" href="/pesquisa" data-limpar>{t("filtro.limpar")}</a>
+    <a class="button-link" href={limparHref} data-limpar>{t("filtro.limpar")}</a>
   </div>
 </form>
-<p class="resultados" aria-live="polite" data-contagem>{textoResultados(total)}</p>
+<p class="resultados" aria-live="polite" data-contagem>{textoInicial}</p>
 <div class="vazio" data-vazio hidden>
   <p>{t("filtro.vazio")}</p>
-  <a class="button-link" href="/pesquisa" data-limpar>{t("filtro.limpar")}</a>
+  <a class="button-link" href={limparHref} data-limpar>{t("filtro.limpar")}</a>
 </div>
 <noscript><p class="ajuda">{t("filtro.semJs")}</p></noscript>
 
 <script>
   import { matchesFiltro, parseQuery, serializeQuery, type FiltroQuery } from "../lib/filters";
-  import { textoResultados } from "../i18n";
 
   // Aprimoramento progressivo: sem JS, a lista completa já está no HTML.
   const form = document.querySelector<HTMLFormElement>("form[data-filtro]");
@@ -68,22 +121,27 @@ const { listaId, tipos, anos, temas, total } = Astro.props;
   if (form && lista) {
     const contagem = document.querySelector<HTMLElement>("[data-contagem]");
     const vazio = document.querySelector<HTMLElement>("[data-vazio]");
-    const itens = Array.from(lista.querySelectorAll<HTMLElement>("li[data-tipo]"));
+    const itens = Array.from(lista.querySelectorAll<HTMLElement>("[data-filtro-item]"));
+    const textoResultados = (n: number) =>
+      n === 1 ? (form.dataset.resUm ?? "") : (form.dataset.resVarios ?? "").replace("{n}", String(n));
 
     const campo = (nome: string) =>
       form.elements.namedItem(nome) as HTMLInputElement | HTMLSelectElement | null;
 
+    // Só lê os campos que existem neste formulário; chaves ausentes ficam vazias.
     const ler = (): FiltroQuery => ({
       tipo: campo("tipo")?.value ?? "",
       ano: campo("ano")?.value ?? "",
       tema: campo("tema")?.value ?? "",
       q: campo("q")?.value ?? "",
+      linguagem: campo("linguagem")?.value ?? "",
+      visibilidade: campo("visibilidade")?.value ?? "",
     });
 
     const preencher = (q: FiltroQuery) => {
-      for (const nome of ["tipo", "ano", "tema", "q"] as const) {
+      for (const nome of ["tipo", "ano", "tema", "q", "linguagem", "visibilidade"] as const) {
         const el = campo(nome);
-        if (el) el.value = q[nome];
+        if (el) el.value = q[nome] ?? "";
       }
     };
 
@@ -91,7 +149,14 @@ const { listaId, tipos, anos, temas, total } = Astro.props;
       let visiveis = 0;
       for (const li of itens) {
         const ok = matchesFiltro(
-          { tipo: li.dataset.tipo ?? "", ano: li.dataset.ano ?? "", tema: li.dataset.tema ?? "", texto: li.dataset.texto ?? "" },
+          {
+            tipo: li.dataset.tipo ?? "",
+            ano: li.dataset.ano ?? "",
+            tema: li.dataset.tema ?? "",
+            texto: li.dataset.texto ?? "",
+            linguagem: li.dataset.linguagem ?? "",
+            visibilidade: li.dataset.visibilidade ?? "",
+          },
           q,
         );
         li.hidden = !ok;
@@ -110,7 +175,7 @@ const { listaId, tipos, anos, temas, total } = Astro.props;
 
     const inicial = parseQuery(location.search);
     preencher(inicial);
-    aplicar(inicial, false);
+    aplicar(ler(), false);
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -122,7 +187,7 @@ const { listaId, tipos, anos, temas, total } = Astro.props;
     document.querySelectorAll<HTMLAnchorElement>("a[data-limpar]").forEach((link) => {
       link.addEventListener("click", (event) => {
         event.preventDefault();
-        const vazioQ: FiltroQuery = { tipo: "", ano: "", tema: "", q: "" };
+        const vazioQ: FiltroQuery = { tipo: "", ano: "", tema: "", q: "", linguagem: "", visibilidade: "" };
         preencher(vazioQ);
         aplicar(vazioQ, true);
         campo("q")?.focus();
@@ -130,9 +195,8 @@ const { listaId, tipos, anos, temas, total } = Astro.props;
     });
 
     window.addEventListener("popstate", () => {
-      const q = parseQuery(location.search);
-      preencher(q);
-      aplicar(q, false);
+      preencher(parseQuery(location.search));
+      aplicar(ler(), false);
     });
   }
 </script>

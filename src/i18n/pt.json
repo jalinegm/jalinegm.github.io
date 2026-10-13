@@ -39,7 +39,9 @@
     "buscaAjuda": "Pesquise por título, autor ou veículo.",
     "todos": "Todos",
     "aplicar": "Filtrar",
-    "semJs": "Os filtros funcionam com JavaScript ativado. Sem JavaScript, a lista completa de publicações está exibida abaixo."
+    "semJs": "Os filtros funcionam com JavaScript ativado. Sem JavaScript, a lista completa está exibida abaixo.",
+    "visibilidade": "Visibilidade",
+    "linguagem": "Linguagem"
   },
   "pub": {
     "doi": "DOI",
@@ -164,5 +166,32 @@
     "reportarTitulo": "Como reportar um problema",
     "reportarTexto": "Se encontrar uma barreira de acesso, escreva para o e-mail abaixo informando a página, o problema e, se possível, o navegador e a tecnologia assistiva utilizados.",
     "revisaoTitulo": "Data da última revisão"
+  },
+  "repos": {
+    "semDescricao": "Descrição a ser incluída.",
+    "atualizado": "Atualizado em {ano}",
+    "fork": "Fork",
+    "publico": "Público",
+    "privado": "Privado — acesso sob convite",
+    "resultados": "{n} repositórios encontrados",
+    "resultadoUm": "1 repositório encontrado",
+    "filtroLegenda": "Filtrar repositórios"
+  },
+  "projetos": {
+    "titulo": "Projetos",
+    "intro": "Estudos de caso de projetos de pesquisa, ensino e gestão de dados, com vínculo institucional explícito, e o catálogo de repositórios da conta no GitHub.",
+    "casosTitulo": "Estudos de caso",
+    "catalogoTitulo": "Catálogo de repositórios",
+    "catalogoIntro": "Repositórios do GitHub, do mais recente ao mais antigo. Repositórios privados aparecem com a indicação de acesso sob convite e não têm link público.",
+    "forks": "Os repositórios marcados como fork são cópias de projetos de terceiros.",
+    "didaticoTitulo": "Material didático (2018–2021)",
+    "didaticoIntro": "Aulas e exercícios de disciplinas de programação, agrupados e recolhidos.",
+    "periodo": "Período: {periodo}",
+    "vinculo": "Vínculo institucional",
+    "tecnologias": "Tecnologias",
+    "reposCaso": "Repositórios no catálogo",
+    "semRepos": "Nenhum repositório de código público está vinculado a este estudo de caso.",
+    "tese": "Ver a tese relacionada",
+    "periodoRotulo": "Período"
   }
 }

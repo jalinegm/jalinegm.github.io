@@ -73,7 +73,7 @@ const estudos = await getCollection("pesquisa");
       const idioma = idiomaTitulo(p.titulo);
       const url = doiUrl(p.doi);
       return (
-        <li data-tipo={p.tipo} data-ano={String(p.ano)} data-tema={p.tema} data-texto={searchText(p)}>
+        <li data-tipo={p.tipo} data-ano={String(p.ano)} data-tema={p.tema} data-texto={searchText(p)} data-filtro-item>
           <p class="pub-titulo">
             {idioma === "en" ? <span lang="en">{p.titulo}</span> : p.titulo}
           </p>

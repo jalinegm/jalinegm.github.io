@@ -2,14 +2,33 @@ import lattesData from "../data/lattes.json";
 import reposData from "../data/repos.json";
 
 export type Lattes = typeof lattesData;
-export type Repo = (typeof reposData)[number];
+/** Registro de src/data/repos.json (gerado por scripts/repos.py). Tipado à mão: o JSON infere `null` para campos sempre vazios. */
+export interface Repo {
+  name: string;
+  /** Vazio para repositórios privados: nunca renderizar como link. */
+  url: string;
+  descricao: string;
+  descricaoRevisar: boolean;
+  linguagem: string | null;
+  privado: boolean;
+  fork: boolean;
+  ano: number;
+  criadoEm: string;
+  tema: string | null;
+  destaque: boolean;
+  grupo: string | null;
+  ocultar: boolean;
+  imagem: string | null;
+  alt: string | null;
+  topicos: string[];
+}
 
 export function getLattes(): Lattes {
   return lattesData;
 }
 
 export function getRepos(): Repo[] {
-  return reposData;
+  return reposData as Repo[];
 }
 
 /**
@@ -17,7 +36,7 @@ export function getRepos(): Repo[] {
  * case studies cannot silently reference a repository that does not exist.
  */
 export function reposByNames(names: string[]): Repo[] {
-  const byName = new Map(reposData.map((r) => [r.name, r] as const));
+  const byName = new Map(getRepos().map((r) => [r.name, r] as const));
   return names.map((name) => {
     const repo = byName.get(name);
     if (!repo) throw new Error(`Repositório não encontrado em repos.json: ${name}`);
