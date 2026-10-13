@@ -2,7 +2,8 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    include: ["tests/unit/**/*.test.ts"],
+    // unit: lógica pura; raiz de tests/: verificações sobre dist/ (exigem `npm run build`).
+    include: ["tests/unit/**/*.test.ts", "tests/*.test.ts"],
     environment: "node",
   },
 });
