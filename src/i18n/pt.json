@@ -131,7 +131,7 @@
     "atuacao": "Atuação profissional",
     "atuacaoAtual": "Pesquisadora Institucional Substituta (exercício provisório), Diretoria de Planejamento e Desenvolvimento Institucional, Reitoria do IFFar, atual",
     "pixellab": "Pesquisa no PixelLab (UFG)",
-    "revisora": "Revisora dos periódicos <span lang='en'>Multimedia Tools and Applications</span> (2023) e <span lang='en'>Frontiers in Education</span> (2024).",
+    "revisora": "Revisora dos periódicos <span lang=\"en\">Multimedia Tools and Applications</span> (2023) e <span lang=\"en\">Frontiers in Education</span> (2024).",
     "premios": "Prêmios e distinções",
     "patente": "Patente",
     "software": "Software registrado",
@@ -151,7 +151,7 @@
   },
   "acessibilidade": {
     "titulo": "Acessibilidade",
-    "compromisso": "Este site busca conformidade com o nível AA das <span lang='en'>Web Content Accessibility Guidelines</span> (WCAG) 2.2.",
+    "compromisso": "Este site busca conformidade com o nível AA das <span lang=\"en\">Web Content Accessibility Guidelines</span> (WCAG) 2.2.",
     "medidasTitulo": "Medidas adotadas",
     "medida1": "Link “Pular para o conteúdo” como primeiro item navegável em todas as páginas.",
     "medida2": "Marcação semântica, com cabeçalhos em ordem e um único título principal (h1) por página.",
