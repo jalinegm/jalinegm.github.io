@@ -1,0 +1,1220 @@
+{
+  "areas": [
+    "Probabilidade e Estatística",
+    "Ciência da Computação"
+  ],
+  "atuacao": [
+    {
+      "cargo": "Pesquisador colaborador",
+      "fim": null,
+      "inicio": 2023,
+      "instituicao": "Universidade Federal do Oeste da Bahia",
+      "tipo": "colaborador"
+    },
+    {
+      "cargo": "Professor Ens. Básico Técnico e Tecnológico",
+      "fim": null,
+      "inicio": 2014,
+      "instituicao": "Instituto Federal Farroupilha",
+      "tipo": "livre"
+    },
+    {
+      "cargo": null,
+      "fim": null,
+      "inicio": null,
+      "instituicao": "Universidade Federal do Pampa",
+      "tipo": null
+    },
+    {
+      "cargo": null,
+      "fim": 2024,
+      "inicio": 2024,
+      "instituicao": "Frontiers In Education",
+      "tipo": "livre"
+    },
+    {
+      "cargo": null,
+      "fim": 2023,
+      "inicio": 2023,
+      "instituicao": "MULTIMEDIA TOOLS AND APPLICATIONS (DORDRECHT. ONLINE)",
+      "tipo": "livre"
+    },
+    {
+      "cargo": "Docente de Informática",
+      "fim": 2020,
+      "inicio": 2017,
+      "instituicao": "Instituto Federal de Brasília",
+      "tipo": "livre"
+    },
+    {
+      "cargo": "Professora Substituta",
+      "fim": 2014,
+      "inicio": 2013,
+      "instituicao": "Instituto Federal Farroupilha",
+      "tipo": "celetista"
+    },
+    {
+      "cargo": "Professora de Informática",
+      "fim": 2013,
+      "inicio": 2011,
+      "instituicao": "Escola de Ensino Fundamental Vida",
+      "tipo": "livre"
+    },
+    {
+      "cargo": "Professora",
+      "fim": 2011,
+      "inicio": 2010,
+      "instituicao": "Acesso Informática",
+      "tipo": "livre"
+    },
+    {
+      "cargo": "Estagiária",
+      "fim": 2010,
+      "inicio": 2009,
+      "instituicao": "Prefeitura Municipal de Alegrete",
+      "tipo": "colaborador"
+    },
+    {
+      "cargo": "Auxiliar Administrativo",
+      "fim": 2010,
+      "inicio": 2007,
+      "instituicao": "Associação Congregação Santa Catarina",
+      "tipo": "livre"
+    }
+  ],
+  "formacao": [
+    {
+      "conclusao": 2022,
+      "curso": "Ciência da Computação",
+      "inicio": 2019,
+      "instituicao": "Universidade Federal de Goiás",
+      "orientador": "Fabrizzio Alphonsus Alves de Melo Nunes",
+      "status": "concluido",
+      "tipo": "doutorado",
+      "titulo": "CLAT: arcabouço conceitual e ferramenta de apoio à avaliação da escrita inicial infantil por meio de dispositivos móveis"
+    },
+    {
+      "conclusao": 2015,
+      "curso": "Engenharia Elétrica",
+      "inicio": 2013,
+      "instituicao": "Universidade Federal do Pampa",
+      "orientador": "Daniel Welfer",
+      "status": "concluido",
+      "tipo": "mestrado",
+      "titulo": "Proposta de Aplicativo Móvel para Identificação de Cédulas de Real por Pessoas com Deficiência Visual"
+    },
+    {
+      "conclusao": 2012,
+      "curso": "Ciência da Computação",
+      "inicio": 2009,
+      "instituicao": "Universidade Federal do Pampa",
+      "orientador": "Daniel Welfer",
+      "status": "concluido",
+      "tipo": "graduacao",
+      "titulo": "Percepção de imagens estáticas por pessoas cegas"
+    }
+  ],
+  "patente": {
+    "ano": 2017,
+    "pais": "Brasil",
+    "titulo": "Dispositivo e Método para Auxílio na Visualização de Imagens para Pessoas com Nictalopia"
+  },
+  "premios": [
+    {
+      "ano": 2020,
+      "entidade": "Comissão Especial da SBC para Sistemas Multimídia e Web (CE-WebMedia)",
+      "titulo": "Melhor trabalho - V Prêmio Luiz Fernando de Computação"
+    },
+    {
+      "ano": 2019,
+      "entidade": "Ideias de Futuro e Google Brasil",
+      "titulo": "Honra ao Mérito Nacional no Desafio Google Startup in School"
+    },
+    {
+      "ano": 2012,
+      "entidade": "Congresso Internacional de Administração",
+      "titulo": "Prêmio Prof. Sérgio Escorsim"
+    }
+  ],
+  "projetos": [
+    {
+      "descricao": "A implantação do Cecate Nordeste e a democratização dos dados da Política Nacional de Transporte Escolar são iniciativas fundamentais para promover a qualidade, segurança e transparência no transporte escolar na região Nordeste do Brasil. O FNDE tem desempenhado um papel crucial no apoio e desenvolvimento dessas políticas, por meio dos Centros Colaboradores de Apoio ao Transporte Escolar (CECATE), estabelecidos em parceria com Instituições de Ensino Superior.A Universidade Federal do Oeste da Bahia foi selecionada para coordenar os esforços na região Nordeste, considerando os desafios únicos enfrentados por essa região, como vasta extensão territorial e desigualdades socioeconômicas acentuadas. A concentração da população urbana nas capitais e maiores municípios evidencia a necessidade de um esforço coordenado para garantir o acesso à educação em áreas remotas e desfavorecidas.O Cecate tem como objetivo promover estudos e ações que contribuam para a melhoria contínua das políticas públicas relacionadas ao transporte escolar. Essa iniciativa visa não apenas fornecer assistência técnica e formação, mas também promover a pesquisa e o desenvolvimento de soluções inovadoras para os desafios enfrentados no transporte escolar.",
+      "fim": null,
+      "inicio": 2024,
+      "situacao": "em_andamento",
+      "titulo": "Cecate Nordeste: Centro Colaborador de Apoio ao Transporte Escolar da Região Nordeste"
+    },
+    {
+      "descricao": "A plataforma Nilo Peçanha (PNP) é um importante instrumento da política pública que traduz o desenvolvimento da Rede Federal da Educação Profissional, Científica e Tecnológica (Rede Federal de EPCT) em um conjunto de iniciativas de coleta, validação e disseminação de estatísticas oficiais da Educação Profissional, Científica e Tecnológica (EPCT) no âmbito dos Institutos Federais (IFs), Centros Federais de Educação Tecnológica (Cefets), Colégio Pedro II e Escolas Técnicas vinculadas às Universidades Federais.Instituída pela Portaria Setec n.1, de 3 de janeiro de 2018, a PNP é um processo feito a várias mãos e conta com um cuidadoso processo metodológico liderado pela REVALIDE, Rede de Coleta, Validação e Disseminação das Estatísticas da Rede Federal da Educação Profissional, Científica e Tecnológica, produzindo dados e contextos analíticos que representam as complexas e diversificadas ofertas e dinâmicas escolares da Rede Federal de EPCT.Nesse contexto, o presente projeto tem como objeto de estudo o desenvolvimento de soluções para democratização de dados do ciclo de coleta, validação e disseminação de indicadores da Rede Federal da Educação Profissional, Científica e Tecnológica.",
+      "fim": null,
+      "inicio": 2023,
+      "situacao": "em_andamento",
+      "titulo": "Plataforma Nilo Peçanha: Desenvolvimento de Soluções de Gestão Analítica da Rede Federal de Educação Profissional, Científica e Tecnológica"
+    },
+    {
+      "descricao": "Segundo dados do Instituto Brasileiro de Geografia e Estatística cerca de 6,5 dos brasileiros têm algum tipo de deficiência visual. Dentre essas pessoas, estima-se que no Brasil cerca de 50 mil possuam Retinose Pigmentar Amiotrófica, uma patologia degenerativa que ataca as células da retina responsáveis pela recepção da luz. Os problemas provenientes dessa enfermidade são inúmeros, dentre esses se destaca a incapacidade do enfermo em perceber imagens que não disponham de uma fonte luminosa própria. Um exemplo característico é a incapacidade de ler um livro ou observar escritos em uma lousa, visto que esses objetos não apresentam bom contraste de cores e iluminação adequado ao aluno com retinose pigmentar. Neste contexto, um dos problemas que surge é a falta de uma ferramenta adequada nas instituições de ensino destinada a facilitar o acesso à visibilidade das lousas de sala de aula. Logo, o presente projeto tem por objetivo a construção de um protótipo para ajuste automático de contraste e luminância do que é exibido nas lousas do IFFar Campus Alegrete. As ferramentas previstas contemplam a biblioteca OpenCV, Android Studio, smartphone com câmera e óculos de realidade virtual. Espera-se como resultados a obtenção de uma ferramenta que torne acessível o conteúdo das lousas de sala de aula aos alunos com cegueira noturna, adicionando novo recurso de Tecnologia Assistiva às Coordenações de Ações Inclusivas do IFFarroupilha.Registrado sob n protocolo: 137.001-2017 IFFar",
+      "fim": 2017,
+      "inicio": 2017,
+      "situacao": "desativado",
+      "titulo": "Protótipo de Tecnologia Assistiva para Pessoas com Retinose Pigmentar"
+    },
+    {
+      "descricao": "O projeto de extensão CodIFicar visa oferecer oficinas para ensino de programação a alunos da educação básica. A metodologia aborda a resolução de problemas e o pensamento computacional por meio de plataformas gráficas que facilitam a compreensão de conceitos de programação. O projeto abrange as cidades de Alegrete e Manoel Viana.",
+      "fim": 2017,
+      "inicio": 2016,
+      "situacao": "desativado",
+      "titulo": "codIFicar"
+    },
+    {
+      "descricao": "O principal objetivo do projeto é oferecer formação aos professores da rede pública que atuam com alunos com deficiência na cidade de Alegrete. Almeja-se como objetivos específicos: * Capacitar os professores da rede pública quanto às deficiências, a fim de contribuir com a inclusão escolar das pessoas com deficiência *­ Capacitar os professores quanto à utilização de ferramentas informatizadas, a fim de contribuir no processo de ensino­-aprendizagem de pessoas com deficiência",
+      "fim": 2015,
+      "inicio": 2015,
+      "situacao": "concluido",
+      "titulo": "Conhecendo as deficiências e seus recursos tecnológicos para prática docente"
+    },
+    {
+      "descricao": "O objetivo geral do projeto é oferecer oficinas de programação de computadores para alunos do ensino fundamental de escolas públicas. Almeja­-se como objetivos específicos: * Fomentar interesse pelo curso técnico em Informática entre estudantes do ensino fundamental * Ensinar conceitos básicos da programação de computadores de forma lúdica e atrativa * Oportunizar aos alunos do curso técnico em Informática a vivência em projetos de extensão, compartilhando com a sociedade o conhecimento adquirido no curso",
+      "fim": 2015,
+      "inicio": 2015,
+      "situacao": "concluido",
+      "titulo": "Hora do Código"
+    },
+    {
+      "descricao": "O projeto Viva Bem com a Informática foi executado em dois módulos, um para professores do Atendimento Educacional Especializado (AEE) e outro para alunos atendidos no AEE das escolas públicas de Alegrete. Os principais objetivos do projeto foram instrumentalizar professores com ferramentas tecnológicas para uso nas salas de atendimento e proporcionar aos alunos com deficiência intelectual o acesso às novas tecnologias, oportunizando formas de interagir, experienciar e vivenciar novos conhecimentos.",
+      "fim": 2014,
+      "inicio": 2014,
+      "situacao": "concluido",
+      "titulo": "Viva Bem com a Informática"
+    },
+    {
+      "descricao": null,
+      "fim": 2015,
+      "inicio": 2013,
+      "situacao": "concluido",
+      "titulo": "Proposta de Aplicativo Móvel para Identificação de Cédulas de Real por Pessoas com Deficiência Visual"
+    },
+    {
+      "descricao": null,
+      "fim": 2012,
+      "inicio": 2012,
+      "situacao": "concluido",
+      "titulo": "Empreendedorismo na Escola"
+    },
+    {
+      "descricao": "O principal objetivo do projeto é desenvolver um aplicativo móvel para abstração de imagens estáticas por pessoas cegas",
+      "fim": 2013,
+      "inicio": 2012,
+      "situacao": "concluido",
+      "titulo": "Percepção de Imagens Estáticas por Pessoas Cegas"
+    },
+    {
+      "descricao": "Subprojeto ntegrado ao Projeto Institucional Novos Talentos (Programa Novos Talentos / DEB / CAPES). O principal objetivo é fomentar a sistematização do uso de recursos de informática em escolas públicas do município de Alegrete/RS alicerçada em métodos que busquem a adoção significativa e autônoma da tecnologia no cotidiano escolar, promovendo o uso de Tecnologia de Informação e Comunicação como instrumento de construção e exercício da cidadania.",
+      "fim": 2011,
+      "inicio": 2010,
+      "situacao": "concluido",
+      "titulo": "Info.edu: Novos Talentos no Pampa"
+    }
+  ],
+  "publicacoes": [
+    {
+      "ano": 2026,
+      "autores": [
+        "GARCIA, PEDRO HENRIQUE SACHETE",
+        "DE SOUZA, PAULO SILAS SEVERO",
+        "LUIZELLI, MARCELO CAGGIANI",
+        "MOMBACH, JALINE GONÇALVES",
+        "SACHETE, ANDRÉIA DOS SANTOS",
+        "ROSSI, FÁBIO DINIZ"
+      ],
+      "doi": "10.1109/access.2026.3680147",
+      "id": "10.1109/access.2026.3680147",
+      "tema": "outros",
+      "tipo": "artigo",
+      "titulo": "The New Web Attack Surface: A Taxonomy of Semantic and Agentic Threats in AI Browsers",
+      "veiculo": "IEEE Access"
+    },
+    {
+      "ano": 2025,
+      "autores": [
+        "SILVA, J. A.",
+        "MOMBACH, J. G.",
+        "BARROS, L."
+      ],
+      "doi": null,
+      "id": "divulgacao-da-libras-para-a-comunidade-um-relato-de-experiencia-no-ambito-da-curricularizacao-da-extensao-2025",
+      "tema": "acessibilidade",
+      "tipo": "evento",
+      "titulo": "Divulgação da Libras para a Comunidade: Um Relato de Experiência no Âmbito da Curricularização da Extensão",
+      "veiculo": "XV Mostra da Educação Profissional e Tecnológica"
+    },
+    {
+      "ano": 2025,
+      "autores": [
+        "BRACCIALLI, F.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "ensino-de-iluminacao-cenica-um-relato-de-experiencia-de-extensao-pelo-curso-de-formacao-de-professores-para-a-educacao-profissional-2025",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Ensino de Iluminação Cênica: um Relato de Experiência de Extensão pelo Curso de Formação de Professores para a Educação Profissional",
+      "veiculo": "XV Mostra da Educação Profissional e Tecnológica"
+    },
+    {
+      "ano": 2025,
+      "autores": [
+        "NASCIMENTO, W. R.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "oficinas-de-curriculos-e-marketing-pessoal-uma-experiencia-de-curricularizacao-da-extensao-no-curso-de-formacao-de-professores-para-educacao-profissional-2025",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Oficinas de Currículos e Marketing Pessoal: Uma Experiência de Curricularização da Extensão no Curso de Formação de Professores para Educação Profissional",
+      "veiculo": "XV Mostra da Educação Profissional e Tecnológica"
+    },
+    {
+      "ano": 2024,
+      "autores": [
+        "SANCHEZ, B. S.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "biodigestor-caseiro-uma-ferramenta-pedagogica-para-educacao-ambiental-e-acoes-comunitarias-2024",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Biodigestor Caseiro: Uma Ferramenta Pedagógica para Educação Ambiental e Ações Comunitárias",
+      "veiculo": "XV Mostra da Educação Profissional e Tecnológica"
+    },
+    {
+      "ano": 2022,
+      "autores": [
+        "MOMBACH, JALINE GONÇALVES",
+        "ROSSI, FÁBIO DINIZ",
+        "FERNANDES, DEBORAH SILVA ALVES",
+        "SOARES, FABRIZZIO ALPHONSUS ALVES DE MELO NUNES"
+      ],
+      "doi": "10.1145/3501712.3535283",
+      "id": "10.1145/3501712.3535283",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Children's Impressions of Early Spelling Assessment through Handwriting on Tablets vs. Paper-based Method",
+      "veiculo": "IDC '22: Interaction Design and Children"
+    },
+    {
+      "ano": 2021,
+      "autores": [
+        "MOMBACH, J. G.",
+        "SOARES, FABRIZZIO"
+      ],
+      "doi": null,
+      "id": "designing-an-app-for-remotely-children-s-spelling-assessment-2021",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Designing an App for Remotely Children's Spelling Assessment",
+      "veiculo": "HCI International"
+    },
+    {
+      "ano": 2021,
+      "autores": [
+        "MOMBACH, JALINE",
+        "SOARES, FABRIZZIO"
+      ],
+      "doi": "10.1007/978-3-030-77889-7_7",
+      "id": "10.1007/978-3-030-77889-7_7",
+      "tema": "alfabetizacao-cci",
+      "tipo": "capitulo",
+      "titulo": "Designing an App for Remotely Children's Spelling Assessment",
+      "veiculo": "Lecture Notes in Computer Science"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "MOMBACH, JALINE",
+        "FONSECA, AFONSO U.",
+        "NASCIMENTO, THAMER H.",
+        "RODRIGUES, WELINGTON GALVAO",
+        "GRESSLER, HENRIQUE",
+        "ROSSI, FABIO DINIZ",
+        "SOARES, FABRIZZIO"
+      ],
+      "doi": "10.1109/smc42975.2020.9283341",
+      "id": "10.1109/smc42975.2020.9283341",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "A new approach to performing paper-based children's spelling tests on mobile devices",
+      "veiculo": "2020 IEEE International Conference on Systems, Man, and Cybernetics (SMC)"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "MOMBACH, J. G.",
+        "SOARES, FABRIZZIO ALVES DE MELO NUNES"
+      ],
+      "doi": null,
+      "id": "aplicativo-para-sondagem-de-hipotese-de-escrita-infantil-remota-2020",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Aplicativo para sondagem de hipótese de escrita infantil remota",
+      "veiculo": "WebMedia"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "BONFIM, C. L.",
+        "MOMBACH, J. G.",
+        "MARTINS, A.",
+        "SOUSA, K. L. L."
+      ],
+      "doi": null,
+      "id": "empoderamento-de-genero-mediado-pelas-tecnologias-2020",
+      "tema": "outros",
+      "tipo": "capitulo",
+      "titulo": "Empoderamento de gênero mediado pelas tecnologias",
+      "veiculo": "Gênero em Perspectiva"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "CARPENEDO, DAIANA FREITAS",
+        "MOMBACH, JALINE GONÇALVES",
+        "COUTINHO, RENATO XAVIER",
+        "RAVASIO, MARCELE TEIXEIRA HOMRICH",
+        "RODRIGUES, RICARDO ANTONIO",
+        "ROSSI, FÁBIO DINIZ"
+      ],
+      "doi": "10.18178/ijiet.2020.10.3.1369",
+      "id": "10.18178/ijiet.2020.10.3.1369",
+      "tema": "outros",
+      "tipo": "artigo",
+      "titulo": "Experience in Creating Learning Objects in a Professional Master's Degree in Education",
+      "veiculo": "INTERNATIONAL JOURNAL OF INFORMATION AND EDUCATION TECHNOLOGY"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "FONSECA, AFONSO U.",
+        "OLIVEIRA, LEANDRO L.",
+        "MOMBACH, JALINE",
+        "FERNANDES, DEBORAH S. A.",
+        "SALVINI, ROGERIO",
+        "SOARES, FABRIZZIO"
+      ],
+      "doi": "10.1109/ccece47787.2020.9255768",
+      "id": "10.1109/ccece47787.2020.9255768",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Foreign Artifacts Detection on Pediatric Chest X-Ray",
+      "veiculo": "2020 IEEE Canadian Conference on Electrical and Computer Engineering (CCECE)"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "BIANCHI, L.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "guia-colaborativo-de-recomendacoes-tecnicas-sobre-interface-de-usuario-para-professores-2020",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Guia Colaborativo de Recomendações Técnicas sobre Interface de Usuário para Professores",
+      "veiculo": "XVII Congresso Brasileiro de Ensino Superior a Distância ESUD 2020"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "MOMBACH, JALINE",
+        "FERREIRA, CRISTIANE",
+        "FELIX, JULIANA",
+        "SALVINI, ROGERIO",
+        "SOARES, FABRIZZIO"
+      ],
+      "doi": "10.1109/ccece47787.2020.9255765",
+      "id": "10.1109/ccece47787.2020.9255765",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Mirrored and Rotated Letters in Children Spellings: An Automatic Analysis Approach",
+      "veiculo": "2020 IEEE Canadian Conference on Electrical and Computer Engineering (CCECE)"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "CARVALHO, THYAGO",
+        "COSTA, CARLOS",
+        "MOMBACH, JALINE",
+        "FERREIRA, CRISTIANE",
+        "FERNANDES, DEBORAH",
+        "SOARES, FABRIZZIO"
+      ],
+      "doi": "10.1109/ccece47787.2020.9255820",
+      "id": "10.1109/ccece47787.2020.9255820",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "PETA-System - A Piano Expression Teaching Aid System",
+      "veiculo": "2020 IEEE Canadian Conference on Electrical and Computer Engineering (CCECE)"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "FORRMIGA, V. A.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "palavrinhas-do-folclore-um-objeto-de-aprendizagem-para-criancas-em-fase-de-alfabetizacao-2020",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Palavrinhas do Folclore: Um Objeto de Aprendizagem para Crianças em Fase de Alfabetização",
+      "veiculo": "Escola Regional de Informática de Goiás (ERI – GO)"
+    },
+    {
+      "ano": 2020,
+      "autores": [
+        "GONCALVES MOMBACH, JALINE",
+        "ROSSI, F. D.",
+        "PAULA FELIX, JULIANA",
+        "SOARES, FABRIZZIO ALVES DE MELO NUNES"
+      ],
+      "doi": "10.1109/compsac48688.2020.00-80",
+      "id": "10.1109/compsac48688.2020.00-80",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Remote Assessing Children's Handwriting Spellingon Mobile Devices",
+      "veiculo": "IEEE 44st Annual Computer Software and Applications Conference (COMPSAC)"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "MOMBACH, JALINE",
+        "SOUZA, PAULO SILAS",
+        "SOARES, FABRIZZIO ALVES DE MELO NUNES",
+        "ROSSI, FABIO",
+        "FERRETO, TIAGO",
+        "LEAL, LARA"
+      ],
+      "doi": "10.5753/cbie.sbie.2019.489",
+      "id": "10.5753/cbie.sbie.2019.489",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "An approach for children's emergent literacy adaptive activities",
+      "veiculo": "XXX Simpósio Brasileiro de Informática na Educação (Brazilian Symposium on Computers in Education)"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "MELO, MARCUS VINICIUS CARDOSO DE",
+        "SEGATO, TIAGO",
+        "MOMBACH, JALINE"
+      ],
+      "doi": "10.5753/cbie.sbie.2019.873",
+      "id": "10.5753/cbie.sbie.2019.873",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Apolo: Versão Digital de um Jogo de Tabuleiro para Apoio ao Ensino na Educação Básica",
+      "veiculo": "XXX Simpósio Brasileiro de Informática na Educação (Brazilian Symposium on Computers in Education)"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "MOMBACH, JALINE",
+        "SOUZA, PAULO SILAS",
+        "ROSSI, FÁBIO"
+      ],
+      "doi": "10.5753/cbie.wie.2019.822",
+      "id": "10.5753/cbie.wie.2019.822",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Avaliação Gamificada no Ensino Médio: Uma Abordagem com GAMED",
+      "veiculo": "XXV Workshop de Informática na Escola"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "SOUZA, PAULO",
+        "MOMBACH, JALINE",
+        "ROSSI, FABIO",
+        "FERRETO, TIAGO"
+      ],
+      "doi": "10.1109/icalt.2019.00114",
+      "id": "10.1109/icalt.2019.00114",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "GAMED: Gamification-Based Assessment Methodology for Final Project Development",
+      "veiculo": "2019 IEEE 19th International Conference on Advanced Learning Technologies (ICALT)"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "DE FREITAS CARPENEDO, DAIANA",
+        "SEVERO, PAULO SILAS SOUZA",
+        "DOS SANTOS MARQUES, WAGNER",
+        "MOMBACH, JALINE GONÇALVES",
+        "DOS SANTOS SACHETE, ANDRÉIA",
+        "ROSSI, FÁBIO DINIZ"
+      ],
+      "doi": "10.20533/licej.2040.2589.2019.0432",
+      "id": "10.20533/licej.2040.2589.2019.0432",
+      "tema": "outros",
+      "tipo": "artigo",
+      "titulo": "Interplay Between VLE's Artifacts and Learning Abstractions",
+      "veiculo": "LITERACY INFORMATION AND COMPUTER EDUCATION JOURNAL (LICEJ)"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "ROSSI, FABIO",
+        "SOUZA, PAULO",
+        "MOMBACH, JALINE",
+        "FERRETO, TIAGO"
+      ],
+      "doi": "10.1109/icalt.2019.00075",
+      "id": "10.1109/icalt.2019.00075",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "On the Integrated Professional Practice in a Computing Course Towards Innovation",
+      "veiculo": "2019 IEEE 19th International Conference on Advanced Learning Technologies (ICALT)"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "CASTRO, BRUNO MORAIS NEVES DE",
+        "SANTOS, MATHEUS BRENO",
+        "MOMBACH, JALINE"
+      ],
+      "doi": "10.5753/cbie.wie.2019.256",
+      "id": "10.5753/cbie.wie.2019.256",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Um Mapeamento de Ferramentas Digitais para Criação de Narrativas Não-Lineares",
+      "veiculo": "XXV Workshop de Informática na Escola"
+    },
+    {
+      "ano": 2019,
+      "autores": [
+        "HORBYLON NASCIMENTO, THAMER",
+        "ALPHONSUS ALVES DE MELO NUNES SOARES, FABRIZZIO",
+        "ALVES VIEIRA, MARCOS",
+        "PAULA FELIX, JULIANA",
+        "GONCALVES MOMBACH, JALINE",
+        "MANCINE COELHO DE CAMPOS, LIVIA",
+        "GALVAO RODRIGUES, WELLINGTON",
+        "FLAVIO DE MIRANDA, WESLEY",
+        "MARTINS DA COSTA, RONALDO"
+      ],
+      "doi": "10.1109/compsac.2019.10217",
+      "id": "10.1109/compsac.2019.10217",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Using Smartwatches as an Interactive Movie Controller: A Case Study with the Bandersnatch Movie",
+      "veiculo": "2019 IEEE 43rd Annual Computer Software and Applications Conference (COMPSAC)"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "BARBOSA, E. N.",
+        "MOMBACH, J. G.",
+        "SEGATO, T. H. F."
+      ],
+      "doi": null,
+      "id": "aplicativo-para-apoio-as-avaliacoes-de-alunos-em-processo-de-alfabetizacao-2018",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Aplicativo para Apoio às Avaliações de Alunos em Processo de Alfabetização",
+      "veiculo": "VIII Semana de Produção Científica"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "CASTRO, B. M. N.",
+        "SANTOS, M. B.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "criacao-de-narrativas-nao-lineares-com-apoio-de-plataformas-informatizadas-2018",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Criação de Narrativas não Lineares com Apoio de Plataformas Informatizadas",
+      "veiculo": "VIII Semana de Produção Científica"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "BONFIM, CRISTIANE DE LIMA",
+        "MARTINS, ALANE",
+        "MOMBACH, JALINE",
+        "SOUSA, JANARA KALLINE LEAL LOPES DE"
+      ],
+      "doi": "10.5753/cbie.wcbie.2018.808",
+      "id": "10.5753/cbie.wcbie.2018.808",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Desenvolvimento de Aplicativos Móveis por Meninas: Uma Abordagem Participativa",
+      "veiculo": "VII Congresso Brasileiro de Informática na Educação"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "BONFIM, C. L.",
+        "MOMBACH, J. G.",
+        "MARTINS, A.",
+        "SOUSA, K. L. L."
+      ],
+      "doi": null,
+      "id": "design-participativo-uma-experiencia-de-criacao-de-aplicativos-com-meninas-2018",
+      "tema": "educacao-computacao",
+      "tipo": "artigo",
+      "titulo": "Design Participativo: Uma Experiência de Criação de Aplicativos com Meninas",
+      "veiculo": "REVISTA DE SISTEMAS E COMPUTAÇÃO - RSC"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "BONFIM, C. L.",
+        "MOMBACH, J. G.",
+        "MARTINS, A."
+      ],
+      "doi": null,
+      "id": "escola-de-app-fase-ii-oficina-de-programacao-dos-aplicativos-2018",
+      "tema": "educacao-computacao",
+      "tipo": "capitulo",
+      "titulo": "Escola de App - fase II: oficina de programação dos aplicativos",
+      "veiculo": "Internet e Direitos Humanos no Brasil: cenários e perspectivas"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "MOMBACH, J. G.",
+        "CASTRO, B. M. N.",
+        "SANTOS, M. B.",
+        "SANTOS, E. S."
+      ],
+      "doi": null,
+      "id": "pookemon-um-jogo-sobre-programacao-orientada-a-objetos-2018",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "POOkémon: um jogo sobre programação orientada a objetos",
+      "veiculo": "XVII SBGames"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "CASTRO, B. M. N.",
+        "SANTOS, M. B.",
+        "SANTOS, E. S.",
+        "DUARTE, L. A.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "pookemon-um-objeto-de-aprendizagem-para-ensino-de-programacao-orientada-a-objetos-2018",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "POOkémon: um objeto de aprendizagem para ensino de programação orientada a objetos",
+      "veiculo": "VIII Semana de Produção Científica"
+    },
+    {
+      "ano": 2018,
+      "autores": [
+        "MOMBACH, JALINE",
+        "BONFIM, CRISTIANE DE LIMA",
+        "MARTINS, ALANE",
+        "SOUSA, JANARA KALLINE LEAL LOPES DE"
+      ],
+      "doi": "10.5753/cbie.wie.2018.680",
+      "id": "10.5753/cbie.wie.2018.680",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Práticas de Criação de Aplicativos Móveis como Estratégia para o Empoderamento Feminino",
+      "veiculo": "XXIV Workshop de Informática na Escola"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "BAUER, R.",
+        "FLORES, G. L. M.",
+        "BAIRRO, L.",
+        "MOMBACH, JALINE GONÇALVES"
+      ],
+      "doi": "10.5281/zenodo.583174",
+      "id": "10.5281/zenodo.583174",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "A Extensão como Estratégia de Incentivo aos Cursos de Informática dos Institutos Federais",
+      "veiculo": "VIII STIN V SABTIC XVIII Fórum"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "MOMBACH, J. G.",
+        "WELFER, D."
+      ],
+      "doi": "10.5753/cbie.sbie.2017.1067",
+      "id": "10.5753/cbie.sbie.2017.1067",
+      "tema": "acessibilidade",
+      "tipo": "evento",
+      "titulo": "Aplicativo Identificador de Cédulas para Apoio ao Ensino do Sistema Monetário Brasileiro a Pessoas com Deficiência Visual",
+      "veiculo": "Simpósio Brasileiro de Informática na Educação"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "MOMBACH, J. G.",
+        "Souza, P.",
+        "LEAL, L."
+      ],
+      "doi": "10.5753/cbie.sbie.2017.516",
+      "id": "10.5753/cbie.sbie.2017.516",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Aplicativo para Auxiliar Professores nas Avaliações de Psicogênese da Escrita",
+      "veiculo": "Simpósio Brasileiro de Informática na Educação"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "BAUER, R.",
+        "MONTANHA, A.",
+        "Souza, P.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "aplicativo-para-o-ensino-de-geometria-espacial-com-realidade-aumentada-2017",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Aplicativo para o ensino de Geometria Espacial com Realidade Aumentada",
+      "veiculo": "8º Encontro Anual de Tecnologia da Informação"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "MONTANHA, A.",
+        "BAUER, R.",
+        "CRESTANI, A.",
+        "FLORES, G. L. M.",
+        "GARCIA JUNIOR, S.",
+        "SILVA, D. F. E.",
+        "HENZ, B.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "clube-de-realidade-virtual-e-aumentada-interacao-com-a-comunidade-2017",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Clube de realidade virtual e aumentada: interação com a comunidade",
+      "veiculo": "VIII Mostra de Educação Profissional e Tecnológica (MEPT)"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "BAUER, R.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "desenvolvimento-de-games-para-ensinar-programacao-de-computadores-2017",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Desenvolvimento de games para ensinar programação de computadores",
+      "veiculo": "VIII Mostra de Educação Profissional e Tecnológica (MEPT)"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "FLORES, GIAN LUCA MOTTA",
+        "CRESTANI, ANGELO V.",
+        "BAUER, RUDIERI",
+        "MOMBACH, JALINE",
+        "MONTANHA, ANDRÉ"
+      ],
+      "doi": "10.5753/cbie.wcbie.2017.1324",
+      "id": "10.5753/cbie.wcbie.2017.1324",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Design Participativo no Ensino Médio: Desenvolvimento de um Jogo Auxiliar ao Processo de Ensino",
+      "veiculo": "VI Congresso Brasileiro de Informática na Educação"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "BORDIN, ANDREA",
+        "PINHEIRO, CRISTIANE GONÇALVES",
+        "GONÇALVES, NATHAN NUNES VARGAS",
+        "MOMBACH, JALINE",
+        "SOUZA, PAULO SILAS"
+      ],
+      "doi": "10.5753/cbie.wie.2017.1179",
+      "id": "10.5753/cbie.wie.2017.1179",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Ensino de programação para o ensino médio com App Inventor: Um relato de experiência extensionista através da colaboração interinstitucional",
+      "veiculo": "XXIII Workshop de Informática na Escola"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "FLORES, G. L. M.",
+        "CRESTANI, A. N. V.",
+        "BAUER, R.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "experiencia-de-gamificacao-na-organizacao-dos-trabalhos-de-conclusao-de-um-curso-tecnico-em-informatica-2017",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Experiência de Gamificação na Organização dos Trabalhos de Conclusão de um Curso Técnico em Informática",
+      "veiculo": "4º ENCompIF - Encontro Nacional de Computação dos Institutos Federais"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "MONTANHA, A.",
+        "BAUER, RUDIERI",
+        "MOMBACH, JALINE"
+      ],
+      "doi": null,
+      "id": "libras-e-realidade-aumentada-visita-acessivel-ao-iffar-campus-alegrete-2017",
+      "tema": "acessibilidade",
+      "tipo": "evento",
+      "titulo": "Libras e realidade aumentada: visita acessível ao IFFar Campus Alegrete",
+      "veiculo": "VIII Mostra de Educação Profissional e Tecnológica (MEPT)"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "MARQUES, W. S.",
+        "Souza, P.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "pensar-para-programar-projeto-de-ensino-no-curso-tecnico-em-informatica-2017",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Pensar para Programar: Projeto de Ensino no Curso Técnico em Informática",
+      "veiculo": "25º WEI Workshop sobre Educação em Computação"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "MOMBACH, J. G.",
+        "SOUZA, Paulo Silas Severo",
+        "BAUER, R.",
+        "FLORES, G. L. M.",
+        "CRESTANI, A. N. V.",
+        "MONTANHA, A."
+      ],
+      "doi": null,
+      "id": "projeto-pensar-para-programar-design-participativo-no-ensino-medio-2017",
+      "tema": "educacao-computacao",
+      "tipo": "artigo",
+      "titulo": "Projeto Pensar para Programar: Design Participativo no Ensino Médio",
+      "veiculo": "REVISTA DE SISTEMAS E COMPUTAÇÃO - RSC"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "BAUER, RUDIERI",
+        "FLORES, GIAN LUCA MOTTA",
+        "CRESTANI, ANGELO V.",
+        "MOMBACH, JALINE"
+      ],
+      "doi": "10.5753/cbie.wcbie.2017.1210",
+      "id": "10.5753/cbie.wcbie.2017.1210",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Projeto codIFic@r: Oficinas de Programação em Dispositivos Móveis no Ensino Fundamental",
+      "veiculo": "VI Congresso Brasileiro de Informática na Educação"
+    },
+    {
+      "ano": 2017,
+      "autores": [
+        "Souza, P.",
+        "MARQUES, W. S.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "towards-an-educational-platform-with-real-time-collaboration-and-monitoring-of-students-achievement-2017",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Towards an Educational Platform with Real-Time Collaboration and Monitoring of Students Achievement",
+      "veiculo": "14º SBSC Simpósio Brasileiro de Sistemas Colaborativos"
+    },
+    {
+      "ano": 2016,
+      "autores": [
+        "Souza, P.",
+        "MARQUES, W. S.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "analise-em-tempo-real-do-progresso-de-alunos-atraves-de-uma-plataforma-educacional-2016",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Análise em Tempo Real do Progresso de Alunos Através de uma Plataforma Educacional",
+      "veiculo": "VII Encontro Anual de Tecnologia da Informação"
+    },
+    {
+      "ano": 2016,
+      "autores": [
+        "Souza, P.",
+        "MOMBACH, J. G."
+      ],
+      "doi": "10.5753/cbie.wie.2016.545",
+      "id": "10.5753/cbie.wie.2016.545",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Ensino de Programação para Crianças através de Práticas Colaborativas nas Escolas",
+      "veiculo": "XXII Workshop de Informática na Escola"
+    },
+    {
+      "ano": 2016,
+      "autores": [
+        "Souza, P.",
+        "MARQUES, W. S.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "incentivo-ao-pensamento-computacional-em-criancas-relato-de-experiencia-em-escolas-alegretenses-2016",
+      "tema": "alfabetizacao-cci",
+      "tipo": "evento",
+      "titulo": "Incentivo ao Pensamento Computacional em Crianças: Relato de Experiência em Escolas Alegretenses",
+      "veiculo": "Seminário de Extensão Universitária da Região Sul"
+    },
+    {
+      "ano": 2015,
+      "autores": [
+        "MARQUES, W. S.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "aprova-if-desenvolvimento-de-um-aplicativo-para-acompanhamento-de-notas-2015",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Aprova IF: desenvolvimento de um aplicativo para acompanhamento de notas",
+      "veiculo": "Encontro Anual de Tecnologia da Informação"
+    },
+    {
+      "ano": 2013,
+      "autores": [
+        "TOLFO, C.",
+        "MEDEIROS, S.T.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "modelagem-de-processos-com-bpmn-em-pequenas-empresas-um-estudo-de-caso-2013",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Modelagem de processos com BPMN em pequenas empresas: um estudo de caso",
+      "veiculo": "Encontro Nacional de Engenharia de Produção"
+    },
+    {
+      "ano": 2013,
+      "autores": [
+        "TOLFO, C.",
+        "MOMBACH, J. G.",
+        "LOBO, K.",
+        "LOPES, V."
+      ],
+      "doi": null,
+      "id": "projeto-empreendedorismo-na-escola-2013",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Projeto empreendedorismo na escola",
+      "veiculo": "31º Seminário de Extensão Universitária da Região Sul"
+    },
+    {
+      "ano": 2013,
+      "autores": [
+        "MOMBACH, JALINE GONÇALVES",
+        "WELFER, DANIEL"
+      ],
+      "doi": "10.5753/cbie.sbie.2013.487",
+      "id": "10.5753/cbie.sbie.2013.487",
+      "tema": "acessibilidade",
+      "tipo": "evento",
+      "titulo": "Proposta de um aplicativo móvel para percepção de imagens estáticas por alunos com deficiência visual",
+      "veiculo": "XXIV Simpósio Brasileiro de Informática na Educação"
+    },
+    {
+      "ano": 2012,
+      "autores": [
+        "MELO, A. M.",
+        "MOMBACH, J. G.",
+        "SALDANHA, J. F.",
+        "WERNZ, M. C. G."
+      ],
+      "doi": null,
+      "id": "informatica-na-educacao-promovendo-novos-talentos-no-pampa-2012",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Informática na Educação: Promovendo Novos Talentos no Pampa",
+      "veiculo": "Congresso Brasileiro de Informática na Educação: Workshop sobre Informática na Escola"
+    },
+    {
+      "ano": 2012,
+      "autores": [
+        "MOMBACH, J. G.",
+        "WELFER, D.",
+        "MACHADO, A."
+      ],
+      "doi": null,
+      "id": "percepcao-de-imagens-estaticas-por-pessoas-cegas-2012",
+      "tema": "acessibilidade",
+      "tipo": "evento",
+      "titulo": "Percepção de imagens estáticas por pessoas cegas",
+      "veiculo": "Salão Internacional de Ensino, Pesquisa e Extensão"
+    },
+    {
+      "ano": 2012,
+      "autores": [
+        "TOLFO, C.",
+        "MOMBACH, J. G.",
+        "FERREIRA, M. G. G."
+      ],
+      "doi": null,
+      "id": "uma-abordagem-para-a-promocao-de-habilidades-empreendedoras-por-meio-do-ensino-de-sustentabilidade-na-educacao-basica-utilizando-o-conceito-de-sistemas-produto-servico-2012",
+      "tema": "educacao-computacao",
+      "tipo": "artigo",
+      "titulo": "Uma abordagem para a promoção de habilidades empreendedoras por meio do ensino de sustentabilidade na educação básica utilizando o conceito de sistemas produto-serviço",
+      "veiculo": "REVISTA ADMPG (IMPRESSO)"
+    },
+    {
+      "ano": 2012,
+      "autores": [
+        "TOLFO, C.",
+        "MOMBACH, J. G.",
+        "FERREIRA, M. G. G."
+      ],
+      "doi": null,
+      "id": "uma-abordagem-para-a-promocao-de-habilidades-empreendedoras-por-meio-do-ensino-de-sustentabilidade-na-educacao-basica-utilizando-o-conceito-de-sistemas-produto-servico-2012-2",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Uma abordagem para a promoção de habilidades empreendedoras por meio do ensino de sustentabilidade na educação básica utilizando o conceito de sistemas produto-serviço",
+      "veiculo": "Congresso Internacional de Administração"
+    },
+    {
+      "ano": 2011,
+      "autores": [
+        "MELO, A. M.",
+        "CUNHA, H.",
+        "SALDANHA, J. F.",
+        "MOMBACH, J. G."
+      ],
+      "doi": null,
+      "id": "extensao-universitaria-como-pratica-pedagogica-de-interacao-humano-computador-2011",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Extensão Universitária como Prática Pedagógica de Interação Humano-Computador",
+      "veiculo": "Workshop Sobre Ensino de IHC"
+    },
+    {
+      "ano": 2011,
+      "autores": [
+        "MOMBACH, J. G.",
+        "SALDANHA, J. F.",
+        "MELO, A. M.",
+        "WERNZ, M. C. G.",
+        "DA SILVA, E."
+      ],
+      "doi": null,
+      "id": "gurizada-net-abordagem-participativa-a-inclusao-digital-de-estudantes-da-educacao-basica-2011",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Gurizada.net: Abordagem Participativa à Inclusão Digital de Estudantes da Educação Básica",
+      "veiculo": "Salão Internacional de Ensino, Pesquisa e Extensão"
+    },
+    {
+      "ano": 2011,
+      "autores": [
+        "MOMBACH, J. G.",
+        "CUNHA, H.",
+        "MELO, A. M."
+      ],
+      "doi": null,
+      "id": "info-edu-novos-talentos-no-pampa-laboratorio-de-construcao-de-sites-em-abordagem-participativa-2011",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Info.edu: Novos Talentos no Pampa – Laboratório de Construção de Sites em Abordagem Participativa",
+      "veiculo": "29º Seminário de Extensão Universitária da Região Sul"
+    },
+    {
+      "ano": 2011,
+      "autores": [
+        "SALDANHA, J. F.",
+        "MELO, A. M.",
+        "WERNZ, M. C. G.",
+        "RANGEL, D.",
+        "CUNHA, H.",
+        "MOMBACH, J. G.",
+        "ABREU, L.",
+        "BRAGA, A. F.",
+        "GUTTIER, R.",
+        "DA SILVA, E."
+      ],
+      "doi": null,
+      "id": "workshops-sobre-uso-da-informatica-em-atividades-de-ensino-aprendizagem-no-municipio-de-alegrete-2011",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "Workshops sobre Uso da Informática em Atividades de Ensino-Aprendizagem no Município de Alegrete",
+      "veiculo": "III Salão Internacional de Ensino, Pesquisa e Extensão"
+    },
+    {
+      "ano": 2010,
+      "autores": [
+        "MOMBACH, J. G.",
+        "MELO, A. M.",
+        "WERNZ, M. C. G.",
+        "SALDANHA, J. F.",
+        "MACHADO, R."
+      ],
+      "doi": null,
+      "id": "gurizada-net-inclusao-digital-em-perspectiva-participativa-2010",
+      "tema": "outros",
+      "tipo": "evento",
+      "titulo": "Gurizada.net: Inclusão Digital em Perspectiva Participativa",
+      "veiculo": "Workshop de Informática na Escola, XXX Congresso da Sociedade Brasileira de Computação"
+    },
+    {
+      "ano": 2010,
+      "autores": [
+        "SALDANHA, J. F.",
+        "MELO, A. M.",
+        "KREUTZ, D.",
+        "VIEIRA, V. G.",
+        "MOMBACH, J. G.",
+        "WERNZ, M. C. G.",
+        "DA SILVA, E."
+      ],
+      "doi": null,
+      "id": "i-workshop-sobre-uso-da-informatica-na-escola-em-atividades-de-ensino-aprendizagem-no-municipio-de-alegrete-2010",
+      "tema": "educacao-computacao",
+      "tipo": "evento",
+      "titulo": "I Workshop sobre Uso da Informática na Escola em Atividades de Ensino-Aprendizagem no Município de Alegrete",
+      "veiculo": "28º Seminário de Extensão Universitária da Região Sul"
+    }
+  ],
+  "resumo": "Doutora em Ciência da Computação pela Universidade Federal de Goiás (2022). Mestra em Engenharia Elétrica (2015) e Bacharela em Ciência da Computação (2012/2), ambos pela Universidade Federal do Pampa. Professora do Instituto Federal Farroupilha - Campus Alegrete desde 2014, atualmente está em exercício provisório como Pesquisadora Institucional Substituta na Diretoria de Planejamento e Desenvolvimento Institucional da Reitoria. Possui interesse nas áreas de Análise de Dados Educacionais, Informática na Educação, Educação em Computação e Interação Humano-Computador.",
+  "software": [
+    {
+      "ano": 2026,
+      "finalidade": "Apoio à tomada de decisão",
+      "titulo": "Calculadora de Matrículas Totais do IFFar"
+    },
+    {
+      "ano": 2026,
+      "finalidade": "Apoio à tomada de decisão",
+      "titulo": "Panorama dos Cursos de Pós-Graduação do IFFar"
+    },
+    {
+      "ano": 2025,
+      "finalidade": "Apoio à tomada de decisão",
+      "titulo": "Acompanhamento de Matrículas e Indicadores de Ensino do IFFar"
+    },
+    {
+      "ano": 2025,
+      "finalidade": "Apoio à tomada de decisão",
+      "titulo": "Painel de Acompanhamento dos Processos Seletivos do IFFar"
+    },
+    {
+      "ano": 2023,
+      "finalidade": "Apoio à tomada de decisão",
+      "titulo": "Calculadora de Matrículas Equivalentes"
+    }
+  ]
+}

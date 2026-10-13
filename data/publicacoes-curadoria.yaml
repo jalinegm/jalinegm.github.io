@@ -1,0 +1,12 @@
+# Curadoria manual de publicações (lida por scripts/lattes.py).
+#
+# Chave: DOI em minúsculas (ex.: 10.5753/cbie.sbie.2019.489) ou slug do título
+# (ex.: escrita-infantil-em-tablets-2019). Valor: ajustes, hoje apenas "tema".
+# Temas válidos: alfabetizacao-cci, acessibilidade, educacao-computacao,
+# dados-educacionais, outros.
+#
+# Exemplo (remova os comentários para ativar):
+# 10.5753/cbie.sbie.2019.489:
+#   tema: acessibilidade
+
+{}
