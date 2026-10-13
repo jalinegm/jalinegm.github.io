@@ -1,0 +1,29 @@
+# Curadoria manual dos repositórios (chave = nome do repositório no GitHub).
+# Campos aceitos: descricao, tema, destaque, grupo (didatico|null), ocultar, alt, revisar.
+# A curadoria tem precedência sobre a descrição da API. `revisar: true` marca texto a conferir.
+# Repositórios de estudo de caso (spec §4.4) recebem destaque: true.
+
+prompts-livro-iffar:
+  descricao: "Página web com os prompts do livro Engenharia de Prompts para Escrita Acadêmica com IA Generativa, com busca, sumário por capítulos e botão para copiar cada prompt."
+  revisar: true
+
+painelPosIFFar:
+  descricao: "Painel de Business Intelligence (Power BI, formato PBIP) para monitorar indicadores acadêmicos dos cursos de pós-graduação lato sensu do IFFar."
+  revisar: true
+  destaque: true
+
+relatorios-pnp2026-iffar: {destaque: true}
+relatorios-pnp2026: {destaque: true}
+artigoJLL: {destaque: true}
+Rede-DSBR: {destaque: true}
+baixar-boletins-sigaa: {destaque: true}
+atributos-docentes-emec: {destaque: true}
+migracaoDocenteCensup2026: {destaque: true}
+migracaoAlunoCensup2026: {destaque: true}
+gerar-planilhas-educacenso: {destaque: true}
+baixadorSistec: {destaque: true}
+alcance-global-citacoes-iffar: {destaque: true}
+mapa_citacoes_iffar: {destaque: true}
+avaliacoesPoloTeresina: {destaque: true}
+avaliacoesPoloSaoLuis: {destaque: true}
+cecatene-inscricao-dialogflow-node: {destaque: true}
