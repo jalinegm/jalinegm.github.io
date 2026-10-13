@@ -1,0 +1,192 @@
+---
+import { t, textoResultados } from "../i18n";
+
+interface Opcao {
+  valor: string;
+  rotulo: string;
+}
+
+interface Props {
+  listaId: string;
+  tipos: Opcao[];
+  anos: string[];
+  temas: Opcao[];
+  total: number;
+}
+
+const { listaId, tipos, anos, temas, total } = Astro.props;
+---
+<form class="filtros" method="get" role="search" aria-label={t("filtro.legenda")} data-filtro data-lista={listaId}>
+  <div class="filtros-campos">
+    <div class="campo">
+      <label for="filtro-tipo">{t("filtro.tipo")}</label>
+      <select id="filtro-tipo" name="tipo">
+        <option value="">{t("filtro.todos")}</option>
+        {tipos.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
+      </select>
+    </div>
+    <div class="campo">
+      <label for="filtro-ano">{t("filtro.ano")}</label>
+      <select id="filtro-ano" name="ano">
+        <option value="">{t("filtro.todos")}</option>
+        {anos.map((a) => <option value={a}>{a}</option>)}
+      </select>
+    </div>
+    <div class="campo">
+      <label for="filtro-tema">{t("filtro.tema")}</label>
+      <select id="filtro-tema" name="tema">
+        <option value="">{t("filtro.todos")}</option>
+        {temas.map((o) => <option value={o.valor}>{o.rotulo}</option>)}
+      </select>
+    </div>
+    <div class="campo campo-busca">
+      <label for="filtro-q">{t("filtro.busca")}</label>
+      <input id="filtro-q" name="q" type="search" autocomplete="off" aria-describedby="filtro-q-ajuda" />
+      <p id="filtro-q-ajuda" class="ajuda">{t("filtro.buscaAjuda")}</p>
+    </div>
+  </div>
+  <div class="filtros-acoes">
+    <button type="submit">{t("filtro.aplicar")}</button>
+    <a class="button-link" href="/pesquisa" data-limpar>{t("filtro.limpar")}</a>
+  </div>
+</form>
+<p class="resultados" aria-live="polite" data-contagem>{textoResultados(total)}</p>
+<div class="vazio" data-vazio hidden>
+  <p>{t("filtro.vazio")}</p>
+  <a class="button-link" href="/pesquisa" data-limpar>{t("filtro.limpar")}</a>
+</div>
+<noscript><p class="ajuda">{t("filtro.semJs")}</p></noscript>
+
+<script>
+  import { matchesFiltro, parseQuery, serializeQuery, type FiltroQuery } from "../lib/filters";
+  import { textoResultados } from "../i18n";
+
+  // Aprimoramento progressivo: sem JS, a lista completa já está no HTML.
+  const form = document.querySelector<HTMLFormElement>("form[data-filtro]");
+  const lista = form ? document.getElementById(form.dataset.lista ?? "") : null;
+
+  if (form && lista) {
+    const contagem = document.querySelector<HTMLElement>("[data-contagem]");
+    const vazio = document.querySelector<HTMLElement>("[data-vazio]");
+    const itens = Array.from(lista.querySelectorAll<HTMLElement>("li[data-tipo]"));
+
+    const campo = (nome: string) =>
+      form.elements.namedItem(nome) as HTMLInputElement | HTMLSelectElement | null;
+
+    const ler = (): FiltroQuery => ({
+      tipo: campo("tipo")?.value ?? "",
+      ano: campo("ano")?.value ?? "",
+      tema: campo("tema")?.value ?? "",
+      q: campo("q")?.value ?? "",
+    });
+
+    const preencher = (q: FiltroQuery) => {
+      for (const nome of ["tipo", "ano", "tema", "q"] as const) {
+        const el = campo(nome);
+        if (el) el.value = q[nome];
+      }
+    };
+
+    const aplicar = (q: FiltroQuery, atualizarUrl: boolean) => {
+      let visiveis = 0;
+      for (const li of itens) {
+        const ok = matchesFiltro(
+          { tipo: li.dataset.tipo ?? "", ano: li.dataset.ano ?? "", tema: li.dataset.tema ?? "", texto: li.dataset.texto ?? "" },
+          q,
+        );
+        li.hidden = !ok;
+        if (ok) visiveis++;
+      }
+      if (contagem) contagem.textContent = textoResultados(visiveis);
+      if (vazio) vazio.hidden = visiveis > 0;
+      if (atualizarUrl) {
+        try {
+          history.replaceState(null, "", `${location.pathname}${serializeQuery(q)}${location.hash}`);
+        } catch {
+          /* history indisponível: os filtros continuam funcionando na página */
+        }
+      }
+    };
+
+    const inicial = parseQuery(location.search);
+    preencher(inicial);
+    aplicar(inicial, false);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      aplicar(ler(), true);
+    });
+    form.addEventListener("input", () => aplicar(ler(), true));
+    form.addEventListener("change", () => aplicar(ler(), true));
+
+    document.querySelectorAll<HTMLAnchorElement>("a[data-limpar]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const vazioQ: FiltroQuery = { tipo: "", ano: "", tema: "", q: "" };
+        preencher(vazioQ);
+        aplicar(vazioQ, true);
+        campo("q")?.focus();
+      });
+    });
+
+    window.addEventListener("popstate", () => {
+      const q = parseQuery(location.search);
+      preencher(q);
+      aplicar(q, false);
+    });
+  }
+</script>
+
+<style>
+  .filtros {
+    display: grid;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    margin-block: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+  .filtros-campos {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  }
+  .campo {
+    display: grid;
+    gap: var(--space-1);
+  }
+  .campo-busca {
+    grid-column: 1 / -1;
+  }
+  .campo select,
+  .campo input {
+    font: inherit;
+    color: inherit;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-2);
+    max-inline-size: 100%;
+  }
+  .ajuda {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+  .filtros-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .resultados {
+    font-weight: 600;
+  }
+  .vazio {
+    padding: var(--space-4);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+  }
+  .vazio[hidden] {
+    display: none;
+  }
+</style>

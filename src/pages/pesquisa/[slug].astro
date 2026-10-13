@@ -1,0 +1,83 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { getCollection, render } from "astro:content";
+import { t } from "../../i18n";
+import { doiUrl, idiomaTitulo } from "../../lib/citation";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("pesquisa");
+  return entries.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { titulo, resumo, pdf, repositorioUrl, publicacoesDerivadas, midia } = entry.data;
+---
+<Base title={titulo} description={resumo}>
+  <Breadcrumbs
+    items={[
+      { label: t("nav.inicio"), href: "/" },
+      { label: t("pesquisa.titulo"), href: "/pesquisa" },
+      { label: titulo },
+    ]}
+  />
+  <h1>{titulo}</h1>
+  <p>{resumo}</p>
+  <p>
+    <a class="button-link" href={pdf.href}>{t("pesquisa.pdfBaixar", { formato: pdf.formato, tamanho: pdf.tamanho })}</a>
+  </p>
+  {repositorioUrl && (
+    <p>
+      <a href={repositorioUrl}>{t("pesquisa.repositorio")}<span class="visually-hidden"> {t("link.externo")}</span></a>
+    </p>
+  )}
+
+  <Content />
+
+  {publicacoesDerivadas.length > 0 && (
+    <section>
+      <h2 class="section-title">{t("pesquisa.derivadas")}</h2>
+      <ul class="lista-simples">
+        {publicacoesDerivadas.map((p) => {
+          const url = doiUrl(p.doi);
+          const idioma = idiomaTitulo(p.titulo);
+          return (
+            <li>
+              {idioma === "en" ? <span lang="en">{p.titulo}</span> : p.titulo}
+              {p.veiculo && <>. {p.veiculo}</>}
+              {p.ano && <>, {p.ano}</>}.
+              {url && (
+                <>
+                  {" "}
+                  <a href={url}>{t("pub.doi")}: {p.doi}<span class="visually-hidden"> {t("link.externo")}</span></a>
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  )}
+
+  {midia.length > 0 && (
+    <section>
+      <h2 class="section-title">{t("pesquisa.midia")}</h2>
+      <ul class="lista-simples">
+        {midia.map((m) => (
+          <li>
+            <a href={m.url}>{m.titulo}<span class="visually-hidden"> {t("link.externo")}</span></a>, {m.veiculo}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+</Base>
+
+<style>
+  .lista-simples {
+    padding-inline-start: var(--space-4);
+    display: grid;
+    gap: var(--space-2);
+  }
+</style>

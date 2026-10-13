@@ -28,8 +28,50 @@
   },
   "filtro": {
     "resultados": "{n} publicações encontradas",
+    "resultadoUm": "1 publicação encontrada",
     "limpar": "Limpar filtros",
-    "vazio": "Nenhum resultado para os filtros selecionados. Tente remover algum filtro."
+    "vazio": "Nenhum resultado para os filtros selecionados. Tente remover algum filtro.",
+    "legenda": "Filtrar publicações",
+    "tipo": "Tipo",
+    "ano": "Ano",
+    "tema": "Tema",
+    "busca": "Buscar",
+    "buscaAjuda": "Pesquise por título, autor ou veículo.",
+    "todos": "Todos",
+    "aplicar": "Filtrar",
+    "semJs": "Os filtros funcionam com JavaScript ativado. Sem JavaScript, a lista completa de publicações está exibida abaixo."
+  },
+  "pub": {
+    "doi": "DOI",
+    "tipo": {
+      "artigo": "Artigo",
+      "evento": "Trabalho em evento",
+      "capitulo": "Capítulo de livro"
+    },
+    "tema": {
+      "outros": "Outros temas",
+      "educacao-computacao": "Educação em computação",
+      "alfabetizacao-cci": "Escrita inicial e interação criança-computador",
+      "acessibilidade": "Acessibilidade"
+    }
+  },
+  "pesquisa": {
+    "titulo": "Pesquisa",
+    "intro": "Pesquisa em interação humano-computador, interação criança-computador e acessibilidade, com análise de dados educacionais.",
+    "linhasTitulo": "Linhas de pesquisa",
+    "linha1": "Análise de dados educacionais",
+    "linha2": "Informática na educação",
+    "linha3": "Interação humano-computador (IHC) e acessibilidade",
+    "estudosTitulo": "Estudos principais",
+    "pdfCurto": "{formato}, {tamanho}",
+    "projetosTitulo": "Projetos de pesquisa em andamento",
+    "desde": "desde {ano}",
+    "publicacoesTitulo": "Publicações",
+    "publicacoesIntro": "Artigos, trabalhos em eventos e capítulos de livro registrados no currículo Lattes, do mais recente ao mais antigo.",
+    "pdfBaixar": "Baixar o texto completo em {formato}, {tamanho}",
+    "repositorio": "Repositório institucional",
+    "derivadas": "Publicações derivadas",
+    "midia": "Divulgação na mídia"
   },
   "copiar": {
     "email": "Copiar e-mail",
