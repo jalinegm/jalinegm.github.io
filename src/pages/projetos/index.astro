@@ -1,0 +1,119 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Card from "../../components/Card.astro";
+import FilterBar from "../../components/FilterBar.astro";
+import { getCollection } from "astro:content";
+import { t } from "../../i18n";
+import { getRepos } from "../../lib/data";
+import { didaticos, filterRepos, ordenarRepos } from "../../lib/filters";
+import { cardPropsRepo } from "../../lib/repos-view";
+
+const casos = (await getCollection("casos")).sort((a, b) => a.data.ordem - b.data.ordem);
+
+const repos = getRepos();
+const principal = ordenarRepos(filterRepos(repos, {}));
+const didaticas = didaticos(repos);
+
+// Opções dos filtros, derivadas dos dados. Temas só aparecem se algum repositório tiver tema curado.
+const anos = [...new Set(principal.map((r) => String(r.ano)))].sort((a, b) => Number(b) - Number(a));
+const linguagens = [...new Set(principal.map((r) => r.linguagem).filter((l): l is string => Boolean(l)))]
+  .sort((a, b) => a.localeCompare(b, "pt-BR"))
+  .map((valor) => ({ valor, rotulo: valor }));
+const temas = [...new Set(principal.map((r) => r.tema).filter((x): x is string => Boolean(x)))]
+  .sort((a, b) => a.localeCompare(b, "pt-BR"))
+  .map((valor) => ({ valor, rotulo: t(`pub.tema.${valor}`) }));
+const visibilidades = [
+  { valor: "publico", rotulo: t("repos.publico") },
+  { valor: "privado", rotulo: t("repos.privado") },
+];
+
+// Descrições sem curadoria em português (descricaoRevisar) são conferidas pela autora.
+const pendentesRevisao = [...principal, ...didaticas].filter((r) => r.descricaoRevisar).length;
+---
+<Base title={t("projetos.titulo")} description={t("projetos.intro")}>
+  <Breadcrumbs items={[{ label: t("nav.inicio"), href: "/" }, { label: t("projetos.titulo") }]} />
+  <h1>{t("projetos.titulo")}</h1>
+  <p>{t("projetos.intro")}</p>
+
+  <h2 class="section-title" id="casos">{t("projetos.casosTitulo")}</h2>
+  <div class="cards">
+    {casos.map((c) => (
+      <Card
+        titulo={c.data.titulo}
+        href={`/projetos/${c.data.slug}`}
+        descricao={c.data.resumo}
+        badges={c.data.periodo ? [{ variante: "neutro", texto: t("projetos.periodo", { periodo: c.data.periodo }) }] : []}
+      />
+    ))}
+  </div>
+
+  <h2 class="section-title" id="catalogo">{t("projetos.catalogoTitulo")}</h2>
+  <p>{t("projetos.catalogoIntro")}</p>
+  <p>{t("projetos.forks")}</p>
+  <Fragment set:html={`<!-- REVISAR: ${pendentesRevisao} descrições de repositórios vêm do GitHub ou ainda não têm texto curado em português (descricaoRevisar). Conferir em data/repos-curadoria.yaml. -->`} />
+
+  <FilterBar
+    listaId="repos-lista"
+    anos={anos}
+    temas={temas}
+    linguagens={linguagens}
+    visibilidades={visibilidades}
+    total={principal.length}
+    legenda={t("repos.filtroLegenda")}
+    resultados={{ um: t("repos.resultadoUm"), varios: t("repos.resultados") }}
+    limparHref="/projetos"
+  />
+  <ul id="repos-lista" class="cards repos">
+    {principal.map((r) => (
+      <li
+        data-filtro-item
+        data-ano={String(r.ano)}
+        data-tema={r.tema ?? ""}
+        data-linguagem={r.linguagem ?? ""}
+        data-visibilidade={r.privado ? "privado" : "publico"}
+        data-texto={`${r.name} ${r.descricao}`}
+      >
+        <Card {...cardPropsRepo(r)} />
+      </li>
+    ))}
+  </ul>
+
+  {didaticas.length > 0 && (
+    <details class="didatico">
+      <summary>{t("projetos.didaticoTitulo")}</summary>
+      <p>{t("projetos.didaticoIntro")}</p>
+      <ul class="cards">
+        {didaticas.map((r) => (
+          <li><Card {...cardPropsRepo(r)} /></li>
+        ))}
+      </ul>
+    </details>
+  )}
+</Base>
+
+<style>
+  .cards {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    list-style: none;
+    padding: 0;
+  }
+  .repos > li[hidden] {
+    display: none;
+  }
+  details {
+    margin-block: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
+  summary {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  details > .cards {
+    margin-block-start: var(--space-4);
+  }
+</style>
