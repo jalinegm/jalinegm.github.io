@@ -65,7 +65,7 @@ Plus: `/acessibilidade` (footer link), `/404`.
 - **Formação** timeline (newest first):
   - Especialização (lato sensu) em Inteligência Artificial e Computacional — UFV — **em andamento**
   - Especialização (lato sensu) em Educação a Distância para a Educação Profissional — IFFar — **em andamento**
-  - Doutorado em Ciência da Computação — UFG — 2019–2022 — Tese: "CLAT: uma abordagem para avaliação da escrita inicial infantil em dispositivos móveis" (orientador Prof. Dr. Fabrizzio Alphonsus A. M. N. Soares; defendida 21/12/2022)
+  - Doutorado em Ciência da Computação — UFG — 2019–2022 — Tese: "CLAT: arcabouço conceitual e ferramenta de apoio à avaliação da escrita inicial infantil por meio de dispositivos móveis" (orientador Prof. Dr. Fabrizzio Alphonsus A. M. N. Soares; defendida 21/12/2022)
   - Mestrado em Engenharia Elétrica — UNIPAMPA — 2013–2015 — Dissertação: "Proposta de aplicativo móvel para identificação de cédulas de Real por pessoas com deficiência visual" (orientador Prof. Dr. Daniel Welfer; defendida 07/05/2015)
   - Bacharelado em Ciência da Computação — UNIPAMPA — 2009–2012 — TCC: "Percepção de imagens estáticas por pessoas cegas"
   - Do not list the incomplete 2017–2019 doctorate (UFG/UFMS) — it is superseded.
