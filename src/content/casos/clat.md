@@ -75,7 +75,7 @@ Cinco especialistas avaliaram o protótipo com 51 recomendações do <span lang=
 
 Com as escolas fechadas, a pesquisa foi para um questionário on-line, entre abril e junho de 2020. Responderam 104 profissionais da alfabetização, de todas as regiões do país, e 119 familiares de crianças de 4 a 7 anos.
 
-<figure>
+<figure class="compacta">
   <img src="/projetos/clat/perfil-profissionais.webp" width="972" height="738" loading="lazy" decoding="async" alt="Infográfico do perfil dos 104 profissionais: 94% do gênero feminino, 76% com pós-graduação, 73% atuam há mais de 5 anos, 60% no Centro-Oeste e Sudeste, 83% aplicam ditados de palavras e 79% avaliam conforme Emília Ferreiro.">
   <figcaption>Perfil dos profissionais que responderam ao questionário.</figcaption>
 </figure>

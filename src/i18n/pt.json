@@ -12,7 +12,7 @@
     "inicio": "Início",
     "sobre": "Sobre",
     "pesquisa": "Pesquisa",
-    "projetos": "Projetos",
+    "projetos": "Portfólio",
     "colaboracao": "Colaboração"
   },
   "a11y": {
@@ -118,7 +118,7 @@
     "bloco2Texto": "Na Reitoria, como Pesquisadora Institucional Substituta da Diretoria de Planejamento e Desenvolvimento Institucional (DPDI), trabalha com painéis da Plataforma Nilo Peçanha (PNP) e com dados do Censo da Educação Superior (Censup), do e-MEC e do SISTEC.",
     "bloco3Titulo": "Ensino e extensão",
     "bloco3Texto": "Docente do IFFar e, entre 2017 e 2020, do Instituto Federal de Brasília (IFB), com projetos de ensino e de extensão registrados no currículo Lattes.",
-    "destaquesTitulo": "Projetos em destaque",
+    "destaquesTitulo": "Portfólio",
     "cta": "Vamos conversar",
     "ctaLink": "Ver formas de colaboração",
     "verTodos": "Ver todos os projetos",
@@ -164,7 +164,7 @@
     "filtroLegenda": "Filtrar repositórios"
   },
   "projetos": {
-    "titulo": "Projetos",
+    "titulo": "Portfólio",
     "intro": "Estudos de caso de projetos de pesquisa, ensino e gestão de dados, com vínculo institucional explícito, e o catálogo de repositórios da conta no GitHub.",
     "casosTitulo": "Estudos de caso",
     "catalogoTitulo": "Catálogo de repositórios",

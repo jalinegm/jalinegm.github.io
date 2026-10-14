@@ -42,7 +42,7 @@ Já existiam aplicativos de reconhecimento de objetos, mas eram pouco usados por
 
 O trabalho seguiu o Design Centrado no Usuário: pesquisa com usuários, delimitação do escopo, estudo de métodos, codificação, testes com usuários em ciclos e, por fim, comparação com aplicativos similares.
 
-<figure>
+<figure class="compacta">
   <img src="/projetos/identificador-cedulas/etapas-dcu.webp" width="1224" height="852" loading="lazy" decoding="async" alt="Ciclo com as etapas do trabalho: pesquisa com usuários, delimitação de escopo, estudo de ferramentas e métodos, codificação, testes com usuários, comparativo com aplicativos relacionados e versão aceitável.">
   <figcaption>Etapas de desenvolvimento, baseadas no Design Centrado no Usuário.</figcaption>
 </figure>
@@ -93,7 +93,7 @@ O método de reconhecimento foi desenhado para ser rápido em um aparelho modest
 2. se não houver, identifica a cor predominante (azul, amarelo ou rosa) e compara só com as cédulas daquela cor;
 3. se nada resolver, compara com todas as cédulas e, se não achar, ativa a câmera de novo.
 
-<figure>
+<figure class="compacta">
   <img src="/projetos/identificador-cedulas/regioes-numeral.webp" width="673" height="730" loading="lazy" decoding="async" alt="Duas imagens de uma cédula de 50 reais, uma na posição normal e outra de cabeça para baixo, com retângulos brancos marcando as regiões onde o numeral é procurado e as porcentagens de posição.">
   <figcaption>Regiões onde o aplicativo procura o numeral, para a cédula de frente e invertida.</figcaption>
 </figure>
@@ -129,7 +129,7 @@ O aplicativo já reconhecia as cédulas, mas comparava o quadro capturado com to
 
 Para resolver o alinhamento, foi criada uma armação de madeira com o tamanho da maior cédula e um apoio que mantém o celular a cerca de 13 cm. O flash passou a ligar sozinho e a captura só acontecia quando o aplicativo reconhecia a cor do fundo, o que exigia uma folha branca embaixo da cédula.
 
-<figure>
+<figure class="compacta">
   <img src="/projetos/identificador-cedulas/armacao-madeira.webp" width="725" height="628" loading="lazy" decoding="async" alt="Desenho da armação de madeira: um retângulo de 15,6 por 7 centímetros sobre fundo branco, com a cédula de 50 reais dentro e uma haste de 13 centímetros para apoiar o celular.">
   <figcaption>Armação usada no segundo protótipo para alinhar a câmera e a cédula.</figcaption>
 </figure>
@@ -151,7 +151,7 @@ A sugestão do participante virou o método. A pessoa segura a cédula na palma 
 
 Cinco pessoas avaliaram o terceiro protótipo em uma escala de Likert de cinco pontos, para método de uso, eficácia e utilidade.
 
-<figure>
+<figure class="compacta">
   <img src="/projetos/identificador-cedulas/avaliacao-likert.webp" width="839" height="714" loading="lazy" decoding="async" alt="Gráfico de barras com a avaliação de cinco usuários. Método: uma pessoa regular e quatro bom. Eficácia: uma regular, duas boas e duas ótimas. Utilidade: as cinco pessoas deram nota ótimo.">
   <figcaption>Avaliação do método de uso, da eficácia e da utilidade pelas cinco pessoas.</figcaption>
 </figure>
@@ -164,7 +164,7 @@ A utilidade teve nota máxima por unanimidade. O método de uso recebeu nota 4 (
 
 Para checar a confiabilidade, o aplicativo foi comparado com o Tap Tap See e o Dinheiro Brasileiro no mesmo aparelho, com todas as cédulas, na mão e sobre folha branca, com luz e no escuro. Também foram usadas cédulas manipuladas, simulando panfletos de lojas, para ver se o aplicativo evitava falsos reconhecimentos.
 
-<figure class="larga">
+<figure class="larga compacta">
   <img src="/projetos/identificador-cedulas/protocolo-comparativo.webp" width="1127" height="696" loading="lazy" decoding="async" alt="Fluxo do protocolo de teste: carregar a bateria, reiniciar o aparelho, abrir o monitor de bateria, abrir o aplicativo, testar as cédulas na mão com luz e no escuro, testar sobre folha branca com luz e no escuro, registrar o tempo e o consumo de bateria.">
   <figcaption>Protocolo de teste usado para comparar os três aplicativos.</figcaption>
 </figure>

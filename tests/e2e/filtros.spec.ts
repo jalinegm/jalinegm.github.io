@@ -130,9 +130,9 @@ test.describe("sem JavaScript", () => {
     const total = await itens.count();
     expect(total).toBeGreaterThan(0);
     for (let i = 0; i < total; i++) await expect(itens.nth(i)).toBeVisible();
-    await page.getByRole("navigation", { name: "Menu principal" }).getByRole("link", { name: "Projetos" }).click();
+    await page.getByRole("navigation", { name: "Menu principal" }).getByRole("link", { name: "Portfólio" }).click();
     await expect(page).toHaveURL(/\/projetos$/);
-    await expect(page.locator("h1")).toHaveText("Projetos");
+    await expect(page.locator("h1")).toHaveText("Portfólio");
   });
 });
 
