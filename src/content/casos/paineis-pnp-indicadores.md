@@ -3,53 +3,111 @@ titulo: "Painéis e relatórios da Plataforma Nilo Peçanha e indicadores do IFF
 slug: paineis-pnp-indicadores
 vinculo: "Instituto Federal Farroupilha (IFFar), Diretoria de Planejamento e Desenvolvimento Institucional (DPDI/Reitoria)"
 periodo: "2023–atual"
-resumo: "Conjunto de painéis, calculadoras e geradores de relatórios que transformam dados institucionais e da Plataforma Nilo Peçanha em indicadores de gestão para o IFFar."
+resumo: "Seis ferramentas que transformam os dados da Plataforma Nilo Peçanha, do Sistec e do ingresso em indicadores para a gestão do IFFar: painéis, calculadoras de matrícula e uma pipeline de relatórios para os 11 campi."
 tecnologias:
   - "Python"
+  - "Streamlit"
   - "Power BI (DAX, M e PBIP)"
   - "python-pptx"
   - "Excel"
 repos:
   - relatorios-pnp2026-iffar
-  - relatorios-pnp2026
   - painelPosIFFar
-  - artigoJLL
-  - Rede-DSBR
 destaque: true
 ordem: 3
 ---
 
-## Contexto
+## Visão geral
 
-A Plataforma Nilo Peçanha (PNP) reúne estatísticas oficiais da Educação Profissional, Científica e Tecnológica nos institutos federais. Os campi precisam transformar esses dados em relatórios e indicadores para planejamento e prestação de contas.
+A Plataforma Nilo Peçanha (PNP) reúne as estatísticas oficiais da educação profissional, científica e tecnológica dos institutos federais. Para o IFFar, acompanhar esses dados e as matrículas é uma tarefa permanente, porque deles dependem o planejamento e a prestação de contas.
 
-## Problema
+O projeto reúne seis ferramentas que apoiam a tomada de decisão da gestão. Todas têm acesso na página de [Painéis e Publicações da DPDI](https://www.iffarroupilha.edu.br/planejamento-e-desenvolvimento/pain%C3%A9is-e-publica%C3%A7%C3%B5es).
 
-Gerar relatórios e painéis para os 11 campi do IFFar de forma repetível, sem refazer manualmente as apresentações e os gráficos a cada coleta de dados.
+- **Papel:** autoria do design e da implementação de todas as ferramentas; colegas da DPDI contribuíram com as regras de negócio.
+- **Quem usa:** gestão e comunidade acadêmica do IFFar.
+- **Entrega:** 3 painéis, 2 calculadoras e 1 pipeline de relatórios.
 
-## Abordagem
+## O desafio
 
-Os projetos automatizam essa etapa. O gerador de relatórios lê os dados brutos da PNP de um campus, confere os números e produz uma apresentação `.pptx` editável. O painel de pós-graduação, em Power BI com formato de projeto (PBIP), consolida dados curados pela coordenação e acompanha matrículas e indicadores por curso.
+Os dados da PNP e do Sistec chegam em formatos e prazos diferentes, e as regras de cálculo mudam com as portarias do MEC. Sem apoio, cada ciclo exigia refazer planilhas, conferir números à mão e remontar apresentações para cada campus.
 
-## Resultado e impacto
+A pergunta do projeto foi: **como entregar à gestão e aos campi números conferidos, atualizados e fáceis de consultar, sem refazer o trabalho a cada coleta?**
 
-Segundo o README do repositório de relatórios, os decks dos 11 campi foram regenerados do zero em 22/07/2026. Entre os produtos registrados no currículo Lattes estão cinco ferramentas de apoio à tomada de decisão, de 2023 a 2026, entre elas o Painel de Acompanhamento dos Processos Seletivos e o Panorama dos Cursos de Pós-Graduação.
+## As ferramentas
 
-<!-- REVISAR: o impacto na gestão (uso das ferramentas por pró-reitorias ou campi) não foi verificado. Incluir apenas dados confirmados. -->
+### Painel de Acompanhamento do Sistec
+
+Atualizado mensalmente com os dados do Sistec, permite que toda a comunidade acadêmica acompanhe os registros. Inclui a simulação de alguns dados do próximo ciclo da PNP.
+
+[Código no GitHub](https://github.com/DPDI-IFFar/acompanhamentoSistec)
+
+<figure>
+  <img src="/projetos/paineis-pnp-indicadores/sistec.webp" width="1446" height="812" loading="lazy" decoding="async" alt="Tela inicial do Painel de Acompanhamento do Sistec, com o título Pesquisa Institucional, Acompanhamento Sistec 2026, e quatro áreas: situação de matrícula, eficiência acadêmica, taxa de evasão e percentuais legais.">
+  <figcaption>Tela inicial do painel do Sistec, organizada nos quatro indicadores que a comunidade mais consulta.</figcaption>
+</figure>
+
+### Calculadora de Matrículas Totais
+
+Software institucional que apoia o cálculo e a conferência da Matrícula Total dos cursos do IFFar, seguindo a metodologia da Portaria MEC nº 243/2026, que revogou e substituiu a Portaria MEC nº 646/2022.
+
+[Aplicação](https://iffarcalcmatriculatotal.streamlit.app/) · [Código no GitHub](https://github.com/DPDI-IFFar/calcMT_iffar)
+
+<figure>
+  <img src="/projetos/paineis-pnp-indicadores/matriculas-totais.webp" width="1347" height="818" loading="lazy" decoding="async" alt="Página inicial da Calculadora de Matrículas Totais do IFFarroupilha, com três opções: Matrículas Totais do IFFar, Outros Institutos Federais e Simulador Manual.">
+  <figcaption>Calculadora de Matrículas Totais: três caminhos, do dado oficial calculado ao simulador manual.</figcaption>
+</figure>
+
+### Calculadora de Matrículas Equivalentes
+
+Ferramenta institucional para análises, simulações e estudos da matrícula equivalente no IFFar.
+
+[Código no GitHub](https://github.com/DPDI-IFFar/calcMatEQ)
+
+<figure class="compacta">
+  <img src="/projetos/paineis-pnp-indicadores/matriculas-equivalentes.webp" width="357" height="343" loading="lazy" decoding="async" alt="Calculadora de Matrículas Equivalentes, da Pró-Reitoria de Desenvolvimento Institucional, com três campos de seleção em sequência: tipo de curso, eixo tecnológico e curso.">
+  <figcaption>Calculadora de Matrículas Equivalentes: a pessoa escolhe tipo de curso, eixo e curso, em uma sequência curta de campos.</figcaption>
+</figure>
+
+### Panorama dos Cursos de Pós-Graduação
+
+Solução de Business Intelligence para gestão, monitoramento e análise dos indicadores dos cursos de pós-graduação lato sensu do IFFar.
+
+[Código no GitHub](https://github.com/jalinegm/painelPosIFFar)
+
+<figure>
+  <img src="/projetos/paineis-pnp-indicadores/pos-graduacao.webp" width="1585" height="884" loading="lazy" decoding="async" alt="Painel Panorama dos Cursos de Pós-Graduação com barras de matrículas por curso, cartões de inscritos, vagas e inscritos por vaga, medidores de ingressantes e concluintes, mapa do Rio Grande do Sul e série histórica.">
+  <figcaption>Panorama dos Cursos de Pós-Graduação: matrículas por curso, ocupação de vagas, mapa e série histórica.</figcaption>
+</figure>
+
+### Painel de Acompanhamento do Processo Seletivo
+
+Ferramenta para dar transparência e permitir o monitoramento e a análise dos dados de ingresso no IFFar.
+
+[Código no GitHub](https://github.com/DPDI-IFFar/painelPS)
+
+<figure>
+  <img src="/projetos/paineis-pnp-indicadores/processo-seletivo.webp" width="1443" height="810" loading="lazy" decoding="async" alt="Painel do Processo Seletivo 2026 com medidores de vagas preenchidas e uma tabela por campus com inscritos, vagas, relação inscrito por vaga e percentual de vagas preenchidas.">
+  <figcaption>Painel do Processo Seletivo: vagas preenchidas e relação inscrito por vaga, por campus.</figcaption>
+</figure>
+
+### Pipeline de relatórios da PNP
+
+Gera automaticamente uma apresentação `.pptx` editável, com os dados da PNP, para cada um dos 11 campi do IFFar. Os slides seguem o storytelling com dados de Cole Nussbaumer Knaflic.
+
+[Código no GitHub](https://github.com/jalinegm/relatorios-pnp2026-iffar)
+
+<figure>
+  <img src="/projetos/paineis-pnp-indicadores/relatorio-campus.webp" width="794" height="452" loading="lazy" decoding="async" alt="Slide de relatório do Campus Alegrete com 2.654 matrículas atendidas em 2025 em destaque e, abaixo, 449 concluintes, 1.835 em curso e 370 evadidos.">
+  <figcaption>Slide gerado pela pipeline: um número em destaque e o detalhamento logo abaixo, no estilo de storytelling com dados.</figcaption>
+</figure>
+
+## Resultado
+
+A comunidade acadêmica usa as ferramentas no acompanhamento dos dados. Segundo o README do repositório, os relatórios dos 11 campi foram regenerados do zero em 22/07/2026. O Lattes registra cinco ferramentas de apoio à tomada de decisão entre 2023 e 2026.
 
 ## Tecnologias
 
-Python, bibliotecas `python-pptx`, `openpyxl` e `matplotlib`, automação do Excel e do PowerPoint para validação visual, e Power BI com DAX e Power Query (M).
-
-## Repositórios relacionados
-
-- `relatorios-pnp2026-iffar`: pipeline que gera os relatórios PNP 2026 dos 11 campi do IFFar.
-- `relatorios-pnp2026`: motor local que gera a apresentação de um campus a partir do Excel da PNP.
-- `painelPosIFFar`: painel de Business Intelligence dos cursos de pós-graduação lato sensu do IFFar.
-- `artigoJLL`: análise de eficiência acadêmica da base da PNP, em apoio a um artigo em elaboração.
-- `Rede-DSBR`: espaço de arquivos de trabalho e relatórios do projeto PNP da Rede DSBR.
-
-<!-- REVISAR: o repositório artigoJLL é versionamento de análise em andamento. Confirmar se pode ser citado publicamente antes de o artigo ser publicado. -->
+Python, Streamlit, `python-pptx`, `openpyxl` e `matplotlib`, automação do Excel e do PowerPoint para validação visual, e Power BI com DAX e Power Query (M).
 
 ## Vínculo institucional
 
