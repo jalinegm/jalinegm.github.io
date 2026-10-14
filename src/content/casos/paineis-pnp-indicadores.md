@@ -94,7 +94,7 @@ Ferramenta para dar transparência e permitir o monitoramento e a análise dos d
 
 Gera automaticamente uma apresentação `.pptx` editável, com os dados da PNP, para cada um dos 11 campi do IFFar. Os slides seguem o storytelling com dados de Cole Nussbaumer Knaflic.
 
-[Código no GitHub](https://github.com/jalinegm/relatorios-pnp2026-iffar)
+Repositório privado, com acesso sob convite (veja o catálogo ao final da página).
 
 <figure>
   <img src="/projetos/paineis-pnp-indicadores/relatorio-campus.webp" width="794" height="452" loading="lazy" decoding="async" alt="Slide de relatório do Campus Alegrete com 2.654 matrículas atendidas em 2025 em destaque e, abaixo, 449 concluintes, 1.835 em curso e 370 evadidos.">
