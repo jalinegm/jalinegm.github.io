@@ -6,21 +6,21 @@ interface Props {
   href: string;
   resumo: string;
   periodo?: string;
-  /** Caminho da imagem (painel, captura de tela). Sem ela, mostra o espaço reservado. */
+  /** Caminho da imagem (painel, captura de tela). Sem ela, a linha vira só texto. */
   imagem?: string;
   alt?: string;
+  /** Linha de abertura: mídia larga acima do texto. */
+  lider?: boolean;
 }
 
-const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
+const { titulo, href, resumo, periodo, imagem, alt, lider } = Astro.props;
 ---
-<article class="linha">
-  <a class="linha-midia" href={href} tabindex="-1" aria-hidden="true">
-    {imagem ? (
+<article class:list={["linha", { "linha--lider": lider && imagem, "linha--texto": !imagem }]}>
+  {imagem && (
+    <a class="linha-midia" href={href} tabindex="-1" aria-hidden="true">
       <img src={imagem} alt="" loading="lazy" width="640" height="400" />
-    ) : (
-      <span class="linha-vazio"></span>
-    )}
-  </a>
+    </a>
+  )}
   <div class="linha-texto">
     <h3><a href={href}>{titulo}</a></h3>
     {periodo && <p class="linha-periodo">{t("projetos.periodo", { periodo })}</p>}
@@ -51,10 +51,6 @@ const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
     object-fit: cover;
     object-position: top left;
   }
-  .linha-vazio {
-    display: block;
-    height: 100%;
-  }
   .linha-texto > * + * {
     margin-block-start: var(--space-3);
   }
@@ -77,9 +73,19 @@ const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
   }
+  .linha--texto .linha-texto {
+    max-inline-size: var(--measure);
+  }
   @media (min-width: 48rem) {
     .linha {
       grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    }
+    .linha--texto,
+    .linha--lider {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .linha--lider .linha-midia {
+      aspect-ratio: 16 / 7;
     }
   }
 </style>

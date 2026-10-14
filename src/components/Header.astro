@@ -39,11 +39,23 @@ import ThemeToggle from "./ThemeToggle.astro";
   }
   :global(#theme-toggle) {
     margin-inline-start: var(--space-2);
-    border-color: transparent;
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
   }
   :global(#theme-toggle:hover) {
-    border-color: var(--color-border);
+    color: var(--color-text);
+  }
+  @media (max-width: 40rem) {
+    .site-name {
+      flex: 1;
+    }
+    .site-header__inner > :global(nav) {
+      order: 3;
+      flex-basis: 100%;
+      margin-inline-start: 0;
+    }
+    :global(#theme-toggle) {
+      margin-inline-start: 0;
+    }
   }
 </style>

@@ -1,7 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
 import ProjetoLinha from "../components/ProjetoLinha.astro";
-import Abbr from "../components/Abbr.astro";
 import fs from "node:fs";
 import path from "node:path";
 import { getCollection } from "astro:content";
@@ -14,13 +13,6 @@ const destaques = (await getCollection("casos"))
   .filter((c) => c.data.destaque)
   .sort((a, b) => a.data.ordem - b.data.ordem);
 
-// Textos com siglas usam {SIGLA} como marcador; cada sigla vira <abbr> com a expansão de sigla.*.
-type Segmento = { sigla: string; significado: string } | { texto: string };
-const segmentos = (texto: string): Segmento[] =>
-  texto.split(/(\{[\w.-]+\})/).map((parte): Segmento => {
-    const m = parte.match(/^\{([\w.-]+)\}$/);
-    return m ? { sigla: m[1], significado: t(`sigla.${m[1]}`) } : { texto: parte };
-  });
 ---
 <Base title={t("nav.inicio")} description={t("site.posicionamento")} wide>
   <div class="pagina">
@@ -61,14 +53,15 @@ const segmentos = (texto: string): Segmento[] =>
       <section aria-labelledby="sobre-titulo">
         <h2 id="sobre-titulo">{t("inicio.sobreTitulo")}</h2>
         <!-- REVISAR: bloco 3 não cita ano de início do IFFar; o currículo indica substituta em 2013 e o resumo indica desde 2014. Confirmar ao incluir a data. -->
-        <p>{segmentos(t("inicio.bloco2Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
-        <p>{segmentos(t("inicio.bloco1Texto")).map((s) => ("sigla" in s ? <Abbr sigla={s.sigla} significado={s.significado} /> : s.texto))}</p>
+        <p>{t("inicio.bloco1Texto")}</p>
+        <p>{t("inicio.bloco2Texto")}</p>
       </section>
 
       <section aria-labelledby="destaques-titulo">
         <h2 id="destaques-titulo">{t("inicio.destaquesTitulo")}</h2>
-        {destaques.map((c) => (
+        {destaques.map((c, i) => (
           <ProjetoLinha
+            lider={i === 0}
             titulo={c.data.titulo}
             href={`/projetos/${c.data.slug}`}
             resumo={c.data.resumo}
@@ -76,7 +69,13 @@ const segmentos = (texto: string): Segmento[] =>
             imagem={imagemCaso(c.data.slug)}
           />
         ))}
-        <p class="mais"><a href="/projetos">{t("nav.projetos")}</a></p>
+        <p class="mais"><a href="/projetos">{t("inicio.verTodos")}</a></p>
+      </section>
+
+      <section class="convite" aria-labelledby="cta-titulo">
+        <h2 id="cta-titulo">{t("inicio.cta")}</h2>
+        <p>{t("inicio.ctaTexto")}</p>
+        <p><a class="convite-link" href="/colaboracao">{t("inicio.ctaLink")}</a></p>
       </section>
     </div>
   </div>
@@ -132,9 +131,18 @@ const segmentos = (texto: string): Segmento[] =>
   }
   .principal :global(h1) {
     font-size: var(--font-size-hero);
-    padding-block-end: var(--space-3);
-    border-block-end: 4px solid var(--color-accent);
     max-inline-size: fit-content;
+  }
+  /* Traço de pressão variável sob o nome: fino, grosso, fino, como um gesto de escrita. */
+  .principal :global(h1)::after {
+    content: "";
+    display: block;
+    inline-size: 100%;
+    block-size: 0.7rem;
+    margin-block-start: var(--space-3);
+    background: var(--color-accent);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M0 8 C40 4 70 3 110 5 S190 10 230 6 S280 3 300 5 L300 6.2 C280 5.6 250 11 215 11.5 S120 9 95 9 S35 12 0 9.5Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M0 8 C40 4 70 3 110 5 S190 10 230 6 S280 3 300 5 L300 6.2 C280 5.6 250 11 215 11.5 S120 9 95 9 S35 12 0 9.5Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
   }
   .principal h2 {
     color: var(--color-accent);
@@ -159,6 +167,29 @@ const segmentos = (texto: string): Segmento[] =>
   }
   .mais {
     margin-block-start: var(--space-4);
+  }
+  .convite {
+    margin-block-start: var(--space-6);
+  }
+  .convite-link {
+    font-weight: 700;
+  }
+  @media (max-width: 55.99rem) {
+    .perfil {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: var(--space-2) var(--space-4);
+      align-items: center;
+    }
+    .perfil-foto {
+      grid-row: span 2;
+      width: 6.5rem;
+      margin: 0;
+    }
+    .perfil-email {
+      grid-column: 1 / -1;
+      margin-block-start: 0;
+    }
   }
   @media (min-width: 56rem) {
     .pagina {
