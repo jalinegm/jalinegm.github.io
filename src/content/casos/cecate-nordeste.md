@@ -1,9 +1,9 @@
 ---
-titulo: "Cecate Nordeste: transporte escolar na região Nordeste"
+titulo: "Cecate Nordeste: apoio ao transporte escolar na região Nordeste"
 slug: cecate-nordeste
-vinculo: "Projeto de pesquisa vinculado à Universidade Federal do Oeste da Bahia (UFOB), no âmbito do Cecate Nordeste apoiado pelo FNDE"
+vinculo: "Universidade Federal do Oeste da Bahia (UFOB), projeto fomentado pelo FNDE, Rede DSBR"
 periodo: "2024–atual"
-resumo: "Projeto de pesquisa do Centro Colaborador de Apoio ao Transporte Escolar da Região Nordeste, com ferramentas de análise de avaliações e de inscrição em eventos."
+resumo: "Projeto de relevância nacional fomentado pelo FNDE para fortalecer a política de transporte escolar em nove estados do Nordeste. Atuo no apoio ao material didático, na organização de eventos (inscrições e certificados automatizados) e no suporte às pessoas participantes."
 tecnologias:
   - "HTML e JavaScript"
   - "Dialogflow"
@@ -14,24 +14,40 @@ repos:
   - avaliacoesPoloSaoLuis
   - cecatene-inscricao-dialogflow-node
 destaque: false
-ordem: 6
+ordem: 7
 ---
+
+## Visão geral
+
+O Cecate Nordeste é uma iniciativa do Fundo Nacional de Desenvolvimento da Educação (FNDE) para fortalecer as políticas nacionais de transporte escolar, por meio dos Centros Colaboradores de Apoio ao Transporte Escolar (Cecate). A coordenação é da Universidade Federal do Oeste da Bahia (UFOB), com abordagem descentralizada, alinhada à missão do FNDE de promover o acesso à educação em todo o país.
+
+Por ser fomentado pelo FNDE, o projeto tem relevância nacional. Mais informações no [site do projeto](https://cecate.dsbr.org/).
+
+- **Papel:** apoio à equipe de material didático, à organização dos eventos e ao atendimento das pessoas participantes.
+- **Atuação:** desde 2024.
+- **Alcance:** nove estados e 1.794 municípios do Nordeste.
 
 ## Contexto
 
-O Centro Colaborador de Apoio ao Transporte Escolar (Cecate) apoia a política nacional de transporte escolar, com parcerias entre o FNDE e instituições de ensino superior. A UFOB foi escolhida para coordenar as ações na região Nordeste, que enfrenta distâncias grandes e desigualdades socioeconômicas.
+O Nordeste tem grande extensão territorial e densidade populacional, e o transporte escolar é condição para garantir o direito à educação. O Cecate apoia o FNDE no aprimoramento das políticas públicas da área, com estudos e ações de melhoria contínua, e acompanha de perto a implementação da Política Nacional de Transporte Escolar (PNATE), para que os recursos sejam usados com eficiência e os estudantes tenham acesso ininterrupto à escola.
 
-## Problema
+## Minha atuação
 
-Apoiar a análise das avaliações realizadas nos polos e a comunicação com participantes de eventos do projeto, em uma região com grande extensão territorial.
+### Material didático
 
-## Abordagem
+Apoio à equipe que produz o material didático das ações de formação do projeto.
 
-O projeto tem o objetivo de promover estudos e ações que contribuam para a melhoria das políticas públicas de transporte escolar, com assistência técnica, formação e pesquisa sobre soluções. Os repositórios reúnem páginas de análise das avaliações dos polos de Teresina e de São Luís e um webhook que liga o WhatsApp Cloud API, o Dialogflow e uma planilha do Google Sheets para inscrições em eventos.
+### Organização dos eventos
 
-## Resultado e impacto
+Atuo na equipe que organiza os eventos promovidos pelo projeto, principalmente nas inscrições e no envio automatizado de certificados. Para as inscrições, o repositório `cecatene-inscricao-dialogflow-node` reúne um webhook que liga o WhatsApp Cloud API, o Dialogflow e uma planilha do Google Sheets.
 
-<!-- REVISAR: nenhum resultado quantitativo foi verificado. Incluir apenas dados confirmados pela coordenação do projeto. -->
+### Suporte às pessoas participantes
+
+Atendimento e esclarecimento de dúvidas das pessoas que participam dos eventos, antes, durante e depois de cada ação.
+
+## Análise das avaliações
+
+Os repositórios `avaliacoesPoloTeresina` e `avaliacoesPoloSaoLuis` reúnem páginas de análise das avaliações realizadas nos polos de Teresina e de São Luís.
 
 ## Tecnologias
 
@@ -42,7 +58,3 @@ HTML e JavaScript, Dialogflow, WhatsApp Cloud API e Google Sheets API.
 - `avaliacoesPoloTeresina`: avaliações do Cecate Nordeste no polo de Teresina.
 - `avaliacoesPoloSaoLuis`: avaliações do Cecate Nordeste no polo de São Luís.
 - `cecatene-inscricao-dialogflow-node`: webhook de inscrição em eventos com Dialogflow e Google Sheets.
-
-## Vínculo institucional
-
-Pesquisadora colaboradora na UFOB desde 2023, no projeto de pesquisa Cecate Nordeste (iniciado em 2024, segundo o currículo Lattes).
