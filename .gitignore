@@ -1,4 +1,4 @@
-# Source originals (too large for git; compressed copies go to public/docs/)
+# Source originals (too large for git)
 /TeseJaline_correcoesProfeFatima.pdf
 /dissertacaoJaline.pdf
 /CV_*.zip
@@ -10,3 +10,7 @@ __pycache__/
 test-results/
 playwright-report/
 .lighthouseci/
+
+# Impeccable: capturas e logs de revisão (gerados)
+.impeccable/review/
+.impeccable/questions/

@@ -26,7 +26,7 @@ Fatos que não puderam ser verificados ficam marcados no código com `<!-- REVIS
 - **Astro 5** (saída estática, sem JavaScript no cliente por padrão), TypeScript, **Zod** para validar conteúdo e dados.
 - Pequenas ilhas em TypeScript puro para filtros, alternância de tema e botões de copiar.
 - **Vitest** (testes unitários e verificações sobre `dist/`) e **pytest** (testes dos scripts Python).
-- **Python 3.12** com PyYAML e PyMuPDF para sincronizar dados e comprimir PDFs.
+- **Python 3.12** com PyYAML para sincronizar dados.
 - **Playwright** com `@axe-core/playwright` (e2e e acessibilidade), **html-validate** e **@lhci/cli** (Lighthouse CI).
 - **GitHub Actions** para CI e publicação.
 
@@ -40,7 +40,6 @@ data/
 scripts/
   lattes.py                       XML -> src/data/lattes.json
   repos.py                        gh CLI -> src/data/repos.json e public/repos/
-  compress_pdfs.py                PDFs originais -> public/docs/ (menos de 10 MB cada)
   tests/                          Testes pytest dos scripts
 src/
   content/casos/                  Estudos de caso (.md)
@@ -58,7 +57,6 @@ tests/
   forbidden-words.test.ts         Termos proibidos em dist/
   links.test.ts                   Links internos quebrados
 public/
-  docs/                           PDFs comprimidos (tese e dissertação)
   repos/                          Imagens dos repositórios
 .github/workflows/
   ci.yml                          Testes e build em pull requests e pushes
@@ -82,7 +80,6 @@ Os scripts Python rodam **localmente pelo ambiente virtual**, com o modo isolado
 ```bash
 .venv/Scripts/python.exe -I scripts/lattes.py
 .venv/Scripts/python.exe -I scripts/repos.py
-.venv/Scripts/python.exe -I scripts/compress_pdfs.py
 ```
 
 O `python -I` do sistema não tem os pacotes instalados. Por isso `npm run sync` só funciona se o `python` do PATH for o do `.venv` com os requisitos instalados. Caso contrário, execute os dois comandos acima diretamente.
@@ -103,8 +100,6 @@ Desenvolvimento: `npm run dev` (http://localhost:4321).
 | `npm run test:e2e` | Playwright contra `astro preview` (usa `dist/`) |
 | `npm run test:lh` | Lighthouse CI sobre `dist/` (exige build antes) |
 | `npm test` | `build` + `test:unit` + `test:html` + `test:e2e` |
-
-`compress_pdfs.py` aceita `--dpi` (padrão 150).
 
 ## Sincronização de dados
 
@@ -130,13 +125,11 @@ meu-repo:
 
 **Estudos de caso** (`src/content/casos/<slug>.md`): frontmatter com `titulo`, `slug`, `vinculo`, `periodo` (opcional), `resumo`, `tecnologias`, `repos` (nomes dos repositórios), `destaque`, `ordem` e `tese` (opcional). O corpo é Markdown com as seções do caso.
 
-**Pesquisa** (`src/content/pesquisa/<slug>.md`): frontmatter com `titulo`, `slug`, `ordem`, `resumo`, `pdf` (`href` começando com `/docs/`, `formato: PDF`, `tamanho` no formato `"7,5 MB"`), `repositorioUrl`, `publicacoesDerivadas` e `midia`.
+**Pesquisa** (`src/content/pesquisa/<slug>.md`): frontmatter com `titulo`, `slug`, `ordem`, `resumo`, `repositorioUrl`, `publicacoesDerivadas` e `midia`.
 
 **Páginas de dados** (`src/content/paginas/*.yaml`): hoje só `formacao-extra.yaml`.
 
 Os esquemas Zod em `src/content.config.ts` reprovam o build quando um campo obrigatório falta. Ao criar um caso novo, rode `npm run build` para validar.
-
-Para adicionar um PDF: coloque o original na raiz do projeto (ele fica fora do Git pelo `.gitignore`), rode `compress_pdfs.py` e confira o tamanho impresso no terminal.
 
 ## Testes
 
@@ -184,7 +177,6 @@ grep -rn "REVISAR" src data
 | `src/content/paginas/formacao-extra.yaml` | 2 | Ano de início (`ano_inicio: null`) em dois itens |
 | `src/content/pesquisa/dissertacao.md` | 1 | Título no SBIE 2013 (Lattes) |
 | `src/content/pesquisa/tese-clat.md` | 3 | Título da capa do PDF; periódico em processo de revisão; link do YouTube não conferido |
-| `src/pages/acessibilidade.astro` | 2 | Data da última revisão; medidas dependem dos testes automatizados |
 | `src/pages/index.astro` | 1 | Ano de início do IFFar no bloco 3 |
 | `src/pages/projetos/index.astro` | 1 | Contagem de descrições pendentes (comentário gerado no build) |
 | `src/pages/sobre.astro` | 3 | Ano de início como professora; nome do orientador do doutorado; cargo e período no PixelLab (UFG) |

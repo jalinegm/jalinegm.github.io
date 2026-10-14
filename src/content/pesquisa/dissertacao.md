@@ -3,11 +3,7 @@ titulo: "Proposta de aplicativo móvel para identificação de cédulas de Real 
 slug: dissertacao
 ordem: 2
 resumo: "Dissertação de mestrado em Engenharia Elétrica (UNIPAMPA, defendida em 07/05/2015) sobre um aplicativo Android que ajuda pessoas com deficiência visual a identificar as cédulas de Real."
-pdf:
-  href: /docs/dissertacao-jaline-mombach.pdf
-  formato: PDF
-  tamanho: "7,5 MB"
-repositorioUrl: "https://repositorio.unipampa.edu.br/handle/riu/745"
+repositorioUrl: "https://repositorio.unipampa.edu.br/items/7bff4be4-4534-4c3c-819c-62631d0841d1"
 publicacoesDerivadas:
   - titulo: "Proposta de um aplicativo móvel para percepção de imagens estáticas por alunos com deficiência visual"
     veiculo: "SBIE 2013 (XXIV Simpósio Brasileiro de Informática na Educação)"
@@ -50,6 +46,6 @@ Os dois trabalhos em congresso abaixo foram listados a partir do currículo Latt
 
 <!-- REVISAR: o currículo Lattes indica o SBIE 2013 como "Proposta de um aplicativo móvel para percepção de imagens estáticas por alunos com deficiência visual". Confirmar se esse trabalho é o desdobramento inicial da mesma linha de pesquisa antes de manter a relação na página. -->
 
-## Download
+## Texto completo
 
-O PDF é uma cópia comprimida da dissertação. O original completo está no repositório institucional da UNIPAMPA.
+O texto completo está no repositório institucional da UNIPAMPA, no link desta página.

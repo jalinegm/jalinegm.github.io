@@ -84,10 +84,11 @@ describe("pesquisa/index.html", () => {
 
 describe("pesquisa/<slug>/index.html", () => {
   for (const slug of ["tese-clat", "dissertacao"]) {
-    it(`${slug}: um h1, link de PDF e sem DOI quebrado`, () => {
+    it(`${slug}: um h1, link do repositório e sem DOI quebrado`, () => {
       const page = html(`pesquisa/${slug}/index.html`);
       expect(page.match(/<h1[\s>]/g)?.length ?? 0).toBe(1);
-      expect(page).toMatch(/href="\/docs\/[^"]+\.pdf"/);
+      expect(page).toMatch(/href="https:\/\/repositorio\.[^"]+"/);
+      expect(page).not.toMatch(/\.pdf"/);
       expect(page).not.toMatch(/doi\.org\/(undefined|null)/);
       expect(page.toLowerCase()).not.toMatch(/consultori|freelance|cliente/);
     });

@@ -24,7 +24,7 @@ Hosted on GitHub Pages at `https://jalinegm.github.io/` (not yet published). Sta
 
 ## Capabilities and Constraints
 
-- Routes: Início, Sobre, Pesquisa (thesis, dissertation, publications with filters and copy-citation), Projetos (case studies and repository list), Colaboração, Acessibilidade, 404.
+- Routes: Início, Sobre, Pesquisa (thesis, dissertation, publications with filters and copy-citation), Projetos (case studies and repository list), Colaboração, 404.
 - Existing tests that must keep passing: unit, e2e, axe 0 violations, Lighthouse 100, forbidden-words grep over `dist/`.
 - Forbidden terms in any text: consultoria, consultora, contratar, contrate, cliente, serviço(s), orçamento, freelance, hire. No services list, pricing or sales tone. Use "atuação profissional", "colaboração", "parcerias institucionais", "palestras e bancas".
 - Jaline holds Dedicação Exclusiva at IFFar, which is why the framing is institutional.

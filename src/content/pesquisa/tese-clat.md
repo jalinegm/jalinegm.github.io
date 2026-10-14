@@ -3,11 +3,7 @@ titulo: "CLAT: arcabouço conceitual e ferramenta de apoio à avaliação da esc
 slug: tese-clat
 ordem: 1
 resumo: "Tese de doutorado em Ciência da Computação (UFG, defendida em 21/12/2022) que propõe modelos de interação para dispositivos móveis capazes de apoiar a avaliação remota da escrita inicial infantil."
-pdf:
-  href: /docs/tese-clat-jaline-mombach.pdf
-  formato: PDF
-  tamanho: "7,8 MB"
-repositorioUrl: "https://repositorio.bc.ufg.br/tede/items/a95acd0b-3a2b-434a-85d0-bef48d0669b3"
+repositorioUrl: "https://repositorio.bc.ufg.br/tede/items/a95acd0b-3a2b-434a-85d0-bef48d0669b3/full"
 publicacoesDerivadas:
   - titulo: "An approach for children's emergent literacy adaptive activities"
     veiculo: "SBIE 2019 (Simpósio Brasileiro de Informática na Educação)"
@@ -112,6 +108,6 @@ A seção 9.1 da tese lista 12 materiais de divulgação, entre notícias, entre
 
 <!-- REVISAR: o item "Entrevista no Programa Mundo UFG" tem link no YouTube que não pôde ser conferido na data da verificação (resposta de limite de acesso). Conferir o link antes da publicação. -->
 
-## Download
+## Texto completo
 
-O PDF é uma cópia comprimida da tese para leitura online. O original completo está no repositório institucional da UFG.
+O texto completo está no repositório institucional da UFG, no link desta página.

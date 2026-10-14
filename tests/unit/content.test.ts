@@ -62,12 +62,10 @@ describe("pesquisa collection", () => {
     expect(slugs).toEqual(expect.arrayContaining(["tese-clat", "dissertacao"]));
   });
 
-  it.each(["tese-clat", "dissertacao"])("%s has pdf link under public/docs and a valid repository url", (slug) => {
+  it.each(["tese-clat", "dissertacao"])("%s has a valid https repository url", (slug) => {
     const p = pesquisa.find((x) => x.data.slug === slug);
     expect(p).toBeDefined();
-    expect(String(p!.data.pdf.href).startsWith("/docs/")).toBe(true);
-    expect(existsSync(join(ROOT, "public", p!.data.pdf.href))).toBe(true);
-    if (p!.data.repositorioUrl) expect(String(p!.data.repositorioUrl)).toMatch(/^https:\/\//);
+    expect(String(p!.data.repositorioUrl)).toMatch(/^https:\/\//);
   });
 });
 

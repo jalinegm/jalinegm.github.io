@@ -15,7 +15,6 @@ const PAGES: { file: string; current: string | null }[] = [
   { file: "index.html", current: "/" },
   { file: "sobre/index.html", current: "/sobre" },
   { file: "colaboracao/index.html", current: null }, // fora da nav principal (botão da home e rodapé)
-  { file: "acessibilidade/index.html", current: null }, // fora da nav principal (link de rodapé)
   { file: "404.html", current: null },
 ];
 

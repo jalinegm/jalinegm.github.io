@@ -25,7 +25,7 @@ const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
     <h3><a href={href}>{titulo}</a></h3>
     {periodo && <p class="linha-periodo">{t("projetos.periodo", { periodo })}</p>}
     <p>{resumo}</p>
-    <p><a class="button-link" href={href}>{t("projetos.verProjeto")}<span class="visually-hidden">: {titulo}</span></a></p>
+    <p><a class="linha-link" href={href}>{t("projetos.verProjeto")}<span class="visually-hidden">: {titulo}</span></a></p>
   </div>
 </article>
 <style>
@@ -34,7 +34,7 @@ const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
     gap: var(--space-4) var(--space-6);
     align-items: center;
     padding-block: var(--space-5);
-    border-block-start: 1px solid var(--color-rule);
+    border-block-start: 2px solid var(--color-accent);
   }
   .linha-midia {
     display: block;
@@ -68,6 +68,10 @@ const { titulo, href, resumo, periodo, imagem, alt } = Astro.props;
   }
   .linha-texto h3 a:hover {
     text-decoration: underline;
+  }
+  .linha-link {
+    font-weight: 700;
+    color: var(--color-accent);
   }
   .linha-periodo {
     font-size: var(--font-size-sm);

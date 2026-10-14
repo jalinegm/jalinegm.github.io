@@ -65,13 +65,11 @@
     "linha2": "Informática na educação",
     "linha3": "Interação humano-computador (IHC) e acessibilidade",
     "estudosTitulo": "Estudos principais",
-    "pdfCurto": "{formato}, {tamanho}",
     "projetosTitulo": "Projetos de pesquisa em andamento",
     "desde": "desde {ano}",
     "publicacoesTitulo": "Publicações",
     "publicacoesIntro": "Artigos, trabalhos em eventos e capítulos de livro registrados no currículo Lattes, do mais recente ao mais antigo.",
-    "pdfBaixar": "Baixar o texto completo em {formato}, {tamanho}",
-    "repositorio": "Repositório institucional",
+    "repositorio": "Ler o texto completo no repositório institucional",
     "derivadas": "Publicações derivadas",
     "midia": "Divulgação na mídia"
   },
@@ -84,8 +82,7 @@
   },
   "rodape": {
     "instituicao": "Instituto Federal Farroupilha — Campus Alegrete · Diretoria de Planejamento e Desenvolvimento Institucional (Reitoria)",
-    "atualizado": "Última atualização: {data}",
-    "acessibilidade": "Acessibilidade"
+    "atualizado": "Última atualização: {data}"
   },
   "breadcrumb": {
     "rotulo": "Você está em"
@@ -127,15 +124,15 @@
     "sobreTitulo": "Sobre",
     "perfilRotulo": "Docente e pesquisadora",
     "lede": "Docente do Instituto Federal Farroupilha.",
-    "email": "Enviar e-mail"
+    "emailRotulo": "E-mail"
   },
   "sobre": {
     "titulo": "Sobre",
     "bio": "Jaline Gonçalves Mombach é doutora em Ciência da Computação pela Universidade Federal de Goiás (2022), mestra em Engenharia Elétrica (2015) e bacharela em Ciência da Computação (2012) pela Universidade Federal do Pampa. Atua como docente do Instituto Federal Farroupilha (IFFar), Campus Alegrete, com interesse em análise de dados educacionais, informática na educação, educação em computação e interação humano-computador.",
     "formacao": "Formação",
     "atuacao": "Atuação profissional",
-    "atuacaoAtual": "Pesquisadora Institucional Substituta (exercício provisório), Diretoria de Planejamento e Desenvolvimento Institucional, Reitoria do IFFar, atual",
-    "pixellab": "Pesquisa no PixelLab (UFG)",
+    "atuacaoAtual": "Pesquisadora Institucional Substituta (exercício provisório), Diretoria de Planejamento e Desenvolvimento Institucional, Reitoria do IFFar (2023–atual)",
+    "escolaVida": "Professora de Informática Educativa para crianças, Escola Vida (2010–2013)",
     "revisora": "Revisora dos periódicos <span lang=\"en\">Multimedia Tools and Applications</span> (2023) e <span lang=\"en\">Frontiers in Education</span> (2024).",
     "premios": "Prêmios e distinções",
     "patente": "Patente",
@@ -153,24 +150,6 @@
     "texto": "Estou aberta a colaborações de pesquisa, parcerias institucionais e projetos interinstitucionais. Também recebo convites para palestras, bancas e revisão por pares.",
     "emailTitulo": "E-mail institucional",
     "perfisTitulo": "Perfis"
-  },
-  "acessibilidade": {
-    "titulo": "Acessibilidade",
-    "compromisso": "Este site busca conformidade com o nível AA das <span lang=\"en\">Web Content Accessibility Guidelines</span> (WCAG) 2.2.",
-    "medidasTitulo": "Medidas adotadas",
-    "medida1": "Link “Pular para o conteúdo” como primeiro item navegável em todas as páginas.",
-    "medida2": "Marcação semântica, com cabeçalhos em ordem e um único título principal (h1) por página.",
-    "medida3": "Foco visível em todos os controles, com contraste mínimo de 3:1.",
-    "medida4": "Texto com contraste mínimo de 4,5:1 nos temas claro e escuro.",
-    "medida5": "Respeito à preferência de movimento reduzido do sistema e ao tema escolhido pelo usuário.",
-    "medida6": "Conteúdo utilizável com zoom de 200% e em telas de 320 px de largura, sem rolagem horizontal.",
-    "medida7": "Textos alternativos em imagens e explicação das siglas na primeira ocorrência.",
-    "limitacoesTitulo": "Limitações conhecidas",
-    "limitacao1": "O site ainda não foi testado com leitores de tela reais, como NVDA e TalkBack. Essa verificação manual está prevista e ainda não foi concluída.",
-    "limitacao2": "Os PDFs da tese e da dissertação são versões comprimidas dos originais, e sua acessibilidade ainda não foi verificada.",
-    "reportarTitulo": "Como reportar um problema",
-    "reportarTexto": "Se encontrar uma barreira de acesso, escreva para o e-mail abaixo informando a página, o problema e, se possível, o navegador e a tecnologia assistiva utilizados.",
-    "revisaoTitulo": "Data da última revisão"
   },
   "repos": {
     "semDescricao": "Descrição a ser incluída.",

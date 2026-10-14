@@ -4,8 +4,10 @@ itens:
   - titulo: "Especialização (lato sensu) em Inteligência Artificial e Computacional"
     instituicao: "Universidade Federal de Viçosa (UFV)"
     status: em-andamento
-    ano_inicio: null # REVISAR: informar o ano de início
+    ano_inicio: 2026
+    ano_fim: null
   - titulo: "Especialização (lato sensu) em Educação a Distância para a Educação Profissional"
     instituicao: "Instituto Federal Farroupilha (IFFar)"
-    status: em-andamento
-    ano_inicio: null # REVISAR: informar o ano de início
+    status: concluido
+    ano_inicio: 2025
+    ano_fim: 2026

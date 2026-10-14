@@ -31,10 +31,12 @@ const formacaoLattes = lattes.formacao.map((f) => ({
   },
 }));
 const formacaoExtra = extra.data.itens.map((f) => ({
-  ordem: Number.POSITIVE_INFINITY,
+  ordem: f.status === "em-andamento" ? Number.POSITIVE_INFINITY : (f.ano_fim ?? 0),
   status: f.status,
   item: {
-    periodo: f.ano_inicio ? `${f.ano_inicio}–${t("status.emAndamento").toLowerCase()}` : t("sobre.periodoIndefinido"),
+    periodo: f.ano_inicio
+      ? `${f.ano_inicio}–${f.status === "em-andamento" ? "" : (f.ano_fim ?? "")}`
+      : t("sobre.periodoIndefinido"),
     titulo: f.titulo,
     instituicao: f.instituicao,
     status: f.status,
@@ -43,6 +45,16 @@ const formacaoExtra = extra.data.itens.map((f) => ({
 const formacao = [...formacaoExtra, ...formacaoLattes]
   .sort((a, b) => (b.ordem === a.ordem ? 0 : b.ordem > a.ordem ? 1 : -1))
   .map((x) => x.item);
+
+// Registros no INPI (Base Programas). A consulta do INPI é por sessão: o link leva à busca, o número identifica o pedido.
+const INPI_BUSCA = "https://busca.inpi.gov.br/pePI/jsp/programas/ProgramaSearchBasico.jsp";
+const registrosInpi: Record<string, { pedido: string; deposito: string }> = {
+  "Calculadora de Matrículas Totais do IFFar": { pedido: "BR 51 2026 004572 0", deposito: "16/06/2026" },
+  "Calculadora de Matrículas Equivalentes": { pedido: "BR 51 2026 004563 0", deposito: "16/06/2026" },
+  "Acompanhamento de Matrículas e Indicadores de Ensino do IFFar": { pedido: "BR 51 2026 004560 6", deposito: "16/06/2026" },
+  "Painel de Acompanhamento dos Processos Seletivos do IFFar": { pedido: "BR 51 2026 004557 6", deposito: "16/06/2026" },
+  "Panorama dos Cursos de Pós-Graduação do IFFar": { pedido: "BR 51 2026 004553 3", deposito: "16/06/2026" },
+};
 
 // Atuação profissional: vínculos a partir de 2013 que têm cargo informado (pré-2013 omitido, spec 4.2).
 const atuacao = lattes.atuacao
@@ -65,8 +77,7 @@ const atuacao = lattes.atuacao
     {atuacao.map((a) => (
       <li>{a.cargo}, {a.instituicao} ({a.inicio}–{a.fim ?? t("sobre.periodoAtual")})</li>
     ))}
-    <!-- REVISAR: "PixelLab (UFG)" vem do perfil do GitHub e não consta do Lattes; confirmar cargo e período. -->
-    <li>{t("sobre.pixellab")}</li>
+    <li>{t("sobre.escolaVida")}</li>
   </ul>
   <p set:html={t("sobre.revisora")} />
 
@@ -83,7 +94,18 @@ const atuacao = lattes.atuacao
   <h2 class="section-title">{t("sobre.software")}</h2>
   <ul>
     {lattes.software.map((s) => (
-      <li>{s.titulo} ({s.ano})</li>
+      <li>
+        {s.titulo} ({s.ano})
+        {registrosInpi[s.titulo] && (
+          <>
+            {" "}
+            <a href={INPI_BUSCA} rel="noopener" target="_blank">
+              Registro no INPI: {registrosInpi[s.titulo].pedido}<span class="visually-hidden"> (abre em nova aba)</span>
+            </a>
+            , depositado em {registrosInpi[s.titulo].deposito}.
+          </>
+        )}
+      </li>
     ))}
   </ul>
 

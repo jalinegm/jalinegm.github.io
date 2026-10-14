@@ -48,7 +48,6 @@ const estudos = (await getCollection("pesquisa")).sort((a, b) => a.data.ordem - 
         titulo={estudo.data.titulo}
         href={`/pesquisa/${estudo.data.slug}`}
         descricao={estudo.data.resumo}
-        badges={[{ variante: "neutro", texto: t("pesquisa.pdfCurto", { formato: estudo.data.pdf.formato, tamanho: estudo.data.pdf.tamanho }) }]}
       />
     ))}
   </div>

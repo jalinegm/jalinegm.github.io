@@ -23,7 +23,7 @@ const casos = defineCollection({
   }),
 });
 
-// Pesquisa (spec 4.3): tese e dissertação com PDF comprimido.
+// Pesquisa (spec 4.3): tese e dissertação com link para o repositório institucional.
 const pesquisa = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/pesquisa" }),
   schema: z.object({
@@ -32,12 +32,7 @@ const pesquisa = defineCollection({
     /** Ordem de exibição na página de pesquisa (menor primeiro). */
     ordem: z.number().int(),
     resumo: z.string().min(1),
-    pdf: z.object({
-      href: z.string().regex(/^\/docs\/.+\.pdf$/),
-      formato: z.literal("PDF"),
-      tamanho: z.string().regex(/^\d+(?:[.,]\d+)? MB$/),
-    }),
-    repositorioUrl: z.string().url().optional(),
+    repositorioUrl: z.string().url(),
     publicacoesDerivadas: z
       .array(
         z.object({
@@ -70,6 +65,7 @@ const paginas = defineCollection({
         instituicao: z.string().min(1),
         status: z.enum(["em-andamento", "concluido"]),
         ano_inicio: z.number().int().nullable(),
+        ano_fim: z.number().int().nullable().optional(),
       }),
     ),
   }),

@@ -1,5 +1,4 @@
 ---
-import Badge from "./Badge.astro";
 import { t } from "../i18n";
 
 interface Item {
@@ -18,34 +17,163 @@ const { itens } = Astro.props;
 ---
 <ol class="timeline">
   {itens.map((item) => (
-    <li>
-      <p class="timeline-periodo">{item.periodo}{item.status === "em-andamento" && <> <Badge variante="info" texto={t("status.emAndamento")} /></>}</p>
-      <h3>{item.titulo}</h3>
-      <p>{item.instituicao}</p>
-      {item.detalhe && <p class="timeline-detalhe">{item.detalhe}</p>}
+    <li class:list={["etapa", item.status === "em-andamento" && "etapa--agora"]}>
+      <p class="etapa-periodo">
+        <span class="etapa-ano">{item.periodo}</span>
+        {item.status === "em-andamento" && <span class="etapa-agora">{t("status.emAndamento")}</span>}
+      </p>
+      <div class="etapa-corpo">
+        <h3>{item.titulo}</h3>
+        <p class="etapa-inst">{item.instituicao}</p>
+        {item.detalhe && <p class="etapa-detalhe">{item.detalhe}</p>}
+      </div>
     </li>
   ))}
 </ol>
 <style>
   .timeline {
+    --rail-x: 9.5rem;
     list-style: none;
+    margin: var(--space-6) 0 0;
     padding: 0;
+    position: relative;
+  }
+  /* trilho contínuo */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    inset-block: 0.6rem 0;
+    inset-inline-start: calc(var(--rail-x) + 0.5px);
+    width: 2px;
+    margin-inline-start: -1px;
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-rule) 18%);
+  }
+  .etapa {
     display: grid;
-    gap: var(--space-4);
+    grid-template-columns: var(--rail-x) 1fr;
+    column-gap: var(--space-6);
+    position: relative;
+    padding-block-end: var(--space-7);
   }
-  .timeline li {
-    padding-inline-start: var(--space-3);
-    border-inline-start: 3px solid var(--color-border);
+  .etapa:last-child {
+    padding-block-end: var(--space-4);
   }
-  .timeline-periodo {
+  /* ponto no trilho */
+  .etapa::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: var(--rail-x);
+    inset-block-start: 0.45rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-inline-start: -0.45rem;
+    border-radius: 50%;
+    background: var(--color-bg);
+    border: 2px solid var(--color-accent);
+    z-index: 1;
+  }
+  .etapa--agora::before {
+    background: var(--color-accent);
+    box-shadow: 0 0 0 0.35rem color-mix(in srgb, var(--color-accent) 22%, transparent);
+    animation: pulso 2.4s var(--ease-out) infinite;
+  }
+  .etapa-periodo {
+    margin: 0;
+    padding-inline-end: var(--space-5);
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-2);
+  }
+  .etapa-ano {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+  .etapa-agora {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    padding: 0.1rem var(--space-3);
+    white-space: nowrap;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+  .etapa-corpo h3 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+  .etapa-inst {
+    margin: var(--space-2) 0 0;
+    color: var(--color-link);
+    font-weight: 700;
+  }
+  .etapa-detalhe {
+    margin: var(--space-3) 0 0;
+    padding: var(--space-3) var(--space-4);
+    background: var(--color-surface);
+    border-radius: var(--radius);
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
+    max-width: var(--measure);
   }
-  .timeline h3 {
-    font-size: var(--font-size-base);
+
+  @keyframes pulso {
+    0%, 100% { box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--color-accent) 30%, transparent); }
+    50% { box-shadow: 0 0 0 0.6rem color-mix(in srgb, var(--color-accent) 0%, transparent); }
   }
-  .timeline-detalhe {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
+  @keyframes entra {
+    from { opacity: 0; translate: 0 1.5rem; filter: blur(4px); }
+    to { opacity: 1; translate: 0 0; filter: blur(0); }
+  }
+  @keyframes ponto {
+    from { scale: 0.3; }
+    to { scale: 1; }
+  }
+  @keyframes trilho {
+    from { transform: scaleY(0.2); }
+    to { transform: scaleY(1); }
+  }
+
+  @supports (animation-timeline: view()) {
+    .etapa-periodo,
+    .etapa-corpo {
+      animation: entra both var(--ease-out);
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    .etapa-corpo { animation-range: entry 8% entry 65%; }
+    .etapa:not(.etapa--agora)::before {
+      animation: ponto both var(--ease-out);
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+    .timeline::before {
+      transform-origin: top;
+      animation: trilho both linear;
+      animation-timeline: scroll(root);
+      animation-range: 0 40%;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .timeline { --rail-x: 0.5rem; }
+    .etapa {
+      grid-template-columns: 1fr;
+      padding-inline-start: var(--space-6);
+      row-gap: var(--space-2);
+    }
+    .etapa-periodo {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: start;
+      padding: 0;
+    }
   }
 </style>

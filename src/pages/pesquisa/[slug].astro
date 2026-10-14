@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
-const { titulo, resumo, pdf, repositorioUrl, publicacoesDerivadas, midia } = entry.data;
+const { titulo, resumo, repositorioUrl, publicacoesDerivadas, midia } = entry.data;
 ---
 <Base title={titulo} description={resumo}>
   <Breadcrumbs
@@ -25,13 +25,8 @@ const { titulo, resumo, pdf, repositorioUrl, publicacoesDerivadas, midia } = ent
   <h1>{titulo}</h1>
   <p>{resumo}</p>
   <p>
-    <a class="button-link" href={pdf.href}>{t("pesquisa.pdfBaixar", { formato: pdf.formato, tamanho: pdf.tamanho })}</a>
+    <a class="button-link" href={repositorioUrl}>{t("pesquisa.repositorio")}<span class="visually-hidden"> {t("link.externo")}</span></a>
   </p>
-  {repositorioUrl && (
-    <p>
-      <a href={repositorioUrl}>{t("pesquisa.repositorio")}<span class="visually-hidden"> {t("link.externo")}</span></a>
-    </p>
-  )}
 
   <Content />
 
