@@ -13,7 +13,7 @@ repos:
   - alcance-global-citacoes-iffar
   - mapa_citacoes_iffar
 destaque: false
-ordem: 5
+ordem: 6
 ---
 
 ## Contexto

@@ -19,7 +19,7 @@ repos:
   - gerar-planilhas-educacenso
   - baixadorSistec
 destaque: true
-ordem: 4
+ordem: 5
 ---
 
 ## Contexto
