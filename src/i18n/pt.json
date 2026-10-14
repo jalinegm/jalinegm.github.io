@@ -175,7 +175,9 @@
     "tecnologias": "Tecnologias",
     "reposCaso": "Repositórios no catálogo",
     "semRepos": "Nenhum repositório de código público está vinculado a este estudo de caso.",
-    "tese": "Ver a tese relacionada",
+    "tese": "Ler a tese",
+    "dissertacao": "Ler a dissertação",
+    "indice": "Nesta página",
     "periodoRotulo": "Período",
     "verProjeto": "Ver projeto"
   }

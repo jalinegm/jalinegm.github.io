@@ -13,11 +13,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
-const { titulo, vinculo, periodo, resumo, tecnologias, repos, tese } = entry.data;
+const { Content, headings } = await render(entry);
+const { titulo, periodo, resumo, tecnologias, repos, tese } = entry.data;
 const relacionados = reposByNames(repos);
+
+// Índice: seções de nível 2 do texto, mais a lista de repositórios que o modelo acrescenta.
+const secoes = [
+  ...headings.filter((h) => h.depth === 2).map((h) => ({ id: h.slug, texto: h.text })),
+  { id: "repos-caso", texto: t("projetos.reposCaso") },
+];
+const comIndice = secoes.length > 4;
 ---
-<Base title={titulo} description={resumo}>
+<Base title={titulo} description={resumo} wide>
   <Breadcrumbs
     items={[
       { label: t("nav.inicio"), href: "/" },
@@ -25,36 +32,46 @@ const relacionados = reposByNames(repos);
       { label: titulo },
     ]}
   />
-  <h1>{titulo}</h1>
-  <p>{resumo}</p>
 
-  <dl class="meta">
-    <dt>{t("projetos.vinculo")}</dt>
-    <dd>{vinculo}</dd>
-    {periodo && (
-      <>
-        <dt>{t("projetos.periodoRotulo")}</dt>
-        <dd>{periodo}</dd>
-      </>
-    )}
-    <dt>{t("projetos.tecnologias")}</dt>
-    <dd>
-      <ul class="tecnologias">
-        {tecnologias.map((item) => <li>{item}</li>)}
-      </ul>
-    </dd>
-  </dl>
+  <header class="caso-topo">
+    <h1>{titulo}</h1>
+    <p class="lead">{resumo}</p>
 
-  {tese && (
-    <p>
-      <a class="button-link" href={`/pesquisa/${tese}`}>{t("projetos.tese")}</a>
-    </p>
+    <dl class="meta">
+      {periodo && (
+        <>
+          <dt>{t("projetos.periodoRotulo")}</dt>
+          <dd>{periodo}</dd>
+        </>
+      )}
+      <dt>{t("projetos.tecnologias")}</dt>
+      <dd>
+        <ul class="tecnologias">
+          {tecnologias.map((item) => <li>{item}</li>)}
+        </ul>
+      </dd>
+    </dl>
+  </header>
+
+  {comIndice && (
+    <nav class="indice" aria-label={t("projetos.indice")}>
+      <details>
+        <summary>{t("projetos.indice")}</summary>
+        <ol>
+          {secoes.map((s) => (
+            <li><a href={`#${s.id}`}>{s.texto}</a></li>
+          ))}
+        </ol>
+      </details>
+    </nav>
   )}
 
-  <Content />
+  <div class="prosa">
+    <Content />
+  </div>
 
-  <section aria-labelledby="repos-caso">
-    <h2 id="repos-caso" class="section-title">{t("projetos.reposCaso")}</h2>
+  <section class="repos" aria-labelledby="repos-caso">
+    <h2 id="repos-caso">{t("projetos.reposCaso")}</h2>
     {relacionados.length === 0 ? (
       <p>{t("projetos.semRepos")}</p>
     ) : (
@@ -65,17 +82,38 @@ const relacionados = reposByNames(repos);
       </ul>
     )}
   </section>
+
+  {tese && (
+    <p class="ler-tese">
+      <a class="button-link" href={`/pesquisa/${tese}`}>{t(tese === "dissertacao" ? "projetos.dissertacao" : "projetos.tese")}</a>
+    </p>
+  )}
 </Base>
 
 <style>
+  .caso-topo {
+    max-width: 52rem;
+    margin-block: var(--space-6);
+  }
+  .caso-topo h1 {
+    margin-block-end: var(--space-5);
+  }
+  .lead {
+    max-width: 60ch;
+    font-size: var(--font-size-lg);
+    line-height: 1.55;
+  }
   .meta {
     display: grid;
-    gap: var(--space-2) var(--space-4);
-    grid-template-columns: max-content 1fr;
-    margin-block: var(--space-4);
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: var(--space-4) var(--space-6);
+    align-items: baseline;
+    margin-block-start: var(--space-6);
+    padding-block-start: var(--space-5);
+    border-block-start: 1px solid var(--color-rule);
   }
   .meta dt {
-    font-weight: 600;
+    font-weight: 700;
   }
   .meta dd {
     margin: 0;
@@ -83,9 +121,52 @@ const relacionados = reposByNames(repos);
   .tecnologias {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-1) var(--space-3);
+    gap: var(--space-2);
+  }
+  .tecnologias li {
+    padding: var(--space-1) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background: var(--color-surface);
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+  }
+
+  .indice {
+    max-width: 52rem;
+    margin-block: var(--space-6) var(--space-7);
+  }
+  .indice summary {
+    display: inline-flex;
+    align-items: center;
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .indice ol {
+    columns: 2 16rem;
+    column-gap: var(--space-6);
+    margin: var(--space-4) 0 0;
+    padding-inline-start: 1.75rem;
+  }
+  .indice li {
+    break-inside: avoid;
+    margin-block-end: var(--space-2);
+  }
+
+  .repos {
+    max-width: var(--measure);
+    margin-block-start: var(--space-8);
+    padding-block-start: var(--space-5);
+    border-block-start: 1px solid var(--color-rule);
+  }
+  .repos h2 {
+    margin-block: 0 var(--space-5);
   }
   .cards {
     display: grid;
@@ -93,5 +174,21 @@ const relacionados = reposByNames(repos);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     list-style: none;
     padding: 0;
+  }
+  .ler-tese {
+    margin-block-start: var(--space-7);
+  }
+
+  @media (max-width: 40rem) {
+    .meta {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--space-2);
+    }
+    .meta dd + dt {
+      margin-block-start: var(--space-4);
+    }
+    .repos {
+      margin-block-start: var(--space-7);
+    }
   }
 </style>

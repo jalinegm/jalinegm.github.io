@@ -18,10 +18,13 @@ import ThemeToggle from "./ThemeToggle.astro";
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-1) var(--space-6);
+    gap: var(--space-1) var(--space-7);
     max-width: var(--wide);
     margin-inline: auto;
     padding: var(--space-2) var(--space-4);
+  }
+  .site-header__inner > :global(nav) {
+    margin-inline-start: auto;
   }
   .site-name {
     margin: 0;
@@ -35,7 +38,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     color: var(--color-text);
   }
   :global(#theme-toggle) {
-    margin-inline-start: auto;
+    margin-inline-start: var(--space-2);
     border-color: transparent;
     color: var(--color-text-muted);
     font-size: var(--font-size-sm);
