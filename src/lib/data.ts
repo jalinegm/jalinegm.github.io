@@ -5,7 +5,7 @@ export type Lattes = typeof lattesData;
 /** Registro de src/data/repos.json (gerado por scripts/repos.py). Tipado à mão: o JSON infere `null` para campos sempre vazios. */
 export interface Repo {
   name: string;
-  /** Vazio para repositórios privados: nunca renderizar como link. */
+  /** Link do GitHub; repositórios privados exigem uma conta com acesso. */
   url: string;
   descricao: string;
   descricaoRevisar: boolean;

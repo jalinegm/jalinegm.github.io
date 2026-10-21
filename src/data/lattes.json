@@ -1,4 +1,108 @@
 {
+  "apresentacoes": [
+    {
+      "ano": 2025,
+      "evento": "Formação de Gestores da Educação a Distância",
+      "natureza": "CONFERENCIA",
+      "titulo": "Gestão na EaD"
+    },
+    {
+      "ano": 2025,
+      "evento": "III Encontro da Internacionalização",
+      "natureza": "CONFERENCIA",
+      "titulo": "Linguagens, internacionalização e indicadores: conexões estratégicas para o desenvolvimento do IFFar"
+    },
+    {
+      "ano": 2025,
+      "evento": "IX Seminário do Pesquisador e IX Seminário da Pós-Graduação",
+      "natureza": "CONFERENCIA",
+      "titulo": "Os Desafios da Pós-Graduação e da Pesquisa na Rede Federal"
+    },
+    {
+      "ano": 2025,
+      "evento": "II Encontro sobre Transparência Ativa e Indicadores da Rede Federal de Educação Profissional, Científica e Tecnológica",
+      "natureza": "CONFERENCIA",
+      "titulo": "PNP: Desafios e Oportunidades"
+    },
+    {
+      "ano": 2017,
+      "evento": "25º WEI Workshop sobre Educação em Computação",
+      "natureza": "SEMINARIO",
+      "titulo": "Pensar para Programar: Projeto de Ensino no Curso Técnico em Informática"
+    },
+    {
+      "ano": 2015,
+      "evento": "VI Mostra da Educação Profissional e Tecnológica (MEPT)",
+      "natureza": "OUTRA",
+      "titulo": "Oficina Uso do Google Drive"
+    },
+    {
+      "ano": 2015,
+      "evento": "VII Workshop sobre Uso da Informática em Atividades de Ensino-Aprendizagem no Município de Alegrete",
+      "natureza": "OUTRA",
+      "titulo": "Programação com Scratch"
+    },
+    {
+      "ano": 2013,
+      "evento": "Seminário de Extensão da Região Sul",
+      "natureza": "SEMINARIO",
+      "titulo": "Empreendedorismo na escola"
+    },
+    {
+      "ano": 2013,
+      "evento": "VI Workshop sobre Uso da Informática em Atividades de Ensino-Aprendizagem no Município de Alegrete",
+      "natureza": "CONFERENCIA",
+      "titulo": "Possibilidades de Uso da Informática na Escola"
+    },
+    {
+      "ano": 2013,
+      "evento": "XXIV Simpósio Brasileiro de Informática na Educação (SBIE 2013)",
+      "natureza": "SIMPOSIO",
+      "titulo": "Proposta de um aplicativo móvel para percepção de imagens estáticas por alunos com deficiência visual"
+    },
+    {
+      "ano": 2012,
+      "evento": "Workshop em Informática na Escola - Congresso Brasileiro de Informática na Educação",
+      "natureza": "CONGRESSO",
+      "titulo": "Informática na Educação: Promovendo Novos Talentos no Pampa"
+    },
+    {
+      "ano": 2012,
+      "evento": "V Workshop sobre Uso de Informática em Atividades de Ensino-Aprendizagem no Município de Alegrete",
+      "natureza": "OUTRA",
+      "titulo": "Magias Tecnológicas na Vida"
+    },
+    {
+      "ano": 2012,
+      "evento": "I Seminário do Laboratório de Processamento de Imagem Aplicado - LAPIA",
+      "natureza": "SEMINARIO",
+      "titulo": "Percepção de imagens estáticas por pessoas cegas"
+    },
+    {
+      "ano": 2012,
+      "evento": "IV Salão Internacional de Ensino, Pesquisa e Extensão",
+      "natureza": "OUTRA",
+      "titulo": "Percepção de imagens estáticas por pessoas cegas"
+    },
+    {
+      "ano": 2011,
+      "evento": "III Salão Internacional de Ensino, Pesquisa e Extensão",
+      "natureza": "OUTRA",
+      "titulo": "Gurizada.net: Abordagem Participativa à Inclusão Digital de Estudantes da Educação Básica"
+    },
+    {
+      "ano": 2010,
+      "evento": "I Seminário Aberto UNIPAMPA de Interação Humano-Computador",
+      "natureza": "SEMINARIO",
+      "titulo": "Design Participativo com Crianças"
+    },
+    {
+      "ano": 2010,
+      "evento": "Seminário de Extensão Universitária da Região Sul",
+      "natureza": "SEMINARIO",
+      "titulo": "I Workshop sobre Uso da Informática na Escola em Atividades de Ensino-Aprendizagem no Município de Alegrete"
+    }
+  ],
   "areas": [
     "Probabilidade e Estatística",
     "Ciência da Computação"
@@ -112,6 +216,64 @@
       "status": "concluido",
       "tipo": "graduacao",
       "titulo": "Percepção de imagens estáticas por pessoas cegas"
+    }
+  ],
+  "orientacoes": [
+    {
+      "ano": 2026,
+      "instituicao": "Instituto Federal Farroupilha",
+      "natureza": "Monografia de conclusão de curso de aperfeiçoamento/especialização",
+      "status": "em-andamento",
+      "titulo": "Aplicação de Mineração de Textos em Artigos Científicos para Identificação de Tendências em Nanotecnologia Cosmética"
+    },
+    {
+      "ano": 2026,
+      "instituicao": "Instituto Federal Farroupilha",
+      "natureza": "Monografia de conclusão de curso de aperfeiçoamento/especialização",
+      "status": "em-andamento",
+      "titulo": "Impacto das Práticas de Extensão no Curso EaD de Formação Pedagógica do IFFar: Uma Análise com Mineração de Textos em Relatórios"
+    },
+    {
+      "ano": 2025,
+      "instituicao": "Instituto Federal Farroupilha",
+      "natureza": "MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO",
+      "status": "concluida",
+      "titulo": "O Impacto dos Cursos Stricto Sensu na Avaliação do Índice Geral de Cursos do Instituto Federal Farroupilha"
+    },
+    {
+      "ano": 2025,
+      "instituicao": "Instituto Federal Farroupilha",
+      "natureza": "MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO",
+      "status": "concluida",
+      "titulo": "Uma Investigação sobre a Aplicação da Inteligência Artificial no Ensino e Aprendizagem na Educação Profissional"
+    },
+    {
+      "ano": 2024,
+      "instituicao": "Instituto Federal Farroupilha",
+      "natureza": "MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO",
+      "status": "concluida",
+      "titulo": "Desenvolvimento de uma Plataforma de Business Intelligence para Análise de Avaliações de Cursos no IFFar"
+    },
+    {
+      "ano": 2020,
+      "instituicao": "Instituto Federal de Brasília",
+      "natureza": "TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO",
+      "status": "concluida",
+      "titulo": "Guia Colaborativo de Recomendações Técnicas de Design de Interface do Usuário para Professores"
+    },
+    {
+      "ano": 2020,
+      "instituicao": "Instituto Federal de Brasília",
+      "natureza": "TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO",
+      "status": "concluida",
+      "titulo": "Palavrinhas do Folclore: Um Objeto de Aprendizagem para Crianças em Fase de Alfabetização"
+    },
+    {
+      "ano": 2017,
+      "instituicao": "Instituto Federal Farroupilha",
+      "natureza": "MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO",
+      "status": "concluida",
+      "titulo": "Mapeamento de Recursos de Tecnologia Assistiva e Objetos de Aprendizagem para Alunos com Deficiência"
     }
   ],
   "patente": {

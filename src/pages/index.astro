@@ -1,4 +1,5 @@
 ---
+import Trajetoria from "../components/Trajetoria.astro";
 import Base from "../layouts/Base.astro";
 import ProjetoLinha from "../components/ProjetoLinha.astro";
 import fs from "node:fs";
@@ -11,11 +12,24 @@ import { imagemCaso } from "../lib/imagem-caso";
 const temFoto = fs.existsSync(path.join(process.cwd(), "public", "foto-jaline.jpg"));
 const destaques = (await getCollection("casos"))
   .filter((c) => c.data.destaque)
-  .sort((a, b) => a.data.ordem - b.data.ordem);
+  .sort((a, b) => a.data.ordem - b.data.ordem)
+  .slice(0, 3);
 
 ---
 <Base title={t("nav.inicio")} description={t("site.posicionamento")} wide>
   <div class="pagina">
+    <div class="abertura">
+      <h1>{t("site.nome")}</h1>
+      <p class="lede">{t("inicio.lede").split(" Atualmente")[0]}<br />Atualmente{t("inicio.lede").split("Atualmente")[1].split("lato sensu")[0]}<i lang="la">lato sensu</i>{t("inicio.lede").split("lato sensu")[1]}</p>
+      <p class="apresentacao">{t("inicio.apresentacao")}</p>
+      <p class="apresentacao">{t("inicio.colaboracao")}<a class="link-edital" href="https://dsbr.org/chamamentos/chamamento022023/">{t("inicio.editalColaboracao")}</a>{t("inicio.colaboracaoProjetos")}</p>
+      <ul class="interesses" aria-label="Interesses">
+        {["Interação Humano-Computador", "Acessibilidade", "Tecnologias Digitais para o Ensino", "Análise e Visualização de Dados Educacionais"].map((tema) => (
+          <li>{tema}</li>
+        ))}
+      </ul>
+      <p><a class="atalho-projetos" href="#destaques-titulo">{t("inicio.verProjetos")}</a></p>
+    </div>
     <aside class="perfil" aria-label={t("inicio.perfilRotulo")}>
       {temFoto && (
         <img class="perfil-foto" src="/foto-jaline.jpg" alt="Retrato de Jaline Mombach" width="480" height="600" />
@@ -47,16 +61,7 @@ const destaques = (await getCollection("casos"))
     </aside>
 
     <div class="principal">
-      <h1>{t("site.nome")}</h1>
-      <p class="lede">{t("inicio.lede")}</p>
-
-      <section aria-labelledby="sobre-titulo">
-        <h2 id="sobre-titulo">{t("inicio.sobreTitulo")}</h2>
-        <!-- REVISAR: bloco 3 não cita ano de início do IFFar; o currículo indica substituta em 2013 e o resumo indica desde 2014. Confirmar ao incluir a data. -->
-        <p>{t("inicio.bloco1Texto")}</p>
-        <p>{t("inicio.bloco2Texto")}</p>
-      </section>
-
+      <Trajetoria secao="formacao" />
       <section aria-labelledby="destaques-titulo">
         <h2 id="destaques-titulo">{t("inicio.destaquesTitulo")}</h2>
         {destaques.map((c, i) => (
@@ -66,21 +71,23 @@ const destaques = (await getCollection("casos"))
             href={`/projetos/${c.data.slug}`}
             resumo={c.data.resumo}
             periodo={c.data.periodo}
-            imagem={imagemCaso(c.data.slug)}
+            imagem={c.data.slug === "paineis-pnp-indicadores" ? "/projetos/paineis-pnp-indicadores-inicio.png" : imagemCaso(c.data.slug)}
           />
         ))}
         <p class="mais"><a href="/projetos">{t("inicio.verTodos")}</a></p>
       </section>
-
-      <section class="convite" aria-labelledby="cta-titulo">
-        <h2 id="cta-titulo">{t("inicio.cta")}</h2>
-        <p>{t("inicio.ctaTexto")}</p>
-        <p><a class="convite-link" href="/colaboracao">{t("inicio.ctaLink")}</a></p>
-      </section>
+      <Trajetoria secao="restante" />
     </div>
   </div>
 </Base>
 <style>
+  .abertura, .principal, .perfil { min-inline-size: 0; }
+  .atalho-projetos {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 44px;
+    margin-block-start: var(--space-4);
+  }
   .pagina {
     display: grid;
     gap: var(--space-6) var(--space-8);
@@ -100,11 +107,13 @@ const destaques = (await getCollection("casos"))
     gap: var(--space-1);
   }
   .perfil-links a {
+    min-block-size: 44px;
     display: inline-flex;
     align-items: center;
     gap: var(--space-3);
     color: var(--color-text);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
   .perfil-links a:hover {
     color: var(--color-link);
@@ -125,16 +134,19 @@ const destaques = (await getCollection("casos"))
     color: var(--color-accent);
   }
   .perfil-email a {
-    min-block-size: 0;
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 44px;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
     font-size: var(--font-size-sm);
-    white-space: nowrap;
   }
-  .principal :global(h1) {
+  .abertura h1 {
     font-size: var(--font-size-hero);
     max-inline-size: fit-content;
   }
   /* Traço de pressão variável sob o nome: fino, grosso, fino, como um gesto de escrita. */
-  .principal :global(h1)::after {
+  .abertura h1::after {
     content: "";
     display: block;
     inline-size: 100%;
@@ -144,14 +156,51 @@ const destaques = (await getCollection("casos"))
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M0 8 C40 4 70 3 110 5 S190 10 230 6 S280 3 300 5 L300 6.2 C280 5.6 250 11 215 11.5 S120 9 95 9 S35 12 0 9.5Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 14' preserveAspectRatio='none'%3E%3Cpath d='M0 8 C40 4 70 3 110 5 S190 10 230 6 S280 3 300 5 L300 6.2 C280 5.6 250 11 215 11.5 S120 9 95 9 S35 12 0 9.5Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
   }
-  .principal h2 {
+  .principal :global(h2) {
     color: var(--color-accent);
+  }
+  .apresentacao {
+    margin-block-start: var(--space-4);
+    max-width: var(--measure);
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    text-wrap: pretty;
+  }
+  .link-edital {
+    color: inherit;
+    text-decoration-color: var(--color-rule);
+    text-underline-offset: 0.2em;
+  }
+  .link-edital:hover,
+  .link-edital:focus-visible {
+    color: var(--color-link);
+    text-decoration-color: currentColor;
+  }
+  .interesses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-block-start: var(--space-4);
+    padding: 0;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .interesses li {
+    max-inline-size: 100%;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-link);
+    overflow-wrap: anywhere;
   }
   .lede {
     margin-block-start: var(--space-3);
     color: var(--color-text-muted);
     font-size: var(--font-size-lg);
     max-width: var(--measure);
+    text-wrap: balance;
   }
   .principal section p {
     max-width: var(--measure);
@@ -168,21 +217,14 @@ const destaques = (await getCollection("casos"))
   .mais {
     margin-block-start: var(--space-4);
   }
-  .convite {
-    margin-block-start: var(--space-6);
-  }
-  .convite-link {
-    font-weight: 700;
-  }
   @media (max-width: 55.99rem) {
     .perfil {
       display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: var(--space-2) var(--space-4);
       align-items: center;
     }
     .perfil-foto {
-      grid-row: span 2;
       width: 6.5rem;
       margin: 0;
     }
@@ -195,7 +237,10 @@ const destaques = (await getCollection("casos"))
     .pagina {
       grid-template-columns: 18rem minmax(0, 1fr);
     }
+    .abertura, .principal { grid-column: 2; }
     .perfil {
+      grid-column: 1;
+      grid-row: 1 / span 2;
       position: sticky;
       inset-block-start: var(--space-5);
       align-self: start;

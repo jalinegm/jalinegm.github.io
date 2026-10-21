@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "broken-image",
+        "value": "*",
+        "files": [
+          "tests/unit/projetos.test.ts"
+        ],
+        "createdAt": "2026-10-21T02:20:04.986Z",
+        "reason": "False positive: regex in an HTML validation test, not a rendered image element."
+      }
+    ]
+  }
+}

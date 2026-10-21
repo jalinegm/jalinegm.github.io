@@ -1,9 +1,9 @@
 ---
-titulo: "Plataforma Nilo Peçanha: interface do BI, regras de negócio e pipeline de dados"
+titulo: "Plataforma Nilo Peçanha: dados, indicadores e visualização para a Rede Federal"
 slug: plataforma-nilo-pecanha
 vinculo: "Universidade Federal do Oeste da Bahia (UFOB), pesquisadora colaboradora no TED com a Rede Federal de EPCT, grupo de pesquisa Rede DSBR"
 periodo: "2023–2026"
-resumo: "Participação na equipe nacional do TED da UFOB para a Plataforma Nilo Peçanha: interface do BI, adaptação do visual para o pleito eleitoral de 2026, apoio à pipeline de dados no Pentaho e novo guia da PNP Indicadores."
+resumo: "Pesquisa colaborativa na UFOB, com financiamento da Setec/MEC: análise e validação de dados, revisão de indicadores e documentos técnicos, evolução da interface e apoio às instituições da Rede Federal."
 tecnologias:
   - "Pentaho"
   - "Business Intelligence"
@@ -12,16 +12,19 @@ tecnologias:
 repos:
   - Rede-DSBR
 destaque: false
-ordem: 3
+ordem: 4
 ---
 
 ## Visão geral
+
 
 A Plataforma Nilo Peçanha (PNP) é um dos projetos mais importantes da Rede Federal de Educação Profissional, Científica e Tecnológica. Ela reúne a coleta, a validação e a divulgação das estatísticas oficiais da Rede Federal.
 
 Participei da chamada nacional para integrar a equipe do TED da Universidade Federal do Oeste da Bahia (UFOB), conduzido pelo grupo de pesquisa que então se chamava Rede DSBR. Desde novembro de 2023, atuei como pesquisadora colaboradora da UFOB. O TED foi encerrado em 2026.
 
-- **Papel:** apoio à interface do BI e atuação na interseção entre regras de negócio, visual e pipeline de dados.
+- **Financiamento:** Secretaria de Educação Profissional e Tecnológica do Ministério da Educação (Setec/MEC).
+- **Repositório institucional:** [Rede DSBR / PNP](https://github.com/Rede-DSBR/PNP).
+- **Papel:** análise e validação de dados, revisão metodológica de indicadores, documentação técnica e design de interfaces, em colaboração com a equipe nacional.
 - **Com quem:** equipe da UFOB, colega responsável pela pipeline de dados no Pentaho, Instituto Federal do Rio Grande do Norte e equipe da Secretaria de Educação Profissional e Tecnológica (Setec) do MEC.
 - **Período:** novembro de 2023 a 2026.
 
@@ -33,21 +36,35 @@ A pergunta do trabalho foi: **como manter regras de negócio, visual e dados ali
 
 ## O que eu fiz
 
-### Interface do BI
+### Análise de dados e apoio à gestão educacional
 
-Apoiei o desenho e a evolução da interface do BI da PNP, incluindo a adaptação do visual para o pleito eleitoral de 2026.
+Atuei no apoio técnico-científico à Setec/MEC, com análises de matrículas, cursos, oferta e indicadores educacionais. Colaborei na preparação de informações para demandas de gestão e transparência e no estudo de metodologias de cálculo, incluindo a Matrícula Equivalente.
 
-<!-- REVISAR: incluir prints da interface (somente telas públicas) e descrever as decisões de design com a ajuda dela. -->
+Evidências: [apoio técnico-científico à gestão e transparência de dados](https://github.com/Rede-DSBR/PNP/issues/223) e [estudo da metodologia de Matrícula Equivalente](https://github.com/Rede-DSBR/PNP/issues/309).
 
-### Regras de negócio, visual e pipeline
+### Validação de dados e regras de negócio
 
-Atuei na interseção entre as regras de negócio, o visual e a pipeline de dados. Colaborei com o colega responsável pela pipeline, que roda no Pentaho, para que o que aparece na interface refletisse as regras definidas com a Setec.
+Participei da identificação e análise de inconsistências da prévia da PNP, em diálogo com pesquisadores institucionais da Rede Federal. Minha atuação também abrangeu a validação de regras de programas e fontes de financiamento e a conferência entre os indicadores do guia de referência e as informações exibidas no painel.
 
-### Guia da PNP Indicadores
+Evidências: [validação da prévia](https://github.com/Rede-DSBR/PNP/issues/190), [programas e fontes de financiamento](https://github.com/Rede-DSBR/PNP/issues/422) e [conferência entre guia e painel](https://github.com/Rede-DSBR/PNP/issues/335).
 
-Participei do desenvolvimento do novo guia da PNP Indicadores, em grupos de trabalho com o Instituto Federal do Rio Grande do Norte e a equipe da Setec/MEC.
+### Indicadores, guia de referência e documentos técnicos
 
-<!-- REVISAR: link público do guia, se houver, e nome oficial do(s) grupo(s) de trabalho. -->
+Contribuí para a revisão do Guia PNP Indicadores, a análise e correção de fichas técnicas e a elaboração e revisão de notas técnicas e minutas. Essas atividades trataram da consistência dos conceitos, das metodologias e da organização dos microdados.
+
+Evidências: [fichas técnicas dos indicadores](https://github.com/Rede-DSBR/PNP/issues/428), [proposta de reestruturação dos microdados](https://github.com/Rede-DSBR/PNP/issues/311) e [revisão técnica de nota conjunta](https://github.com/Rede-DSBR/PNP/issues/435).
+
+### Design de interfaces e visualização de dados
+
+Colaborei na evolução da navegação e da interface do BI, incluindo o acesso aos produtos de dados e a visualização das unidades da Rede Federal. Desenvolvi protótipos no Figma para uma versão móvel da PNP e participei da elaboração de uma proposta de pesquisa com usuários.
+
+Evidências: [novo visual da PNP](https://github.com/Rede-DSBR/PNP/issues/296), [prototipação móvel](https://github.com/Rede-DSBR/PNP/issues/151) e [elaboração da pesquisa com usuários](https://github.com/Rede-DSBR/PNP/issues/158).
+
+### Atendimento e disseminação
+
+Apoiei o esclarecimento de dúvidas sobre os dados e indicadores, inclusive em demandas do Fala.BR, e a organização dos encontros sobre Transparência Ativa e Indicadores da Rede Federal, com formulários, avaliações e certificados.
+
+Evidências: [esclarecimentos sobre Matrícula Equivalente](https://github.com/Rede-DSBR/PNP/issues/149) e [II Encontro sobre Transparência Ativa e Indicadores](https://github.com/Rede-DSBR/PNP/issues/269).
 
 ## Resultado
 

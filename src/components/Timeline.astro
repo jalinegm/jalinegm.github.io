@@ -6,6 +6,8 @@ interface Item {
   titulo: string;
   instituicao: string;
   detalhe?: string;
+  detalheHref?: string;
+  orientacao?: string;
   status?: "em-andamento" | "concluido";
 }
 
@@ -23,18 +25,23 @@ const { itens } = Astro.props;
         {item.status === "em-andamento" && <span class="etapa-agora">{t("status.emAndamento")}</span>}
       </p>
       <div class="etapa-corpo">
-        <h3>{item.titulo}</h3>
+        <h3>{item.titulo.split(/(lato sensu)/).map((parte) => parte === "lato sensu" ? <i lang="la">{parte}</i> : parte)}</h3>
         <p class="etapa-inst">{item.instituicao}</p>
-        {item.detalhe && <p class="etapa-detalhe">{item.detalhe}</p>}
+        {item.detalhe && (
+          <p class="etapa-detalhe">
+            {item.detalheHref ? <a href={item.detalheHref}>{item.detalhe}</a> : item.detalhe}.
+            {item.orientacao && <> {item.orientacao}</>}
+          </p>
+        )}
       </div>
     </li>
   ))}
 </ol>
 <style>
   .timeline {
-    --rail-x: 9.5rem;
+    --rail-x: 8rem;
     list-style: none;
-    margin: var(--space-6) 0 0;
+    margin: var(--space-4) 0 0;
     padding: 0;
     position: relative;
   }
@@ -51,9 +58,9 @@ const { itens } = Astro.props;
   .etapa {
     display: grid;
     grid-template-columns: var(--rail-x) 1fr;
-    column-gap: var(--space-6);
+    column-gap: var(--space-5);
     position: relative;
-    padding-block-end: var(--space-7);
+    padding-block-end: var(--space-5);
   }
   .etapa:last-child {
     padding-block-end: var(--space-4);
@@ -74,8 +81,6 @@ const { itens } = Astro.props;
   }
   .etapa--agora::before {
     background: var(--color-accent);
-    box-shadow: 0 0 0 0.35rem color-mix(in srgb, var(--color-accent) 22%, transparent);
-    animation: pulso 2.4s var(--ease-out) infinite;
   }
   .etapa-periodo {
     margin: 0;
@@ -84,40 +89,42 @@ const { itens } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: var(--space-2);
+    gap: var(--space-1);
   }
   .etapa-ano {
-    font-size: var(--font-size-lg);
-    font-weight: 700;
+    font-size: var(--font-size-sm);
+    font-weight: 400;
     font-variant-numeric: tabular-nums;
-    color: var(--color-text);
-    line-height: 1.2;
+    color: var(--color-text-muted);
+    line-height: 1.5;
   }
   .etapa-agora {
-    font-size: var(--font-size-sm);
-    font-weight: 700;
-    padding: 0.1rem var(--space-3);
-    white-space: nowrap;
+    font-size: 0.75rem;
+    font-weight: 400;
+    padding: 0.15rem var(--space-2);
+    line-height: 1.4;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
     border-radius: 999px;
-    background: var(--color-accent);
-    color: var(--color-bg);
+    background: var(--color-surface);
+    color: var(--color-link);
   }
   .etapa-corpo h3 {
     margin: 0;
-    font-size: var(--font-size-lg);
-    line-height: 1.3;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
     text-wrap: balance;
   }
+  .etapa-corpo { min-inline-size: 0; overflow-wrap: anywhere; }
   .etapa-inst {
-    margin: var(--space-2) 0 0;
-    color: var(--color-link);
-    font-weight: 700;
+    margin: var(--space-1) 0 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: 400;
   }
   .etapa-detalhe {
-    margin: var(--space-3) 0 0;
-    padding: var(--space-3) var(--space-4);
-    background: var(--color-surface);
-    border-radius: var(--radius);
+    margin: var(--space-2) 0 0;
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
     max-width: var(--measure);
@@ -164,12 +171,13 @@ const { itens } = Astro.props;
   @media (max-width: 40rem) {
     .timeline { --rail-x: 0.5rem; }
     .etapa {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       padding-inline-start: var(--space-6);
       row-gap: var(--space-2);
     }
     .etapa-periodo {
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
       text-align: start;

@@ -1,5 +1,5 @@
 # Cursos de especialização não constam do currículo Lattes exportado.
-# Dados informados pela autora; mesclados na página Sobre.
+# Dados informados pela autora; mesclados na página inicial.
 itens:
   - titulo: "Especialização (lato sensu) em Inteligência Artificial e Computacional"
     instituicao: "Universidade Federal de Viçosa (UFV)"
@@ -8,6 +8,6 @@ itens:
     ano_fim: null
   - titulo: "Especialização (lato sensu) em Educação a Distância para a Educação Profissional"
     instituicao: "Instituto Federal Farroupilha (IFFar)"
-    status: concluido
+    status: em-andamento
     ano_inicio: 2025
-    ano_fim: 2026
+    ano_fim: null

@@ -24,8 +24,8 @@ const FORBIDDEN = [
 describe("casos collection", () => {
   const casos = mdFiles("casos");
 
-  it("has the seven case studies (six from spec 4.4 plus Plataforma Nilo Peçanha)", () => {
-    expect(casos.length).toBe(7);
+  it("includes the eight case studies, including the prompts book", () => {
+    expect(casos.length).toBe(8);
   });
 
   it.each(casos.map((c): [string, Frontmatter] => [c.name, c.data]))("%s has required frontmatter", (_name, d) => {

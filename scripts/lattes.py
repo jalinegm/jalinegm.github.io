@@ -319,6 +319,41 @@ def _software(root: ET.Element) -> list[dict[str, Any]]:
     return softwares
 
 
+def _apresentacoes(root: ET.Element) -> list[dict[str, Any]]:
+    itens = []
+    for el in root.findall(".//PRODUCAO-TECNICA//APRESENTACAO-DE-TRABALHO"):
+        basico = el.find("DADOS-BASICOS-DA-APRESENTACAO-DE-TRABALHO")
+        detalhe = el.find("DETALHAMENTO-DA-APRESENTACAO-DE-TRABALHO")
+        if basico is None:
+            continue
+        itens.append({
+            "titulo": clean_title(basico.get("TITULO")),
+            "ano": _int_ou_none(basico.get("ANO")),
+            "natureza": basico.get("NATUREZA", ""),
+            "evento": clean_title(detalhe.get("NOME-DO-EVENTO")) if detalhe is not None else "",
+        })
+    return sorted(itens, key=lambda i: (-(i["ano"] or 0), i["titulo"]))
+
+
+def _orientacoes(root: ET.Element) -> list[dict[str, Any]]:
+    itens = []
+    for secao, status in [("ORIENTACOES-CONCLUIDAS", "concluida"), ("ORIENTACOES-EM-ANDAMENTO", "em-andamento")]:
+        for container in root.findall(".//" + secao):
+            for el in container:
+                basico = next((c for c in el if c.tag.startswith("DADOS-BASICOS-")), None)
+                detalhe = next((c for c in el if c.tag.startswith("DETALHAMENTO-")), None)
+                if basico is None:
+                    continue
+                itens.append({
+                    "titulo": clean_title(basico.get("TITULO") or basico.get("TITULO-DO-TRABALHO")),
+                    "ano": _int_ou_none(basico.get("ANO")),
+                    "status": status,
+                    "natureza": basico.get("NATUREZA", ""),
+                    "instituicao": clean_title(detalhe.get("NOME-DA-INSTITUICAO") or detalhe.get("NOME-INSTITUICAO")) if detalhe is not None else "",
+                })
+    return sorted(itens, key=lambda i: (i["status"] != "em-andamento", -(i["ano"] or 0), i["titulo"]))
+
+
 def _patente(root: ET.Element) -> dict[str, Any] | None:
     patente = root.find(".//PATENTE/DADOS-BASICOS-DA-PATENTE")
     if patente is None:
@@ -353,6 +388,8 @@ def parse_lattes(xml_bytes: bytes, overrides: dict[str, dict[str, str]] | None =
 
     resumo_el = dados.find("RESUMO-CV")
     return {
+        "apresentacoes": _apresentacoes(root),
+        "orientacoes": _orientacoes(root),
         "areas": _areas(dados),
         "atuacao": _atuacao(dados),
         "formacao": _formacao(dados),

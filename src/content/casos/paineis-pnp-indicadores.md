@@ -14,7 +14,7 @@ repos:
   - relatorios-pnp2026-iffar
   - painelPosIFFar
 destaque: true
-ordem: 4
+ordem: 6
 ---
 
 ## Visão geral

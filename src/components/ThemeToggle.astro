@@ -1,7 +1,7 @@
 ---
 import { t } from "../i18n";
 ---
-<button type="button" id="theme-toggle" aria-pressed="false">{t("tema.alternar")}</button>
+<button type="button" id="theme-toggle" aria-pressed="false" data-label={t("tema.alternar")} data-light={t("tema.claro")} data-dark={t("tema.escuro")}>{t("tema.alternar")}</button>
 <script>
   const KEY = "theme";
   const button = document.getElementById("theme-toggle");
@@ -16,6 +16,7 @@ import { t } from "../i18n";
   function render() {
     if (!button) return;
     button.setAttribute("aria-pressed", String(currentDark()));
+    button.textContent = `${button.dataset.label} (${currentDark() ? button.dataset.dark : button.dataset.light})`;
   }
 
   button?.addEventListener("click", () => {

@@ -19,7 +19,7 @@ repos:
   - gerar-planilhas-educacenso
   - baixadorSistec
 destaque: true
-ordem: 5
+ordem: 7
 ---
 
 ## Contexto
@@ -31,6 +31,8 @@ Os processos de regulação e de censo exigem o preenchimento e o envio de dados
 Reduzir o trabalho manual de baixar, preencher e conferir dados nesses sistemas, sem perder o controle do que é enviado.
 
 ## Abordagem
+
+![Tela inicial do Boletins SIGAA, com etapas Arquivo, Acesso ao SIGAA e Boletins, e seleção de arquivo CSV de matrículas.](/projetos/automacao-academico-regulatoria.png)
 
 Cada ferramenta cobre uma etapa:
 

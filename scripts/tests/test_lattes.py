@@ -61,3 +61,34 @@ def test_theme_keywords():
     assert classify_theme("Ensino de programação com App Inventor") == "educacao-computacao"
     assert classify_theme("Indicadores da Plataforma Nilo Peçanha") == "dados-educacionais"
     assert classify_theme("Algo sem palavra-chave") == "outros"
+
+
+def test_apresentacoes_e_orientacoes_preservam_tipo_ano_e_status():
+    xml = b'''<CURRICULO-VITAE><DADOS-GERAIS />
+    <PRODUCAO-TECNICA><DEMAIS-TIPOS-DE-PRODUCAO-TECNICA>
+      <APRESENTACAO-DE-TRABALHO>
+        <DADOS-BASICOS-DA-APRESENTACAO-DE-TRABALHO TITULO="Indicadores" ANO="2025" NATUREZA="CONFERENCIA" />
+        <DETALHAMENTO-DA-APRESENTACAO-DE-TRABALHO NOME-DO-EVENTO="Encontro" />
+      </APRESENTACAO-DE-TRABALHO>
+    </DEMAIS-TIPOS-DE-PRODUCAO-TECNICA></PRODUCAO-TECNICA>
+    <OUTRA-PRODUCAO><ORIENTACOES-CONCLUIDAS><OUTRAS-ORIENTACOES-CONCLUIDAS>
+      <DADOS-BASICOS-DE-OUTRAS-ORIENTACOES-CONCLUIDAS TITULO="Trabalho concluido" ANO="2024" NATUREZA="TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO" />
+      <DETALHAMENTO-DE-OUTRAS-ORIENTACOES-CONCLUIDAS NOME-DA-INSTITUICAO="Instituto A" />
+    </OUTRAS-ORIENTACOES-CONCLUIDAS></ORIENTACOES-CONCLUIDAS></OUTRA-PRODUCAO>
+    <DADOS-COMPLEMENTARES><ORIENTACOES-EM-ANDAMENTO><ORIENTACAO-EM-ANDAMENTO-DE-APERFEICOAMENTO-ESPECIALIZACAO>
+      <DADOS-BASICOS-DA-ORIENTACAO-EM-ANDAMENTO-DE-APERFEICOAMENTO-ESPECIALIZACAO TITULO-DO-TRABALHO="Trabalho atual" ANO="2026" />
+      <DETALHAMENTO-DA-ORIENTACAO-EM-ANDAMENTO-DE-APERFEICOAMENTO-ESPECIALIZACAO NOME-INSTITUICAO="Instituto B" />
+    </ORIENTACAO-EM-ANDAMENTO-DE-APERFEICOAMENTO-ESPECIALIZACAO></ORIENTACOES-EM-ANDAMENTO></DADOS-COMPLEMENTARES>
+    </CURRICULO-VITAE>'''
+    data = parse_lattes(xml)
+    assert data["apresentacoes"] == [{"titulo": "Indicadores", "ano": 2025, "natureza": "CONFERENCIA", "evento": "Encontro"}]
+    assert [(o["titulo"], o["status"], o["instituicao"]) for o in data["orientacoes"]] == [
+        ("Trabalho atual", "em-andamento", "Instituto B"),
+        ("Trabalho concluido", "concluida", "Instituto A"),
+    ]
+
+
+def test_campos_novos_ausentes_retornam_listas_vazias():
+    data = parse_lattes(b"<CURRICULO-VITAE><DADOS-GERAIS /></CURRICULO-VITAE>")
+    assert data["apresentacoes"] == []
+    assert data["orientacoes"] == []

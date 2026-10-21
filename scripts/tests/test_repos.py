@@ -35,11 +35,11 @@ def test_didatico_patterns():
     assert not is_didatico("Sistemas-web")
 
 
-def test_private_repo_never_exposes_url_or_image():
+def test_private_repo_preserves_link_without_downloading_image():
     api = {"name": "Rede-DSBR", "description": None, "isPrivate": True, "url": "https://github.com/jalinegm/Rede-DSBR"}
     out = merge_curation(api, None, imagem=None)
     assert out["privado"] is True
-    assert out["url"] == ""
+    assert out["url"] == "https://github.com/jalinegm/Rede-DSBR"
     assert out["imagem"] is None
 
 
@@ -57,11 +57,11 @@ def test_build_repos_fixture_rules():
     api_list = json.loads(FIX.read_text(encoding="utf-8"))
     repos = {r["name"]: r for r in build_repos(api_list, {}, {"baixar-boletins-sigaa": "/repos/baixar-boletins-sigaa.png"})}
 
-    # privado sem descrição: placeholder vazio, revisão marcada, grupo didático, sem URL nem imagem
+    # privado sem descrição: placeholder vazio, revisão marcada, grupo didático, com link e sem imagem
     assert repos["POO_Aula02"]["privado"] and repos["POO_Aula02"]["descricao"] == ""
     assert repos["POO_Aula02"]["descricaoRevisar"] is True
     assert repos["POO_Aula02"]["grupo"] == "didatico"
-    assert repos["POO_Aula02"]["url"] == ""
+    assert repos["POO_Aula02"]["url"] == "https://github.com/jalinegm/POO_Aula02"
     assert repos["Sistema"]["grupo"] == "didatico"
 
     # privado com imagem na API (OpenGraph) não pode vazar a URL

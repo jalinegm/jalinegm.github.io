@@ -217,14 +217,14 @@ describe("didaticos", () => {
 });
 
 describe("ordenarRepos", () => {
-  it("sorts newest first, forks last, then by name", () => {
+  it("sorts public before private, then forks last, newest first and by name", () => {
     expect(ordenarRepos(repos).map((r) => r.name)).toEqual([
       "painelPosIFFar",
       "baixar-boletins-sigaa",
-      "Rede-DSBR",
       "oculto-teste",
-      "POO_Aula02",
       "react-native-image-modal",
+      "Rede-DSBR",
+      "POO_Aula02",
     ]);
   });
 });

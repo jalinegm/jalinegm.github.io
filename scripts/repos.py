@@ -2,7 +2,7 @@
 
 Usa o CLI `gh` local e autenticado (sem tokens no repositório). Imagens de
 README públicas vão para public/repos/<nome>.<ext>. Repositórios privados
-nunca têm imagem baixada nem URL exposta: só nome, descrição e selo.
+têm links para acesso autenticado, sem baixar imagens dos READMEs privados.
 
 Uso (a partir da raiz do repositório):
     .venv\\Scripts\\python.exe -I scripts/repos.py
@@ -99,7 +99,7 @@ def merge_curation(api_repo: dict[str, Any], cur: dict[str, Any] | None, imagem:
 
     return {
         "name": name,
-        "url": "" if privado else (api_repo.get("url") or ""),
+        "url": api_repo.get("url") or f"https://github.com/jalinegm/{name}",
         "descricao": descricao,
         "descricaoRevisar": descricao_revisar,
         "linguagem": linguagem_obj.get("name") or None,

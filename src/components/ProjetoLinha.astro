@@ -18,7 +18,7 @@ const { titulo, href, resumo, periodo, imagem, alt, lider } = Astro.props;
 <article class:list={["linha", { "linha--lider": lider && imagem, "linha--texto": !imagem }]}>
   {imagem && (
     <a class="linha-midia" href={href} tabindex="-1" aria-hidden="true">
-      <img src={imagem} alt="" loading="lazy" width="640" height="400" />
+      <img src={imagem} class:list={{ "imagem-cecate": imagem.includes("cecate-nordeste") }} alt="" loading="lazy" width="640" height="400" />
     </a>
   )}
   <div class="linha-texto">
@@ -50,6 +50,10 @@ const { titulo, href, resumo, periodo, imagem, alt, lider } = Astro.props;
     height: 100%;
     object-fit: cover;
     object-position: top left;
+  }
+  .linha-midia img.imagem-cecate {
+    object-fit: contain;
+    object-position: center;
   }
   .linha-texto > * + * {
     margin-block-start: var(--space-3);

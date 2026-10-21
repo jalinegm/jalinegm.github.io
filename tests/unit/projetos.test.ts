@@ -12,7 +12,7 @@ const FORBIDDEN = [
   "consultoria", "consultora", "contratar", "contrate", "cliente",
   "serviço", "serviços", "orçamento", "freelance", "hire",
 ];
-const CASOS = ["clat", "identificador-cedulas", "paineis-pnp-indicadores", "automacao-academico-regulatoria", "alcance-global-citacoes", "cecate-nordeste"];
+const CASOS = ["clat", "identificador-cedulas", "paineis-pnp-indicadores", "automacao-academico-regulatoria", "cecate-nordeste", "plataforma-nilo-pecanha", "prompts-livro-iffar"];
 const PRIVADO = "Privado — acesso sob convite";
 
 type Repo = (typeof repos)[number];
@@ -58,10 +58,10 @@ describe("projetos/index.html", () => {
     for (const r of didaticas) expect(principalHtml, r.name).not.toMatch(comoTexto(r.name));
   });
 
-  it("nenhum repositório privado tem link para o GitHub (nem URL bruta)", () => {
+  it("repositórios privados mantêm links para acesso autenticado", () => {
     const h = page();
     for (const r of privados) {
-      expect(h, r.name).not.toContain(`github.com/jalinegm/${r.name}"`);
+      expect(h, r.name).toContain(`href="${r.url}"`);
     }
     expect(h).not.toMatch(/raw\.githubusercontent\.com/);
   });
@@ -87,7 +87,7 @@ describe("projetos/index.html", () => {
     for (const r of didaticas) expect(bloco, r.name).toMatch(comoTexto(r.name));
   });
 
-  it("estudos de caso linkam para as seis páginas de projeto", () => {
+  it("estudos de caso linkam para os projetos selecionados", () => {
     const h = page();
     for (const slug of CASOS) expect(h).toContain(`href="/projetos/${slug}"`);
   });
@@ -104,10 +104,10 @@ describe("projetos/index.html", () => {
     expect(h).toMatch(/<div class="vazio" data-vazio hidden/);
   });
 
-  it("imagens têm alt e não há caixa de placeholder vazia", () => {
+  it("imagens têm alt e espaços reservados são decorativos", () => {
     const h = page();
     for (const img of h.match(/<img [^>]*>/g) ?? []) expect(img).toMatch(/\salt="/);
-    expect(h).not.toMatch(/card-placeholder/);
+    expect(h).toMatch(/class="card-placeholder" aria-hidden="true"/);
   });
 
   it("não contém vocabulário proibido", () => {
@@ -126,9 +126,11 @@ describe.each(CASOS)("projetos/%s/index.html", (slug) => {
     expect(h).toContain('href="/projetos"');
   });
 
-  it("repositórios relacionados privados não têm link", () => {
+  it("repositórios relacionados privados mantêm links quando exibidos", () => {
     const h = html(file);
-    for (const r of privados) expect(h, r.name).not.toContain(`github.com/jalinegm/${r.name}"`);
+    for (const r of privados) {
+      if (comoTexto(r.name).test(h)) expect(h, r.name).toContain(`href="${r.url}"`);
+    }
   });
 
   it("não contém vocabulário proibido", () => {

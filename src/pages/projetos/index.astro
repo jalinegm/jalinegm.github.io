@@ -11,10 +11,13 @@ import { getRepos } from "../../lib/data";
 import { didaticos, filterRepos, ordenarRepos } from "../../lib/filters";
 import { cardPropsRepo } from "../../lib/repos-view";
 
-const casos = (await getCollection("casos")).sort((a, b) => a.data.ordem - b.data.ordem);
+const casos = (await getCollection("casos"))
+  .filter((caso) => caso.data.slug !== "alcance-global-citacoes")
+  .sort((a, b) => a.data.ordem - b.data.ordem);
 
 const repos = getRepos();
-const principal = ordenarRepos(filterRepos(repos, {}));
+const principal = ordenarRepos(filterRepos(repos, {}))
+  .sort((a, b) => Number(Boolean(cardPropsRepo(b).imagem)) - Number(Boolean(cardPropsRepo(a).imagem)));
 const didaticas = didaticos(repos);
 
 // Opções dos filtros, derivadas dos dados. Temas só aparecem se algum repositório tiver tema curado.

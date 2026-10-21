@@ -30,7 +30,7 @@ describe("pesquisa/index.html", () => {
     const nav = page().match(/<nav aria-label="Menu principal"[^>]*>([\s\S]*?)<\/nav>/);
     expect(nav).not.toBeNull();
     const hrefs = [...nav![1].matchAll(/<a href="([^"]+)"/g)].map((m) => m[1]);
-    expect(hrefs).toEqual(["/", "/sobre", "/pesquisa", "/projetos"]);
+    expect(hrefs).toEqual(["/", "/pesquisa", "/projetos"]);
     const current = [...nav![1].matchAll(/<a href="([^"]+)"[^>]*aria-current="page"/g)].map((m) => m[1]);
     expect(current).toEqual(["/pesquisa"]);
   });

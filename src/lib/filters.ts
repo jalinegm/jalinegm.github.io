@@ -136,10 +136,11 @@ export function didaticos<T extends RepoFiltravel>(items: T[]): T[] {
   return items.filter((r) => r.grupo === "didatico" && !r.ocultar);
 }
 
-/** Mais recentes primeiro, forks por último, empate por nome em ordem pt-BR. Não altera a entrada. */
+/** Públicos primeiro; em cada grupo, forks por último, ano decrescente e nome em pt-BR. */
 export function ordenarRepos<T extends RepoFiltravel>(items: T[]): T[] {
   return [...items].sort(
     (a, b) =>
+      Number(a.privado) - Number(b.privado) ||
       Number(a.fork) - Number(b.fork) ||
       b.ano - a.ano ||
       a.name.localeCompare(b.name, "pt-BR"),
