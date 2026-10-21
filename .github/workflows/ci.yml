@@ -40,11 +40,11 @@ jobs:
       - name: Testes unitários dos scripts Python
         run: python -m pytest scripts/tests -q
 
-      - name: Testes unitários (Vitest)
-        run: npm run test:unit
-
       - name: Build (astro check + astro build)
         run: npm run build
+
+      - name: Testes unitários (Vitest)
+        run: npm run test:unit
 
       - name: Validação HTML (html-validate)
         run: npm run test:html
