@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 // Razões de contraste WCAG 2.x calculadas a partir dos tokens reais de src/styles/tokens.css,
-// nos dois temas (escuro, padrão em :root; claro, em [data-theme="light"]). Texto >= 4.5:1; UI e foco >= 3:1.
+// nos três blocos de tema (claro; escuro pelo SO; escuro manual). Texto >= 4.5:1; UI e foco >= 3:1.
 
 const css = readFileSync(fileURLToPath(new URL("../../src/styles/tokens.css", import.meta.url)), "utf8");
 
@@ -34,8 +34,9 @@ function razao(a: string, b: string): number {
 }
 
 const TEMAS: Record<string, Record<string, string>> = {
-  escuro: tokens(bloco(":root {")),
-  claro: tokens(bloco(':root[data-theme="light"]')),
+  claro: tokens(bloco(":root {")),
+  "escuro (SO)": tokens(bloco(':root:not([data-theme="light"])')),
+  "escuro (manual)": tokens(bloco(':root[data-theme="dark"]')),
 };
 
 const TEXTO = ["text", "text-muted", "link"] as const;
