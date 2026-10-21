@@ -1,7 +1,7 @@
 # Source originals (too large for git)
 /TeseJaline_correcoesProfeFatima.pdf
 /dissertacaoJaline.pdf
-/CV_*.zip
+*CV_*.zip
 node_modules/
 dist/
 .astro/
@@ -11,6 +11,5 @@ test-results/
 playwright-report/
 .lighthouseci/
 
-# Impeccable: capturas e logs de revisão (gerados)
-.impeccable/review/
-.impeccable/questions/
+# Impeccable (gerado)
+.impeccable/
