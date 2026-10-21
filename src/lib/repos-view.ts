@@ -30,8 +30,8 @@ export function cardPropsRepo(r: Repo) {
 
   return {
     titulo: r.name,
-    href: r.url || undefined,
-    externo: Boolean(r.url),
+    href: r.privado ? undefined : r.url || undefined,
+    externo: Boolean(r.url) && !r.privado,
     descricao: r.descricao || t("repos.semDescricao"),
     // Descrições de forks vêm do GitHub em inglês (ver descricaoRevisar).
     descricaoLang: r.fork && r.descricao ? "en" : undefined,
